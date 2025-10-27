@@ -1,0 +1,6 @@
+SQLarius: Wake up samurai,
+SQLarius: We have a city to burn!
+...
+[wait time="1.0"]
+- Get up
+	[signal arg="OpenEyes"]

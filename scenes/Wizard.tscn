@@ -1,0 +1,93 @@
+[gd_scene load_steps=15 format=3 uid="uid://buxaw2cgx0u71"]
+
+[ext_resource type="Texture2D" uid="uid://dnni81d5o1prt" path="res://assets/images/Wizard/Idle.png" id="1_n70s3"]
+[ext_resource type="Shader" uid="uid://dorawnuph7cxo" path="res://scenes/player.gdshader" id="1_ot8hm"]
+[ext_resource type="Texture2D" uid="uid://l6k0dfl2jyct" path="res://assets/images/Other/circle_fade.jpg" id="2_8jckm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tuyoq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apy6v"]
+shader = ExtResource("1_ot8hm")
+shader_parameter/n = SubResource("NoiseTexture2D_tuyoq")
+shader_parameter/intensity = 0.67
+shader_parameter/speed = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1afpl"]
+atlas = ExtResource("1_n70s3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot8hm"]
+atlas = ExtResource("1_n70s3")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jckm"]
+atlas = ExtResource("1_n70s3")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apy6v"]
+atlas = ExtResource("1_n70s3")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hh8q"]
+atlas = ExtResource("1_n70s3")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwuk2"]
+atlas = ExtResource("1_n70s3")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61wvc"]
+atlas = ExtResource("1_n70s3")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3drt"]
+atlas = ExtResource("1_n70s3")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xo3ru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1afpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot8hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jckm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apy6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hh8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwuk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61wvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3drt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Wizard" type="Node2D"]
+
+[node name="CircleFade" type="Sprite2D" parent="."]
+modulate = Color(0.6156863, 0.3254902, 0.6745098, 1)
+light_mask = 3
+visibility_layer = 3
+material = SubResource("ShaderMaterial_apy6v")
+position = Vector2(0, -33)
+scale = Vector2(0.45737183, 0.6800668)
+texture = ExtResource("2_8jckm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -64)
+sprite_frames = SubResource("SpriteFrames_xo3ru")
+autoplay = "default"
