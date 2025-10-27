@@ -183,6 +183,7 @@ sources/0 = SubResource("TileSetAtlasSource_ashvg")
 [node name="Characters" type="Node" parent="."]
 
 [node name="Player" parent="Characters" instance=ExtResource("1_rbmkf")]
+position = Vector2(-13, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Characters/Player"]
 position = Vector2(-1.4210855e-14, -8.000002)
