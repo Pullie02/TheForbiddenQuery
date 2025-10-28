@@ -1,0 +1,6 @@
+"Mysterious Voice": wake up...
+"Mysterious Voice": Wake up!
+"Mysterious Voice": WAKE UP!
+- Get up
+	[signal arg="start"]
+[end_timeline]
