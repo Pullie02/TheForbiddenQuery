@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://vlve4vio4ibm" path="res://assets/images/Knight/Run.png" id="4_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dq605xlg4lkaa" path="res://assets/images/Knight/Pray.png" id="5_qlg0r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(14.484774, 23.521824)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_dqkch")
 region = Rect2(0, 0, 128, 64)
@@ -333,6 +330,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(20.594467, 36.467087)
+
 [sub_resource type="Environment" id="Environment_tuyoq"]
 background_mode = 3
 glow_enabled = true
@@ -340,25 +340,22 @@ glow_intensity = 1.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
-position = Vector2(0, -8)
+position = Vector2(0, -13)
+scale = Vector2(0.633, 0.633)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ofpvf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.9604645e-08, -3.2817125)
-scale = Vector2(0.6903801, 0.9963757)
-shape = SubResource("RectangleShape2D_dqkch")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1.3034608, 1.7228315, 5.3174357, 1)
-position = Vector2(0, -12)
-scale = Vector2(0.633, 0.633)
+position = Vector2(0, -11.058451)
 sprite_frames = SubResource("SpriteFrames_81gkq")
-animation = &"wakeup"
+animation = &"idle"
 autoplay = "idle"
-frame = 17
-frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.7898896, 2.369669)
+shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tuyoq")

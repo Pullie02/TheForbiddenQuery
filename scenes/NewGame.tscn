@@ -193,10 +193,10 @@ layer_1/name = "Mid"
 [node name="Characters" type="Node" parent="."]
 
 [node name="Player" parent="Characters" instance=ExtResource("3_n0sx4")]
-position = Vector2(76, -8)
+position = Vector2(76, -13)
 
 [node name="Camera2D" type="Camera2D" parent="Characters/Player"]
-position = Vector2(-9.536743e-07, -44.000004)
+position = Vector2(0, -44)
 scale = Vector2(5.169, 5.169)
 zoom = Vector2(4.5, 4.5)
 limit_bottom = 120
@@ -210,7 +210,6 @@ scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Wizard" parent="Characters" instance=ExtResource("5_r55i3")]
 position = Vector2(113, 0)
-scale = Vector2(0.539, 0.539)
 
 [node name="Killzone" parent="." instance=ExtResource("6_3cv1w")]
 position = Vector2(74, 141)
