@@ -1,6 +1,8 @@
-SQLarius: Wake up samurai,
-SQLarius: We have a city to burn!
-...
-[wait time="1.0"]
-- Get up
-	[signal arg="OpenEyes"]
+SQLarius: Finally, you are awake.
+SQLarius: We are in GRAVE danger and we need you.
+SQLarius: The hackers have stolen my SQL Spell powers.
+SQLarius: And, theyre using them for bad acts.
+SQLarius: Now go to the end of the hallway.
+SQLarius: There is a door there. We will discuss it more outside.
+[signal arg="begin"]
+[end_timeline]

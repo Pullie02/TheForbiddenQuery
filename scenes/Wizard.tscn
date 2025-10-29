@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://buxaw2cgx0u71"]
 
-[ext_resource type="Texture2D" uid="uid://dnni81d5o1prt" path="res://assets/images/Wizard/Idle.png" id="1_n70s3"]
+[ext_resource type="Texture2D" uid="uid://b7leyk7uxj4dd" path="res://assets/images/Wizard/Idle.png" id="1_n70s3"]
 [ext_resource type="Shader" uid="uid://dorawnuph7cxo" path="res://scenes/player.gdshader" id="1_ot8hm"]
 [ext_resource type="Texture2D" uid="uid://l6k0dfl2jyct" path="res://assets/images/Other/circle_fade.jpg" id="2_8jckm"]
 
@@ -91,3 +91,4 @@ texture = ExtResource("2_8jckm")
 position = Vector2(0, -64)
 sprite_frames = SubResource("SpriteFrames_xo3ru")
 autoplay = "default"
+flip_h = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7leyk7uxj4dd"
-path="res://.godot/imported/Idle-export.png-e6af3d2d48230f038026d6520c7af7eb.ctex"
+uid="uid://du7tn3obg63q6"
+path="res://.godot/imported/castle interior.jpg-1990f27095408dcc6abb640ea75de142.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Wizard/Idle-export.png"
-dest_files=["res://.godot/imported/Idle-export.png-e6af3d2d48230f038026d6520c7af7eb.ctex"]
+source_file="res://assets/images/Other/castle interior.jpg"
+dest_files=["res://.godot/imported/castle interior.jpg-1990f27095408dcc6abb640ea75de142.ctex"]
 
 [params]
 
