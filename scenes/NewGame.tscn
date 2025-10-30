@@ -225,7 +225,6 @@ scale = Vector2(0.2134724, 0.2134724)
 texture = ExtResource("7_kv5ta")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 position = Vector2(430, -19)
 monitoring = false
 monitorable = false
@@ -236,7 +235,6 @@ position = Vector2(-38.5, -4.5)
 shape = SubResource("RectangleShape2D_n0sx4")
 
 [node name="portal" parent="." instance=ExtResource("9_n0sx4")]
-modulate = Color(1, 0.30457973, 0.18976966, 1)
-position = Vector2(328, -4.7683716e-07)
+position = Vector2(331, 7.6293945e-06)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvg1rbf3lwyfc"]
+[gd_scene load_steps=13 format=3 uid="uid://dvg1rbf3lwyfc"]
 
-[ext_resource type="Script" uid="uid://btg4p28uk5xy5" path="res://scenes/portal.gd" id="1_jr6l0"]
 [ext_resource type="Texture2D" uid="uid://c2js50txnfjen" path="res://assets/images/Other/portal.png" id="1_v0xau"]
-[ext_resource type="PackedScene" uid="uid://cbj2h7kstsawk" path="res://Interactions/interactable.tscn" id="3_d4jfq"]
+[ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://Interactions/interactable.tscn" id="3_d4jfq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ffj6"]
 atlas = ExtResource("1_v0xau")
@@ -68,12 +67,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyed0"]
-size = Vector2(47.57873, 93.45822)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jr6l0"]
+size = Vector2(49.27797, 91.758995)
 
 [node name="portal" type="Node2D"]
 scale = Vector2(0.5884983, 0.5884983)
-script = ExtResource("1_jr6l0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -57)
@@ -82,9 +80,10 @@ sprite_frames = SubResource("SpriteFrames_5yude")
 frame_progress = 0.30721888
 
 [node name="Interactable" parent="." instance=ExtResource("3_d4jfq")]
-position = Vector2(0, -50.977207)
+position = Vector2(0, -52.676445)
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(4.051304e-07, 4.2481003)
+position = Vector2(-0.8496185, 6.796959)
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_dyed0")
+shape = SubResource("RectangleShape2D_jr6l0")
