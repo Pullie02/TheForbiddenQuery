@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbj2h7kstsawk"]
+
+[ext_resource type="Script" uid="uid://4iuytkpxm8he" path="res://Interactions/interactable.gd" id="1_ii5sf"]
+
+[node name="Interactable" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_ii5sf")
+interact_name = "Go Inside"
