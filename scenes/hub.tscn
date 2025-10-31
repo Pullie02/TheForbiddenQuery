@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwkc6e83lkb5a"]
+[gd_scene load_steps=12 format=3 uid="uid://cwkc6e83lkb5a"]
 
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_d1od2"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_w6xti"]
 [ext_resource type="PackedScene" uid="uid://dvg1rbf3lwyfc" path="res://scenes/portal.tscn" id="3_w6xti"]
-[ext_resource type="PackedScene" uid="uid://cbj2h7kstsawk" path="res://Interactions/interactable.tscn" id="4_7wvbm"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="4_3wyi3"]
+[ext_resource type="PackedScene" uid="uid://buxaw2cgx0u71" path="res://scenes/Wizard.tscn" id="4_hlsmc"]
+[ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://Interactions/interactable.tscn" id="5_bfqb0"]
+[ext_resource type="Script" uid="uid://dimisa4v2dtma" path="res://scenes/wizard.gd" id="5_hlsmc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
 texture = ExtResource("1_d1od2")
@@ -171,8 +174,13 @@ texture = ExtResource("1_d1od2")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d1od2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfqb0"]
-size = Vector2(27, 54)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlsmc"]
+radius = 23.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_441x5"]
+font = ExtResource("4_3wyi3")
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Hub" type="Node2D"]
 
@@ -197,14 +205,38 @@ limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
 
+[node name="Wizard" parent="." instance=ExtResource("4_hlsmc")]
+position = Vector2(150, -8)
+script = ExtResource("5_hlsmc")
+
+[node name="Interactable" parent="Wizard" instance=ExtResource("5_bfqb0")]
+position = Vector2(0, -31.53989)
+scale = Vector2(1.8552877, 1.8552877)
+interact_name = "Press E to talk to SQLarius"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wizard/Interactable"]
+z_index = 10
+shape = SubResource("CircleShape2D_hlsmc")
+
 [node name="portal" parent="." instance=ExtResource("3_w6xti")]
 modulate = Color(1, 0.30457973, 0.18976966, 1)
 position = Vector2(214, -8)
 
-[node name="Interactable" parent="." instance=ExtResource("4_7wvbm")]
-position = Vector2(213, -37)
-interact_name = "Press E to go inside"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(1, 3)
-shape = SubResource("RectangleShape2D_bfqb0")
+[node name="Label" type="Label" parent="portal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.571144
+offset_top = -152.93163
+offset_right = 65.428856
+offset_bottom = -117.931625
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Level 1
+Login page"
+label_settings = SubResource("LabelSettings_441x5")
+horizontal_alignment = 1
+vertical_alignment = 1

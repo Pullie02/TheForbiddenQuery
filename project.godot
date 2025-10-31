@@ -26,11 +26,13 @@ ProjectUISoundController="*res://addons/maaacks_menus_template/base/nodes/autolo
 [dialogic]
 
 directories/dch_directory={
+"MainCharacter": "res://Dialogue/Characters/MainCharacter.dch",
 "SQLarius": "res://Dialogue/Characters/SQLarius.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
 "Intro": "res://Intro.dtl",
+"PortalTutor": "res://Dialogue/Dialogue/PortalTutor.dtl",
 "wakeup": "res://Dialogue/Dialogue/wakeup.dtl"
 }
 layout/style_directory={
@@ -127,7 +129,7 @@ locale/translations=PackedStringArray("res://addons/maaacks_menus_template/base/
 
 [layer_names]
 
-2d_physics/layer_1="interactions"
+2d_physics/layer_2="interactions"
 
 [maaacks_menus_template]
 

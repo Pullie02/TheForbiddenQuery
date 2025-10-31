@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=15 format=3 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" uid="uid://dnt2db0yeyo3v" path="res://scripts/NewGame.gd" id="1_a7222"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_yjc3x"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://buxaw2cgx0u71" path="res://scenes/Wizard.tscn" id="5_r55i3"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="6_3cv1w"]
 [ext_resource type="Texture2D" uid="uid://du7tn3obg63q6" path="res://assets/images/Other/castle interior.jpg" id="7_kv5ta"]
-[ext_resource type="Script" uid="uid://d3ucdjpfvn7fp" path="res://scripts/area_2d.gd" id="8_yjc3x"]
+[ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://Interactions/interactable.tscn" id="9_l4j0o"]
 [ext_resource type="PackedScene" uid="uid://dvg1rbf3lwyfc" path="res://scenes/portal.tscn" id="9_n0sx4"]
+[ext_resource type="Script" uid="uid://bxk018j58ikxe" path="res://scripts/portal.gd" id="9_r55i3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjc3x"]
 texture = ExtResource("2_yjc3x")
@@ -178,8 +179,8 @@ sources/0 = SubResource("TileSetAtlasSource_yjc3x")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cn5tm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0sx4"]
-size = Vector2(11, 47)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r55i3"]
+size = Vector2(44.180252, 86.661255)
 
 [node name="NewGame" type="Node2D"]
 script = ExtResource("1_a7222")
@@ -205,7 +206,6 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="opening" parent="Characters/Player" instance=ExtResource("4_l4j0o")]
-visible = false
 position = Vector2(0, -44)
 scale = Vector2(2, 2)
 
@@ -224,17 +224,16 @@ position = Vector2(153, -53)
 scale = Vector2(0.2134724, 0.2134724)
 texture = ExtResource("7_kv5ta")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(430, -19)
-monitoring = false
-monitorable = false
-script = ExtResource("8_yjc3x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-38.5, -4.5)
-shape = SubResource("RectangleShape2D_n0sx4")
-
 [node name="portal" parent="." instance=ExtResource("9_n0sx4")]
 position = Vector2(331, 7.6293945e-06)
+script = ExtResource("9_r55i3")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Interactable" parent="portal" instance=ExtResource("9_l4j0o")]
+position = Vector2(0, -54.375683)
+scale = Vector2(0.99999994, 0.99999994)
+interact_name = "E to enter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal/Interactable"]
+position = Vector2(4.051304e-07, 11.045059)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_r55i3")
