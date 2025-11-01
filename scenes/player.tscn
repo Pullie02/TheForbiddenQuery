@@ -363,3 +363,11 @@ environment = SubResource("Environment_tuyoq")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("6_tuyoq")]
 z_index = 10
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -44)
+scale = Vector2(5.169, 5.169)
+zoom = Vector2(4.5, 4.5)
+limit_bottom = 120
+limit_smoothed = true
+position_smoothing_enabled = true

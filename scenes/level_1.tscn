@@ -1,16 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwkc6e83lkb5a"]
+[gd_scene load_steps=6 format=3 uid="uid://cat1h3i714q3l"]
 
-[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_d1od2"]
-[ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_w6xti"]
-[ext_resource type="PackedScene" uid="uid://dvg1rbf3lwyfc" path="res://scenes/portal.tscn" id="3_w6xti"]
-[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="4_3wyi3"]
-[ext_resource type="PackedScene" uid="uid://buxaw2cgx0u71" path="res://scenes/Wizard.tscn" id="4_hlsmc"]
-[ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://Interactions/interactable.tscn" id="5_bfqb0"]
-[ext_resource type="Script" uid="uid://dimisa4v2dtma" path="res://scripts/wizard.gd" id="5_hlsmc"]
-[ext_resource type="Script" uid="uid://btg4p28uk5xy5" path="res://scripts/lvl1portal.gd" id="7_441x5"]
+[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_rus8k"]
+[ext_resource type="PackedScene" uid="uid://bcn3pdbpxuuwl" path="res://scenes/firewall1.tscn" id="3_rus8k"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
-texture = ExtResource("1_d1od2")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
+texture = ExtResource("1_bswci")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -171,78 +166,24 @@ texture = ExtResource("1_d1od2")
 2:4/size_in_atlas = Vector2i(3, 3)
 2:4/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_w6xti"]
+[sub_resource type="TileSet" id="TileSet_4nkto"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_d1od2")
+sources/0 = SubResource("TileSetAtlasSource_5xbjy")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hlsmc"]
-radius = 23.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hkft"]
-size = Vector2(42.285553, 86.66127)
-
-[sub_resource type="LabelSettings" id="LabelSettings_441x5"]
-font = ExtResource("4_3wyi3")
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[node name="Hub" type="Node2D"]
+[node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(0, -8)
-tile_set = SubResource("TileSet_w6xti")
+tile_set = SubResource("TileSet_4nkto")
 format = 2
 layer_0/name = "Background"
-layer_0/tile_data = PackedInt32Array(65532, 524288, 0, 65533, 524288, 1, 65534, 524288, 1, 65535, 524288, 1, 0, 524288, 1, 1, 524288, 1, 2, 524288, 1, 3, 524288, 1, 4, 524288, 1, 5, 524288, 1, 6, 524288, 1, 7, 524288, 1, 8, 524288, 1, 9, 524288, 1, 10, 524288, 1, 11, 524288, 1, 12, 524288, 1, 13, 524288, 1, 14, 524288, 1, 15, 524288, 1, 16, 524288, 1, 17, 524288, 1, 18, 524288, 1, 19, 524288, 1, 20, 524288, 1, 22, 524288, 1, 21, 524288, 1, 23, 524288, 1, 24, 524288, 0, 25, 524288, 0, 26, 524288, 0, 27, 524288, 0, 28, 524288, 0, 29, 524288, 0, 30, 524288, 0, 31, 524288, 0, 32, 524288, 0, 33, 524288, 0, 34, 524288, 0, 35, 524288, 0, 36, 524288, 0, 37, 524288, 0, 38, 524288, 0, 39, 524288, 0, 40, 524288, 0, 41, 524288, 0, 42, 524288, 0, 43, 524288, 0, 44, 524288, 0, 45, 524288, 0, 46, 524288, 0, 47, 524288, 0, 48, 524288, 0, 49, 524288, 0, 50, 524288, 0, 51, 524288, 0, 52, 524288, 0, 53, 524288, 0, 54, 524288, 0, 55, 524288, 0, 56, 524288, 0, 57, 524288, 0, 58, 524288, 0, 59, 524288, 0, 60, 524288, 0, 61, 524288, 0, 62, 524288, 0, 63, 524288, 0, 64, 524288, 0, 65, 524288, 0, 66, 524288, 0, 67, 524288, 0, 68, 524288, 0, -4, 524288, 0, -65540, 524288, 0, -131076, 524288, 0, -196612, 524288, 0, -262148, 524288, 0, -327684, 524288, 0, -393220, 524288, 0, -458756, 524288, 0, -524292, 524288, 0)
+layer_0/tile_data = PackedInt32Array(65519, 524288, 0, 65520, 524288, 0, 65521, 524288, 0, 65522, 524288, 0, 65523, 524288, 0, 65524, 524288, 0, 65525, 524288, 0, 65526, 524288, 0, 65527, 524288, 0, 65528, 524288, 0, 65529, 524288, 0, 65530, 524288, 0, 65531, 524288, 0, 65532, 524288, 0, 65533, 524288, 0, 65534, 524288, 0, 65535, 524288, 0, 0, 524288, 0, 1, 524288, 0, 2, 524288, 0, 3, 524288, 0, 4, 524288, 0, 5, 524288, 0, 6, 524288, 0, 7, 524288, 0, 8, 524288, 0, 9, 524288, 0, 10, 524288, 0, 11, 524288, 0, 12, 524288, 0, 13, 524288, 0, 14, 524288, 0, 15, 524288, 0, 16, 524288, 0, 17, 524288, 0, 18, 524288, 0, 19, 524288, 0, 20, 524288, 0, 21, 524288, 0, 22, 524288, 0, 23, 524288, 0, 24, 524288, 0, 25, 524288, 0, 26, 524288, 0, 27, 524288, 0, 28, 524288, 0, 29, 524288, 0, 30, 524288, 0, 65518, 524288, 0, 65517, 524288, 0, 65516, 524288, 0, 65515, 524288, 0, 65514, 524288, 0, 65513, 524288, 0, 65512, 524288, 0, 65511, 524288, 0, 65510, 524288, 0, 65509, 524288, 0)
 layer_1/name = "Mid"
 
-[node name="Characters" type="Node" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_rus8k")]
+position = Vector2(-1, -13)
 
-[node name="Player" parent="Characters" instance=ExtResource("2_w6xti")]
-position = Vector2(58, -21)
-
-[node name="Wizard" parent="." instance=ExtResource("4_hlsmc")]
-position = Vector2(150, -8)
-script = ExtResource("5_hlsmc")
-
-[node name="Interactable" parent="Wizard" instance=ExtResource("5_bfqb0")]
-position = Vector2(0, -31.53989)
-scale = Vector2(1.8552877, 1.8552877)
-interact_name = "Press E to talk to SQLarius"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wizard/Interactable"]
-z_index = 10
-shape = SubResource("CircleShape2D_hlsmc")
-
-[node name="portal" parent="." instance=ExtResource("3_w6xti")]
-modulate = Color(1, 0.30457973, 0.18976966, 1)
-position = Vector2(214, -8)
-script = ExtResource("7_441x5")
-
-[node name="Interactable" parent="portal" instance=ExtResource("5_bfqb0")]
-scale = Vector2(0.9999999, 0.9999999)
-interact_name = "Press E to enter"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portal/Interactable"]
-z_index = 1
-position = Vector2(-0.7518616, -43.330635)
-shape = SubResource("RectangleShape2D_2hkft")
-
-[node name="Label" type="Label" parent="portal"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.571144
-offset_top = -152.93163
-offset_right = 65.428856
-offset_bottom = -117.931625
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "Level 1
-Login page"
-label_settings = SubResource("LabelSettings_441x5")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Control" parent="." instance=ExtResource("3_rus8k")]
+offset_left = 317.0
+offset_top = -111.0
+offset_right = 317.0
+offset_bottom = -111.0

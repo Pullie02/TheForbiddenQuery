@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dvg1rbf3lwyfc" path="res://scenes/portal.tscn" id="9_n0sx4"]
 [ext_resource type="Script" uid="uid://bxk018j58ikxe" path="res://scripts/portal.gd" id="9_r55i3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjc3x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4j0o"]
 texture = ExtResource("2_yjc3x")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -175,7 +175,7 @@ texture = ExtResource("2_yjc3x")
 
 [sub_resource type="TileSet" id="TileSet_wvtw0"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_yjc3x")
+sources/0 = SubResource("TileSetAtlasSource_l4j0o")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cn5tm"]
 
@@ -196,14 +196,6 @@ layer_1/name = "Mid"
 
 [node name="Player" parent="Characters" instance=ExtResource("3_n0sx4")]
 position = Vector2(76, -13)
-
-[node name="Camera2D" type="Camera2D" parent="Characters/Player"]
-position = Vector2(0, -44)
-scale = Vector2(5.169, 5.169)
-zoom = Vector2(4.5, 4.5)
-limit_bottom = 120
-limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="opening" parent="Characters/Player" instance=ExtResource("4_l4j0o")]
 position = Vector2(0, -44)
