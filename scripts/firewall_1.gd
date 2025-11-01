@@ -10,4 +10,4 @@ func _ready() -> void:
 
 func _on_text_changed(new_text: String) -> void:
 	player_input = new_text
-	display_label.text = "Your name is: " + player_input
+	display_label.text = "SELECT *\n FROM users\n WHERE email = " + player_input + "\nAND pass = "
