@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_bswci"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_rus8k"]
-[ext_resource type="PackedScene" uid="uid://bcn3pdbpxuuwl" path="res://scenes/firewall1.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://b5lbmp3e2o77r" path="res://scenes/firewall1.tscn" id="3_rus8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
 texture = ExtResource("1_bswci")
@@ -183,7 +183,7 @@ layer_1/name = "Mid"
 position = Vector2(-1, -13)
 
 [node name="Control" parent="." instance=ExtResource("3_rus8k")]
-offset_left = 317.0
-offset_top = -111.0
-offset_right = 317.0
-offset_bottom = -111.0
+offset_left = 129.0
+offset_top = -69.0
+offset_right = 129.0
+offset_bottom = -69.0
