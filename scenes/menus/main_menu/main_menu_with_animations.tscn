@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://n8gl0won1y60" path="res://scenes/menus/main_menu/main_menu_with_animations.gd" id="2_sr523"]
 [ext_resource type="PackedScene" uid="uid://3ue1e0ultkq4" path="res://scenes/overlaid_menus/main_menu_options_overlaid_menu.tscn" id="3_ixa71"]
 [ext_resource type="PackedScene" uid="uid://drnijxoociwlb" path="res://scenes/overlaid_menus/main_menu_credits_overlaid_menu.tscn" id="4_2k5l7"]
-[ext_resource type="FontFile" uid="uid://c1bo74ryyohkd" path="res://assets/fonts/LiquidCrystalDecayRegular-e9O4g.ttf" id="5_sr523"]
+[ext_resource type="FontFile" uid="uid://nm7mlvs05vs7" path="res://assets/fonts/LiquidCrystalDecayRegular-e9O4g.ttf" id="5_sr523"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -316,7 +316,7 @@ graph_offset = Vector2(-180.277, 49)
 
 [node name="MainMenu" instance=ExtResource("1_rr1rn")]
 script = ExtResource("2_sr523")
-game_scene_path = "uid://cwkc6e83lkb5a"
+game_scene_path = "uid://cat1h3i714q3l"
 options_packed_scene = ExtResource("3_ixa71")
 credits_packed_scene = ExtResource("4_2k5l7")
 

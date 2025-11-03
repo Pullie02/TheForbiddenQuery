@@ -1,13 +1,21 @@
 extends Control
 
-@onready var input_box: LineEdit = $LineEdit
-@onready var display_label: Label = $Label   # <-- The Label you added
-var player_input: String = ""
+@onready var email: LineEdit = $LineEdit
+@onready var passw: LineEdit = $LineEdit2
+@onready var display_label: Label = $Label
 
 func _ready() -> void:
-	# This runs every time a letter is added or deleted
-	input_box.text_changed.connect(_on_text_changed)
+	# Connect both signals
+	email.text_changed.connect(_update_label)
+	passw.text_changed.connect(_update_label)
+	
+	# Initialize the label right away
+	_update_label()
 
-func _on_text_changed(new_text: String) -> void:
-	player_input = new_text
-	display_label.text = "SELECT *\n FROM users\n WHERE email = " + player_input + "\nAND pass = "
+func _update_label(_new_text := "") -> void:
+	display_label.text = (
+		"SELECT *\n"+
+		"FROM users\n"+
+		"WHERE email = '" + email.text + "'\n"+
+		"AND pass = '" + passw.text + "'"
+	)
