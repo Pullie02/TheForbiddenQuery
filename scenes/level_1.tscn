@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cat1h3i714q3l"]
+[gd_scene load_steps=11 format=3 uid="uid://cat1h3i714q3l"]
 
+[ext_resource type="Script" uid="uid://cpf336m0xk21l" path="res://scripts/level_1.gd" id="1_5xbjy"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_bswci"]
+[ext_resource type="Texture2D" uid="uid://des3j4p5vacy4" path="res://assets/images/bgImages/lab.png" id="2_4nkto"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_rus8k"]
 [ext_resource type="PackedScene" uid="uid://b5lbmp3e2o77r" path="res://scenes/firewall1.tscn" id="3_rus8k"]
 
@@ -170,7 +172,48 @@ texture = ExtResource("1_bswci")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5xbjy")
 
+[sub_resource type="Animation" id="Animation_fcfvj"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125.00001, -67)]
+}
+
+[sub_resource type="Animation" id="Animation_4nkto"]
+resource_name = "inFrame"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(125.00001, -67), Vector2(51.999992, -67)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pa8r4"]
+_data = {
+&"RESET": SubResource("Animation_fcfvj"),
+&"inFrame": SubResource("Animation_4nkto")
+}
+
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_5xbjy")
+
+[node name="lab" type="Sprite2D" parent="."]
+position = Vector2(54, -37)
+scale = Vector2(0.0843777, 0.0843777)
+texture = ExtResource("2_4nkto")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4nkto")
@@ -180,11 +223,28 @@ layer_0/tile_data = PackedInt32Array(65519, 524288, 0, 65520, 524288, 0, 65521, 
 layer_1/name = "Mid"
 
 [node name="Player" parent="." instance=ExtResource("2_rus8k")]
-position = Vector2(-1, -13)
+position = Vector2(2, -20)
+scale = Vector2(0.958, 0.958)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(54, -41)
+scale = Vector2(5.1689997, 5.1689997)
+zoom = Vector2(9, 9)
+limit_left = -9999966
+limit_top = -9999999
+limit_right = 10000034
+limit_bottom = 121
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="Control" parent="." instance=ExtResource("3_rus8k")]
-offset_left = 201.0
-offset_top = -64.0
-offset_right = 201.0
-offset_bottom = -64.0
-scale = Vector2(0.575, 0.575)
+offset_left = 125.00001
+offset_top = -67.0
+offset_right = 125.00001
+offset_bottom = -67.0
+scale = Vector2(0.3, 0.293)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+&"": SubResource("AnimationLibrary_pa8r4")
+}

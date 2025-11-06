@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Forbidden Query"
-run/main_scene="res://scenes/opening/opening.tscn"
+run/main_scene="uid://cat1h3i714q3l"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -33,14 +33,16 @@ directories/dch_directory={
 directories/dtl_directory={
 "Intro": "res://Dialogue/Dialogue/Intro.dtl",
 "PortalTutor": "res://Dialogue/Dialogue/PortalTutor.dtl",
+"lvl1": "res://Dialogue/Dialogue/lvl1.dtl",
 "wakeup": "res://Dialogue/Dialogue/wakeup.dtl"
 }
 layout/style_directory={
-"": "res://Dialogue/custom_style/style.tres",
-"style": "res://Dialogue/custom_style/style.tres"
+"": "res://Dialogue/custom_style/Wizard.tres",
+"Knight": "res://Dialogue/custom_style/Knight.tres",
+"Wizard": "res://Dialogue/custom_style/Wizard.tres"
 }
-layout/style_list=["res://Dialogue/custom_style/style.tres"]
-layout/default_style="res://Dialogue/custom_style/style.tres"
+layout/style_list=["res://Dialogue/custom_style/Wizard.tres", "res://Dialogue/custom_style/Knight.tres"]
+layout/default_style="res://Dialogue/custom_style/Wizard.tres"
 glossary/default_case_sensitive=true
 variables={}
 extensions_folder="res://addons/dialogic_additions"

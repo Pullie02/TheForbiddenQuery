@@ -19,7 +19,7 @@
 &"portraits": {
 "normal": {
 "export_overrides": {
-"image": "\"res://Dialogue/Characters/SQLarius face.png\""
+"image": "\"res://Dialogue/Characters/SQLarius Face.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
