@@ -83,7 +83,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/maaacks_menus_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg", "res://addons/maaacks_menus_template/plugin.cfg")
 
 [gui]
 
