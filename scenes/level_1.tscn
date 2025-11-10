@@ -172,33 +172,35 @@ texture = ExtResource("1_bswci")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5xbjy")
 
-[sub_resource type="Animation" id="Animation_fcfvj"]
+[sub_resource type="Animation" id="Animation_4nkto"]
+resource_name = "inFrame"
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(135, -69), Vector2(49, -69)]
+}
+
+[sub_resource type="Animation" id="Animation_fcfvj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(125.00001, -67)]
-}
-
-[sub_resource type="Animation" id="Animation_4nkto"]
-resource_name = "inFrame"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(125.00001, -67), Vector2(51.999992, -67)]
+"values": [Vector2(135, -69)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pa8r4"]
@@ -238,13 +240,14 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Control" parent="." instance=ExtResource("3_rus8k")]
-offset_left = 125.00001
-offset_top = -67.0
-offset_right = 125.00001
-offset_bottom = -67.0
-scale = Vector2(0.3, 0.293)
+offset_left = 135.0
+offset_top = -69.0
+offset_right = 135.0
+offset_bottom = -69.0
+scale = Vector2(0.31043127, 0.31043127)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_pa8r4")
 }

@@ -5,8 +5,9 @@ var qr
 
 @onready var email: LineEdit = $LineEdit
 @onready var passw: LineEdit = $LineEdit2
-@onready var display_label: Label = $Label
+@onready var display_label: Label = $backEndCode
 @onready var button: Button = $Button
+@onready var output: Label = $Output
 
 func _ready() -> void:
 	db = SQLite.new()
@@ -31,4 +32,9 @@ func _update_label(_new_text := "") -> void:
 func _query(_new_text := "") -> void:
 	var sql = "SELECT * FROM users WHERE email = '" + email.text + "' AND pass = '" + passw.text + "'"
 	db.query(sql)
-	print(db.query_result)
+	
+		# Check if any results were found
+	if db.query_result.size() > 0:
+		output.text = "Login successful!\n" + str(db.query_result)
+	else:
+		output.text = "No user found with that email and password."
