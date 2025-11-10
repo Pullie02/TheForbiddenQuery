@@ -1,0 +1,12 @@
+[wait time="1.5"]
+SQLarius: Good job!
+SQLarius: You finished the first challenge.
+SQLarius: Im sure it was was easy for you!
+SQLarius: Now that you have done it successfully,
+SQLarius: do you wanna go back to the hub? Or do you wanna do it again?
+- Go back to hub
+	[wait time="0.5"]
+	[signal arg="BackToHub"]
+- Replay Level.
+	[wait time="1.0"]
+	[signal arg="again"]

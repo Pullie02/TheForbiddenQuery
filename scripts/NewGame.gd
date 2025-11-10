@@ -2,8 +2,6 @@ extends Node2D
 
 @onready var animation_player: AnimationPlayer = $Characters/Player/opening/AnimationPlayer
 @onready var opening: Node2D = $Characters/Player/opening
-
-
 @onready var player: CharacterBody2D = $Characters/Player
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 

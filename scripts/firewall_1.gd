@@ -36,5 +36,14 @@ func _query(_new_text := "") -> void:
 		# Check if any results were found
 	if db.query_result.size() > 0:
 		output.text = "Login successful!\n" + str(db.query_result)
+		Dialogic.start("FinishLvl1")
+		Dialogic.signal_event.connect(_back_to_hub)
 	else:
 		output.text = "No user found with that email and password."
+		Dialogic.start("WrongAnswer")
+
+func _back_to_hub(argument: String):
+	if argument == "BackToHub":
+		get_tree().change_scene_to_file("res://scenes/hub.tscn")
+	if argument == "again":
+		get_tree().reload_current_scene()
