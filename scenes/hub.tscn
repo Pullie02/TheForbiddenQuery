@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://Interactions/interactable.tscn" id="5_bfqb0"]
 [ext_resource type="Script" uid="uid://dimisa4v2dtma" path="res://scripts/wizard.gd" id="5_hlsmc"]
 [ext_resource type="Script" uid="uid://btg4p28uk5xy5" path="res://scripts/lvl1portal.gd" id="7_441x5"]
-[ext_resource type="Script" uid="uid://dithkyi15g0sw" path="res://scenes/portallvl2.gd" id="9_2hkft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
 texture = ExtResource("1_d1od2")
@@ -187,6 +186,18 @@ font = ExtResource("4_3wyi3")
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="GDScript" id="GDScript_441x5"]
+script/source = "extends Node2D
+
+@onready var interactable: Area2D = $Interactable
+
+func _ready():
+	interactable.interact = _on_interact
+	
+func _on_interact():
+	get_tree().change_scene_to_file(\"res://scenes/lvl/level_2.tscn\")
+"
+
 [node name="Hub" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -262,7 +273,7 @@ vertical_alignment = 1
 [node name="lvl1portal2" parent="." instance=ExtResource("3_w6xti")]
 modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
 position = Vector2(412.00003, -8)
-script = ExtResource("9_2hkft")
+script = SubResource("GDScript_441x5")
 
 [node name="Interactable" parent="lvl1portal2" instance=ExtResource("5_bfqb0")]
 scale = Vector2(0.9999999, 0.9999999)

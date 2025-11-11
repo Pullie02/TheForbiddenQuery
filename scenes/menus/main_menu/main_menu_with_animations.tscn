@@ -1,10 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://km7fjo05n782"]
+[gd_scene load_steps=22 format=3 uid="uid://km7fjo05n782"]
 
 [ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_menus_template/base/nodes/menus/main_menu/main_menu.tscn" id="1_rr1rn"]
 [ext_resource type="Script" uid="uid://n8gl0won1y60" path="res://scenes/menus/main_menu/main_menu_with_animations.gd" id="2_sr523"]
 [ext_resource type="PackedScene" uid="uid://3ue1e0ultkq4" path="res://scenes/overlaid_menus/main_menu_options_overlaid_menu.tscn" id="3_ixa71"]
 [ext_resource type="PackedScene" uid="uid://drnijxoociwlb" path="res://scenes/overlaid_menus/main_menu_credits_overlaid_menu.tscn" id="4_2k5l7"]
+[ext_resource type="Texture2D" uid="uid://b3osa7llvu1jh" path="res://assets/images/bgImages/mainmenu.png" id="5_2k5l7"]
 [ext_resource type="FontFile" uid="uid://nm7mlvs05vs7" path="res://assets/fonts/LiquidCrystalDecayRegular-e9O4g.ttf" id="5_sr523"]
+[ext_resource type="Texture2D" uid="uid://du2u0qdq80s0x" path="res://assets/images/bgImages/komar-logo-eng-krd-Transparent.png" id="7_vsp5b"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -314,18 +316,35 @@ states/Start/position = Vector2(82, 123)
 transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "OpenSubMenu", SubResource("14"), "Start", "Intro", SubResource("AnimationNodeStateMachineTransition_j0orr"), "OpenSubMenu", "OpenMainMenu", SubResource("AnimationNodeStateMachineTransition_63dxc")]
 graph_offset = Vector2(-180.277, 49)
 
+[sub_resource type="LabelSettings" id="LabelSettings_2k5l7"]
+font_size = 71
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
 [node name="MainMenu" instance=ExtResource("1_rr1rn")]
 script = ExtResource("2_sr523")
 game_scene_path = "uid://cuv4vme4rwno0"
 options_packed_scene = ExtResource("3_ixa71")
 credits_packed_scene = ExtResource("4_2k5l7")
 
-[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+[node name="Mainmenu" type="Sprite2D" parent="." index="0"]
+position = Vector2(576.125, 339.25375)
+scale = Vector2(0.7498372, 0.66358155)
+texture = ExtResource("5_2k5l7")
+metadata/_edit_lock_ = true
+
+[node name="KomarLogoEngKrdTransparent" type="Sprite2D" parent="." index="1"]
+position = Vector2(70, 577)
+scale = Vector2(0.20703125, 0.20703125)
+texture = ExtResource("7_vsp5b")
+metadata/_edit_lock_ = true
+
+[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 libraries = {
 &"": SubResource("AnimationLibrary_2kqig")
 }
 
-[node name="MenuAnimationTree" type="AnimationTree" parent="." index="2"]
+[node name="MenuAnimationTree" type="AnimationTree" parent="." index="4"]
 tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
@@ -337,10 +356,11 @@ modulate = Color(1, 1, 1, 0)
 modulate = Color(1, 1, 1, 0)
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-modulate = Color(0.21176471, 0.29411766, 1, 1)
+modulate = Color(0.08544015, 0, 0.8995977, 1)
 theme_override_fonts/font = ExtResource("5_sr523")
 theme_override_font_sizes/font_size = 70
 text = "The Forbidden Query"
+label_settings = SubResource("LabelSettings_2k5l7")
 
 [node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
@@ -356,7 +376,7 @@ modulate = Color(1, 1, 1, 0)
 [node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0"]
 lock = true
 
-[node name="MouseFilter" type="Control" parent="." index="7"]
+[node name="MouseFilter" type="Control" parent="." index="9"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

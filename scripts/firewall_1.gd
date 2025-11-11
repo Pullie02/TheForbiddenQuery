@@ -8,6 +8,7 @@ var qr
 @onready var display_label: Label = $backEndCode
 @onready var button: Button = $Button
 @onready var output: Label = $Output
+@onready var damage: AnimationPlayer = $damage
 
 func _ready() -> void:
 	db = SQLite.new()
@@ -39,6 +40,7 @@ func _query(_new_text := "") -> void:
 		Dialogic.start("FinishLvl1")
 		Dialogic.signal_event.connect(_back_to_hub)
 	else:
+		damage.play("damage")
 		output.text = "No user found with that email and password."
 		Dialogic.start("WrongAnswer")
 

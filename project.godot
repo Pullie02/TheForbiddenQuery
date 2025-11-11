@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Forbidden Query"
-run/main_scene="uid://cwkc6e83lkb5a"
+run/main_scene="uid://bl3evrpnxpnai"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -35,6 +35,7 @@ directories/dtl_directory={
 "Intro": "res://Dialogue/Dialogue/Intro.dtl",
 "PortalTutor": "res://Dialogue/Dialogue/PortalTutor.dtl",
 "WrongAnswer": "res://Dialogue/Dialogue/WrongAnswer.dtl",
+"leave": "res://Dialogue/Dialogue/leave.dtl",
 "lvl1": "res://Dialogue/Dialogue/lvl1.dtl",
 "wakeup": "res://Dialogue/Dialogue/wakeup.dtl"
 }
