@@ -321,11 +321,11 @@ libraries = {
 }
 
 [node name="Button" type="Button" parent="."]
-offset_left = -8.0
-offset_top = -75.0
-offset_right = 134.0
-offset_bottom = -28.0
-scale = Vector2(0.125, 0.125)
-text = "Go Back to hub"
+offset_left = -6.0000005
+offset_top = -76.0
+offset_right = 137.0
+scale = Vector2(0.085, 0.085)
+text = "Back to
+The Root Courtyard"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

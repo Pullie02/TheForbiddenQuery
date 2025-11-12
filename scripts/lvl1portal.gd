@@ -6,4 +6,4 @@ func _ready():
 	interactable.interact = _on_interact
 	
 func _on_interact():
-	get_tree().change_scene_to_file("res://scenes/lvlsd/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/lvls/level_1.tscn")

@@ -9,6 +9,8 @@ var qr
 @onready var button: Button = $Button
 @onready var output: Label = $Output
 @onready var damage: AnimationPlayer = $damage
+@onready var animated_sprite: AnimatedSprite2D = $Player/AnimatedSprite2D
+@onready var player: CharacterBody2D = $"../Player"
 
 func _ready() -> void:
 	db = SQLite.new()
@@ -41,6 +43,9 @@ func _query(_new_text := "") -> void:
 		Dialogic.signal_event.connect(_back_to_hub)
 	else:
 		damage.play("damage")
+		player.animated_sprite.play("damage")
+		await get_tree().create_timer(0.5).timeout
+		player.animated_sprite.play("idle")
 		output.text = "No user found with that email and password."
 		Dialogic.start("WrongAnswer")
 

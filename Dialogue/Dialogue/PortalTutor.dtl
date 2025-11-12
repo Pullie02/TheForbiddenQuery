@@ -1,4 +1,21 @@
-SQLarius: Ahh I see you have reached your first Portal.
-MainCharacter: ...
-SQLarius: So basically you go to each level and press E on them so that you enter the level.
+SQLarius: You made it. This is the Root Courtyard — empty most days now.
+SQLarius: It’s the connector for the campus buildings. Quiet, but not broken.
+MainCharacter: Feels… too calm.
+SQLarius: The buildings here are more than architecture —
+SQLarius: they’re gateways. The L Building, the P Building, and the E Building.
+SQLarius: Each holds a section I used to manage.
+MainCharacter: You said your power was stolen. Why these buildings?
+SQLarius: Because those were the nodes of my work. They’re where I forged tools and set defenses.
+SQLarius: The thieves took my magic — my SQL Injection — from me alone.
+SQLarius: Everyone else still carries theirs; only mine is gone.
+MainCharacter: So only you were targeted.
+SQLarius: Yes. They hit the source. And they left firewalls where doors used to be —
+SQLarius: deliberate blocks that refuse my access. You, however, still register inside those systems.
+SQLarius: That’s why I woke you.
+MainCharacter: I don’t know how to use any of it.
+MainCharacter: I barely know what you’re talking about.
+SQLarius: You don’t need to know everything yet. You need to move. I’ll explain while you act.
+SQLarius: The L Building — the Lab — is the first place to go.
+SQLarius: It’s where I tested the core of SQL Injection spells. It will teach you how the power responds before you learn to shape it.
+SQLarius: Now, go to the L Building and then press the E key to enter.
 [signal arg="move"]

@@ -3,4 +3,3 @@
 "Mysterious Voice": WAKE UP!
 - Get up
 	[signal arg="start"]
-[end_timeline]
