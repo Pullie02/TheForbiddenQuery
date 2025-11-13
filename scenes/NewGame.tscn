@@ -185,7 +185,7 @@ size = Vector2(44.180252, 86.661255)
 [node name="NewGame" type="Node2D"]
 script = ExtResource("1_a7222")
 
-[node name="ChatGptImageNov4,2025,082524Pm" type="Sprite2D" parent="."]
+[node name="E-Building" type="Sprite2D" parent="."]
 position = Vector2(80.18154, -53.999992)
 scale = Vector2(0.13022919, 0.107421875)
 texture = ExtResource("2_l4j0o")
@@ -203,7 +203,6 @@ layer_1/name = "Mid"
 position = Vector2(76, -13)
 
 [node name="opening" parent="Characters/Player" instance=ExtResource("4_l4j0o")]
-visible = false
 position = Vector2(1.5797788, -64.77093)
 scale = Vector2(2, 2)
 

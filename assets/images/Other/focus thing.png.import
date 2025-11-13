@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2ce0de5y22l8"
-path="res://.godot/imported/background.png-f5727c86c9c294dfd358532462d6b0d1.ctex"
+uid="uid://ctwjhhlr6g0pi"
+path="res://.godot/imported/focus thing.png-57697586d8776fa480b0e2063b1a997c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Other/background.png"
-dest_files=["res://.godot/imported/background.png-f5727c86c9c294dfd358532462d6b0d1.ctex"]
+source_file="res://assets/images/Other/focus thing.png"
+dest_files=["res://.godot/imported/focus thing.png-57697586d8776fa480b0e2063b1a997c.ctex"]
 
 [params]
 

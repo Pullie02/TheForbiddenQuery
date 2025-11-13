@@ -1,4 +1,6 @@
-SQLarius: <Empty Text Event>
+SQLarius: welcome werry traveler
 MainCharacter: ...
 [signal arg="inFrame"]
 SQLarius: This is where you will be learning the basics SQL Injection magic.
+SQLarius: This is where you will put input in.
+[signal arg="tutLogin"]

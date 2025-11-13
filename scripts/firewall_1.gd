@@ -11,6 +11,7 @@ var qr
 @onready var damage: AnimationPlayer = $damage
 @onready var animated_sprite: AnimatedSprite2D = $Player/AnimatedSprite2D
 @onready var player: CharacterBody2D = $"../Player"
+@onready var login_focus: Control = $"../Focus/LoginFocus"
 
 func _ready() -> void:
 	db = SQLite.new()
@@ -23,6 +24,7 @@ func _ready() -> void:
 	button.pressed.connect(_query)
 
 	_update_label()
+	Dialogic.signal_event.connect(_tutorial)
 
 func _update_label(_new_text := "") -> void:
 	display_label.text = (
@@ -54,3 +56,8 @@ func _back_to_hub(argument: String):
 		get_tree().change_scene_to_file("res://scenes/hub.tscn")
 	if argument == "again":
 		get_tree().reload_current_scene()
+		
+		
+func _tutorial(argument: String):
+	if argument == "tutLogin":
+		login_focus.visible = true

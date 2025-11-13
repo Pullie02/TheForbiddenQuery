@@ -354,62 +354,16 @@ scale = Vector2(0.085, 0.085)
 text = "Back to
 The Rootyard"
 
-[node name="Focus" type="Node" parent="."]
-
-[node name="LoginFocus" type="Control" parent="Focus"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="FocusThing" type="Sprite2D" parent="Focus/LoginFocus"]
+[node name="FocusThing" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(80, -66)
-scale = Vector2(0.2020343, -0.042898633)
+position = Vector2(82, -66)
+scale = Vector2(0.20540681, -0.037485037)
 texture = ExtResource("6_ob5n2")
 
-[node name="BlackBar" type="Sprite2D" parent="Focus/LoginFocus"]
+[node name="BlackBar" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(55.000004, 15.000001)
-scale = Vector2(0.07508788, -0.10303187)
-texture = ExtResource("7_xixly")
-
-[node name="BackendFocus" type="Control" parent="Focus"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="FocusThing" type="Sprite2D" parent="Focus/BackendFocus"]
-modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(80, -44)
-scale = Vector2(0.19869131, -0.074446924)
-skew = 0.06806784
-texture = ExtResource("6_ob5n2")
-
-[node name="OutputFocus" type="Control" parent="Focus"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1.0
-offset_top = 25.000002
-offset_right = 39.0
-offset_bottom = 65.0
-scale = Vector2(1.0007137, 1.0069124)
-
-[node name="FocusThing" type="Sprite2D" parent="Focus/OutputFocus"]
-modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(80, -44)
-scale = Vector2(0.19869131, -0.074446924)
-skew = 0.06806784
-texture = ExtResource("6_ob5n2")
-
-[node name="BlackBar" type="Sprite2D" parent="Focus/OutputFocus"]
-modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(54.46113, -107.2586)
-scale = Vector2(0.06278492, 0.04121626)
+position = Vector2(55, 11.999999)
+scale = Vector2(0.07516064, -0.1028483)
 texture = ExtResource("7_xixly")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
