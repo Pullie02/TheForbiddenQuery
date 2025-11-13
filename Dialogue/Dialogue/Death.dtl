@@ -1,0 +1,3 @@
+SQLarius: As you can see you ran out of health, you will be sent back to the Rootyard. And you can try again.
+- Back to Rootyard
+	[signal arg="rootyard"]

@@ -2,6 +2,7 @@ extends Control
 
 var db = SQLite
 var qr
+@onready var health_manager: Node = %HealthManager
 
 @onready var email: LineEdit = $LineEdit
 @onready var passw: LineEdit = $LineEdit2
@@ -12,6 +13,10 @@ var qr
 @onready var animated_sprite: AnimatedSprite2D = $Player/AnimatedSprite2D
 @onready var player: CharacterBody2D = $"../Player"
 @onready var login_focus: Control = $"../Focus/LoginFocus"
+@onready var backend_focus: Control = $"../Focus/BackendFocus"
+@onready var output_focus: Control = $"../Focus/OutputFocus"
+@onready var health_focus: Control = $"../Focus/HealthFocus"
+@onready var return_focus: Control = $"../Focus/ReturnFocus"
 
 func _ready() -> void:
 	db = SQLite.new()
@@ -50,6 +55,7 @@ func _query(_new_text := "") -> void:
 		player.animated_sprite.play("idle")
 		output.text = "No user found with that email and password."
 		Dialogic.start("WrongAnswer")
+		health_manager.less_health()
 
 func _back_to_hub(argument: String):
 	if argument == "BackToHub":
@@ -61,3 +67,17 @@ func _back_to_hub(argument: String):
 func _tutorial(argument: String):
 	if argument == "tutLogin":
 		login_focus.visible = true
+	if argument == "tutBackend":
+		login_focus.visible = false
+		backend_focus.visible = true
+	if argument == "tutOutput":
+		backend_focus.visible = false
+		output_focus.visible = true
+	if argument == "tutHealth":
+		output_focus.visible = false
+		health_focus.visible = true
+	if argument == "tutReturn":
+		health_focus.visible = false
+		return_focus.visible = true
+	if argument == "tutDone":
+		return_focus.visible = false

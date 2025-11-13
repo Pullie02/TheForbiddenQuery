@@ -2,5 +2,23 @@ SQLarius: welcome werry traveler
 MainCharacter: ...
 [signal arg="inFrame"]
 SQLarius: This is where you will be learning the basics SQL Injection magic.
-SQLarius: This is where you will put input in.
 [signal arg="tutLogin"]
+SQLarius: This is where you will put input in.
+SQLarius: This will simulate a website login page where you can type in email and password.
+SQLarius: We will be using these TextFields to perform our SQL Injection magic.
+[signal arg="tutBackend"]
+SQLarius: And this is the Backend code, simply what is happening behind the code of our "website".
+SQLarius: Here you will see what you are entering into the back of the website.
+SQLarius: And you will understand why the SQL Injection spell works.
+[signal arg="tutOutput"]
+SQLarius: Next, we have the Output, you will see the SQL result of our input.
+SQLarius: we will see if we have made a mistake or done it correctly.
+[signal arg="tutHealth"]
+SQLarius: Here we have the health bar, every wrong asnwer you give you will lose one health.
+SQLarius: After your health runs out, you will be sent back to the Courtyard.
+SQLarius: From there you can go back in and try again.
+[signal arg="tutReturn"]
+SQLarius: And lastly, we have the return button. For when you want to go back to the Courtyard quickly.
+[signal arg="tutDone"]
+SQLarius: That was all, if you need any help just open the pause menu and all my magic guides will be there.
+[end_timeline]
