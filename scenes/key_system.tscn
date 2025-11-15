@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1f6mt8317h8v"]
+
+[ext_resource type="Texture2D" uid="uid://b6arrnnaw1jfb" path="res://assets/images/Other/key.png" id="1_hdu0s"]
+[ext_resource type="Script" uid="uid://bm7kieuki62lj" path="res://scripts/key_system.gd" id="1_qquq8"]
+
+[node name="KeyManager" type="Node2D"]
+script = ExtResource("1_qquq8")
+
+[node name="BlueKeyImg" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.085547455, 0.42011222, 0.9852794, 1)
+self_modulate = Color(0.29244882, 0.3258976, 0.9279773, 1)
+position = Vector2(1, 0)
+texture = ExtResource("1_hdu0s")
+
+[node name="RedKeyImg" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.84398454, 0.2938965, 0.3657671, 1)
+position = Vector2(35, 0)
+texture = ExtResource("1_hdu0s")

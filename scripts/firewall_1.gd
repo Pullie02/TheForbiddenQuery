@@ -18,6 +18,7 @@ var qr
 @onready var health_focus: Control = $"../Focus/HealthFocus"
 @onready var return_focus: Control = $"../Focus/ReturnFocus"
 
+
 func _ready() -> void:
 	db = SQLite.new()
 	db.path = "res://Database/database.db"
@@ -48,6 +49,7 @@ func _query(_new_text := "") -> void:
 		output.text = "Login successful!\n" + str(db.query_result)
 		Dialogic.start("FinishLvl1")
 		Dialogic.signal_event.connect(_back_to_hub)
+		key_manager.add_blue_key()
 	else:
 		damage.play("damage")
 		player.animated_sprite.play("damage")

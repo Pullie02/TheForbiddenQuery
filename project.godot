@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+key_manager="*res://scripts/key_system.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_menus_template/base/nodes/autoloads/app_config/app_config.tscn"
 SceneLoader="*res://addons/maaacks_menus_template/base/nodes/autoloads/scene_loader/scene_loader.tscn"
@@ -31,6 +32,7 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"BlueKeyMissing": "res://Dialogue/Dialogue/BlueKeyMissing.dtl",
 "Death": "res://Dialogue/Dialogue/Death.dtl",
 "FinishLvl1": "res://Dialogue/Dialogue/FinishLvl1.dtl",
 "Intro": "res://Dialogue/Dialogue/Intro.dtl",

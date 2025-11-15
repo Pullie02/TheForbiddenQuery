@@ -9,21 +9,5 @@ SQLarius: ripped out by the ones who call themselves hackers.
 SQLarius: It wasn’t ordinary magic. It was SQL Injection —
 SQLarius: the kind that let me shape data, bend commands, and rebuild what was broken.”
 SQLarius: They took it and scattered the fragments through this place.
-SQLarius: You were my contingency. My last vault.
-MainCharacter: I don’t understand. Why me?
-SQLarius: Because you still hold what I lost —
-SQLarius: not the knowledge, not the control…
-SQLarius: but the raw magic.
-SQLarius: It’s inside you, even if you don’t know how to use it.
-SQLarius: That’s why I woke you. You’ll move where I can’t.
-SQLarius: I’ll teach. You’ll act.
-MainCharacter: So you’re the brain, and I’m the muscle.
-SQLarius: Close enough.
-SQLarius: You have something I can’t reclaim on my own.
-SQLarius: And I know how to make it mean something before they break the rest of this world.
-MainCharacter: Feels like it’s already trying to burn through me.
-SQLarius: Then we start before it does.
-SQLarius: There’s a door to your right. It leads out of this tomb and into what remains of The Root Courtyard —
-SQLarius: a place I once used to keep things organized. We’ll need it again.
 [signal arg="begin"]
 [end_timeline]

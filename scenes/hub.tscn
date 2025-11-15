@@ -1,13 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwkc6e83lkb5a"]
+[gd_scene load_steps=16 format=3 uid="uid://cwkc6e83lkb5a"]
 
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_d1od2"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_w6xti"]
+[ext_resource type="PackedScene" uid="uid://c1f6mt8317h8v" path="res://scenes/key_system.tscn" id="3_2hkft"]
 [ext_resource type="PackedScene" uid="uid://dvg1rbf3lwyfc" path="res://scenes/portal.tscn" id="3_w6xti"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="4_3wyi3"]
 [ext_resource type="PackedScene" uid="uid://buxaw2cgx0u71" path="res://scenes/Wizard.tscn" id="4_hlsmc"]
 [ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://Interactions/interactable.tscn" id="5_bfqb0"]
 [ext_resource type="Script" uid="uid://dimisa4v2dtma" path="res://scripts/wizard.gd" id="5_hlsmc"]
 [ext_resource type="Script" uid="uid://btg4p28uk5xy5" path="res://scripts/lvl1portal.gd" id="7_441x5"]
+[ext_resource type="Script" uid="uid://bu5spp2aihb0v" path="res://scripts/portal2.gd" id="10_4oyfp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
 texture = ExtResource("1_d1od2")
@@ -186,18 +188,6 @@ font = ExtResource("4_3wyi3")
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="GDScript" id="GDScript_441x5"]
-script/source = "extends Node2D
-
-@onready var interactable: Area2D = $Interactable
-
-func _ready():
-	interactable.interact = _on_interact
-	
-func _on_interact():
-	get_tree().change_scene_to_file(\"res://scenes/lvl/level_2.tscn\")
-"
-
 [node name="Hub" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -224,16 +214,28 @@ limit_bottom = 121
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Wizard" parent="." instance=ExtResource("4_hlsmc")]
+[node name="Control" type="Control" parent="Characters/Player/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -24.37609
+offset_top = -13.929194
+offset_right = -24.37609
+offset_bottom = -13.929194
+
+[node name="KeyManager" parent="Characters/Player/Camera2D/Control" instance=ExtResource("3_2hkft")]
+position = Vector2(1.7187536, 1.9444673)
+scale = Vector2(0.09307025, 0.09307025)
+
+[node name="Wizard" parent="Characters" instance=ExtResource("4_hlsmc")]
 position = Vector2(150, -8)
 script = ExtResource("5_hlsmc")
 
-[node name="Interactable" parent="Wizard" instance=ExtResource("5_bfqb0")]
+[node name="Interactable" parent="Characters/Wizard" instance=ExtResource("5_bfqb0")]
 position = Vector2(0, -31.53989)
 scale = Vector2(1.8552877, 1.8552877)
 interact_name = "Press E to talk to SQLarius"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wizard/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Wizard/Interactable"]
 z_index = 10
 shape = SubResource("CircleShape2D_hlsmc")
 
@@ -269,22 +271,23 @@ Login page"
 label_settings = SubResource("LabelSettings_441x5")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="lvl1portal2" parent="." instance=ExtResource("3_w6xti")]
+[node name="lvl2portal" parent="." instance=ExtResource("3_w6xti")]
 modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
 position = Vector2(412.00003, -8)
-script = SubResource("GDScript_441x5")
+script = ExtResource("10_4oyfp")
 
-[node name="Interactable" parent="lvl1portal2" instance=ExtResource("5_bfqb0")]
+[node name="Interactable" parent="lvl2portal" instance=ExtResource("5_bfqb0")]
 scale = Vector2(0.9999999, 0.9999999)
 interact_name = "Press E to enter"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1portal2/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl2portal/Interactable"]
 z_index = 1
 position = Vector2(-0.7518616, -43.330635)
 shape = SubResource("RectangleShape2D_2hkft")
 
-[node name="Label" type="Label" parent="lvl1portal2"]
+[node name="Label" type="Label" parent="lvl2portal"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -302,3 +305,4 @@ Search Engine"
 label_settings = SubResource("LabelSettings_441x5")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
