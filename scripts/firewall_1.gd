@@ -9,7 +9,7 @@ var qr
 @onready var display_label: Label = $backEndCode
 @onready var button: Button = $Button
 @onready var output: Label = $Output
-@onready var damage: AnimationPlayer = $damage
+@onready var Animations: AnimationPlayer = $Animations
 @onready var animated_sprite: AnimatedSprite2D = $Player/AnimatedSprite2D
 @onready var player: CharacterBody2D = $"../Player"
 @onready var login_focus: Control = $"../Focus/LoginFocus"
@@ -17,7 +17,6 @@ var qr
 @onready var output_focus: Control = $"../Focus/OutputFocus"
 @onready var health_focus: Control = $"../Focus/HealthFocus"
 @onready var return_focus: Control = $"../Focus/ReturnFocus"
-
 
 func _ready() -> void:
 	db = SQLite.new()
@@ -47,11 +46,11 @@ func _query(_new_text := "") -> void:
 		# Check if any results were found
 	if db.query_result.size() > 0:
 		output.text = "Login successful!\n" + str(db.query_result)
-		Dialogic.start("FinishLvl1")
-		Dialogic.signal_event.connect(_back_to_hub)
-		key_manager.add_blue_key()
+		await get_tree().create_timer(0.5).timeout
+		Animations.play("Transition")
+		
 	else:
-		damage.play("damage")
+		Animations.play("damage")
 		player.animated_sprite.play("damage")
 		await get_tree().create_timer(0.5).timeout
 		player.animated_sprite.play("idle")
@@ -59,13 +58,9 @@ func _query(_new_text := "") -> void:
 		Dialogic.start("WrongAnswer")
 		health_manager.less_health()
 
-func _back_to_hub(argument: String):
-	if argument == "BackToHub":
-		get_tree().change_scene_to_file("res://scenes/hub.tscn")
-	if argument == "again":
-		get_tree().reload_current_scene()
-		
-		
+
+
+
 func _tutorial(argument: String):
 	if argument == "tutLogin":
 		login_focus.visible = true

@@ -63,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://c2d00hcrgbk6m" path="res://assets/images/Other/life/4/h12.png" id="57_pfis4"]
 [ext_resource type="Texture2D" uid="uid://cqxxqmyg4hpl5" path="res://assets/images/Other/life/4/h13.png" id="58_k3h6u"]
 [ext_resource type="AudioStream" uid="uid://4nhddiwob10x" path="res://assets/music/SoundFX/damage-40114.mp3" id="61_akcvo"]
+[ext_resource type="PackedScene" uid="uid://que2nkh1tkae" path="res://scenes/lvls/Level_1end.tscn" id="62_c5c4f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffmti"]
 animations = [{
@@ -420,43 +421,6 @@ texture = ExtResource("1_bswci")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5xbjy")
 
-[sub_resource type="Animation" id="Animation_fcfvj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(135, -69)]
-}
-
-[sub_resource type="Animation" id="Animation_4nkto"]
-resource_name = "inFrame"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(135, -69), Vector2(49, -69)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pa8r4"]
-_data = {
-&"RESET": SubResource("Animation_fcfvj"),
-&"inFrame": SubResource("Animation_4nkto")
-}
-
 [sub_resource type="Animation" id="Animation_15mv3"]
 length = 0.001
 tracks/0/type = "value"
@@ -474,7 +438,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Level1/Control/DamageSound:playing")
+tracks/1/path = NodePath("Level1/Login/DamageSound:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -483,6 +447,69 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Level1/Login:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(135, -69)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Level1/Login:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Level1/website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_c5c4f"]
+resource_name = "Transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level1/Login:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Level1/website:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_pa8r4"]
 resource_name = "damage"
@@ -490,7 +517,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Level1/Control:position")
+tracks/0/path = NodePath("Level1/Login:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -526,7 +553,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Level1/Control:modulate")
+tracks/3/path = NodePath("Level1/Login:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -550,7 +577,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Level1/Control/DamageSound:playing")
+tracks/5/path = NodePath("Level1/Login/DamageSound:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -560,10 +587,28 @@ tracks/5/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_akcvo"]
+resource_name = "inFrame"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level1/Login:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(135, -69), Vector2(49, -69)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e3sih"]
 _data = {
 &"RESET": SubResource("Animation_15mv3"),
-&"damage": SubResource("Animation_pa8r4")
+&"Transition": SubResource("Animation_c5c4f"),
+&"damage": SubResource("Animation_pa8r4"),
+&"inFrame": SubResource("Animation_akcvo")
 }
 
 [node name="Level1" type="Node2D"]
@@ -595,7 +640,6 @@ layer_0/tile_data = PackedInt32Array(65519, 524288, 0, 65520, 524288, 0, 65521, 
 layer_1/name = "Mid"
 
 [node name="Player" parent="." instance=ExtResource("2_rus8k")]
-visible = false
 position = Vector2(2, -20)
 scale = Vector2(0.958, 0.958)
 
@@ -610,28 +654,30 @@ limit_bottom = 121
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Control" parent="." instance=ExtResource("3_rus8k")]
+[node name="Login" parent="." instance=ExtResource("3_rus8k")]
 offset_left = 135.0
 offset_top = -69.0
 offset_right = 135.0
 offset_bottom = -69.0
 scale = Vector2(0.31043127, 0.31043127)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_pa8r4")
-}
-
-[node name="damage" type="AnimationPlayer" parent="Control"]
+[node name="Animations" type="AnimationPlayer" parent="Login"]
 root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_e3sih")
 }
 
-[node name="DamageSound" type="AudioStreamPlayer2D" parent="Control"]
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="Login"]
 stream = ExtResource("61_akcvo")
 bus = &"SFX"
+
+[node name="website" parent="." instance=ExtResource("62_c5c4f")]
+visible = false
+offset_left = 49.0
+offset_top = -69.0
+offset_right = 49.0
+offset_bottom = -69.0
+scale = Vector2(0.3101974, 0.30944106)
 
 [node name="Button" type="Button" parent="."]
 offset_left = -9.0

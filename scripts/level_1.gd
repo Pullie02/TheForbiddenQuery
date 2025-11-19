@@ -1,7 +1,7 @@
 extends Node2D
 @onready var player: CharacterBody2D = $Player
-@onready var animation_player: AnimationPlayer = $Control/AnimationPlayer
 @onready var button: Button = $Button
+@onready var animations: AnimationPlayer = $Login/Animations
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 func _start_game(argument: String):
 	if argument == "inFrame":
-		animation_player.play("inFrame")
+		animations.play("inFrame")
 
 
 func _on_button_pressed() -> void:

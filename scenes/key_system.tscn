@@ -1,10 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1f6mt8317h8v"]
+[gd_scene load_steps=3 format=3 uid="uid://c7hp770lvdwxy"]
 
-[ext_resource type="Texture2D" uid="uid://b6arrnnaw1jfb" path="res://assets/images/Other/key.png" id="1_hdu0s"]
-[ext_resource type="Script" uid="uid://bm7kieuki62lj" path="res://scripts/key_system.gd" id="1_qquq8"]
+[ext_resource type="Texture2D" path="res://assets/images/Other/key.png" id="1_hdu0s"]
+
+[sub_resource type="GDScript" id="GDScript_hdu0s"]
+script/source = "extends Node2D
+
+var blue_key = 0
+var red_key = 0
+@onready var blue_key_img: Sprite2D = $BlueKeyImg
+@onready var red_key_img: Sprite2D = $RedKeyImg
+
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if key_manager.blue_key >= 1:
+		blue_key_img.visible = true
+	if key_manager.red_key >= 1:
+		red_key_img.visible = true
+
+
+func add_blue_key():
+	blue_key+=1
+	print(blue_key)
+"
 
 [node name="KeyManager" type="Node2D"]
-script = ExtResource("1_qquq8")
+script = SubResource("GDScript_hdu0s")
 
 [node name="BlueKeyImg" type="Sprite2D" parent="."]
 visible = false
