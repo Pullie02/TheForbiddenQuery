@@ -1,13 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwkc6e83lkb5a"]
+[gd_scene load_steps=16 format=3 uid="uid://cwkc6e83lkb5a"]
 
+[ext_resource type="Texture2D" uid="uid://bjlfiuqkxpr54" path="res://assets/images/bgImages/hub/Hub L Building.png" id="1_2hkft"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_d1od2"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_w6xti"]
+[ext_resource type="Texture2D" uid="uid://57t0fu6i3ukt" path="res://assets/images/bgImages/hub/Hub P Building.png" id="3_4oyfp"]
 [ext_resource type="PackedScene" uid="uid://dvg1rbf3lwyfc" path="res://scenes/portal.tscn" id="3_w6xti"]
-[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="4_3wyi3"]
 [ext_resource type="PackedScene" uid="uid://buxaw2cgx0u71" path="res://scenes/Wizard.tscn" id="4_hlsmc"]
 [ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://Interactions/interactable.tscn" id="5_bfqb0"]
 [ext_resource type="Script" uid="uid://dimisa4v2dtma" path="res://scripts/wizard.gd" id="5_hlsmc"]
 [ext_resource type="Script" uid="uid://btg4p28uk5xy5" path="res://scripts/lvl1portal.gd" id="7_441x5"]
+[ext_resource type="Texture2D" uid="uid://dytsxx1odxb6h" path="res://assets/images/bgImages/hub/Hub M Building.png" id="10_4oyfp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
 texture = ExtResource("1_d1od2")
@@ -179,12 +181,7 @@ sources/0 = SubResource("TileSetAtlasSource_d1od2")
 radius = 23.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hkft"]
-size = Vector2(42.285553, 86.66127)
-
-[sub_resource type="LabelSettings" id="LabelSettings_441x5"]
-font = ExtResource("4_3wyi3")
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
+size = Vector2(34.999744, 86.66127)
 
 [sub_resource type="GDScript" id="GDScript_441x5"]
 script/source = "extends Node2D
@@ -200,6 +197,23 @@ func _on_interact():
 
 [node name="Hub" type="Node2D"]
 
+[node name="Background" type="Node" parent="."]
+
+[node name="HubLBuilding" type="Sprite2D" parent="Background"]
+position = Vector2(95, -60.000004)
+scale = Vector2(0.1278076, 0.1278076)
+texture = ExtResource("1_2hkft")
+
+[node name="HubMBuilding" type="Sprite2D" parent="Background"]
+position = Vector2(294, -58)
+scale = Vector2(0.13134766, 0.13134766)
+texture = ExtResource("10_4oyfp")
+
+[node name="HubPBuilding" type="Sprite2D" parent="Background"]
+position = Vector2(498.5187, -55.98755)
+scale = Vector2(0.13474128, 0.13474129)
+texture = ExtResource("3_4oyfp")
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -8)
 tile_set = SubResource("TileSet_w6xti")
@@ -211,12 +225,12 @@ layer_1/name = "Mid"
 [node name="Characters" type="Node" parent="."]
 
 [node name="Player" parent="Characters" instance=ExtResource("2_w6xti")]
-position = Vector2(94, -21)
+position = Vector2(19, -21)
 
 [node name="Camera2D" type="Camera2D" parent="Characters/Player"]
 position = Vector2(-1.5797732, -56.872036)
 scale = Vector2(8.165876, 8.165876)
-zoom = Vector2(4.5, 4.5)
+zoom = Vector2(6, 6)
 limit_left = -9999966
 limit_top = -9999999
 limit_right = 10000034
@@ -225,7 +239,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Wizard" parent="Characters" instance=ExtResource("4_hlsmc")]
-position = Vector2(150, -8)
+position = Vector2(153, -8)
 script = ExtResource("5_hlsmc")
 
 [node name="Interactable" parent="Characters/Wizard" instance=ExtResource("5_bfqb0")]
@@ -239,7 +253,7 @@ shape = SubResource("CircleShape2D_hlsmc")
 
 [node name="lvl1portal" parent="." instance=ExtResource("3_w6xti")]
 modulate = Color(1, 0.30457973, 0.18976966, 1)
-position = Vector2(214, -8)
+position = Vector2(77.00003, -33)
 script = ExtResource("7_441x5")
 
 [node name="Interactable" parent="lvl1portal" instance=ExtResource("5_bfqb0")]
@@ -248,57 +262,20 @@ interact_name = "Press E to enter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1portal/Interactable"]
 z_index = 1
-position = Vector2(-0.7518616, -43.330635)
+position = Vector2(0.33877563, 0)
+scale = Vector2(0.99036366, 1)
 shape = SubResource("RectangleShape2D_2hkft")
 
-[node name="Label" type="Label" parent="lvl1portal"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.571144
-offset_top = -152.93163
-offset_right = 65.428856
-offset_bottom = -117.931625
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "Level 1
-Login page"
-label_settings = SubResource("LabelSettings_441x5")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl1portal2" parent="." instance=ExtResource("3_w6xti")]
+[node name="lvl2portal" parent="." instance=ExtResource("3_w6xti")]
 modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
-position = Vector2(412.00003, -8)
+position = Vector2(291.00003, -8)
 script = SubResource("GDScript_441x5")
 
-[node name="Interactable" parent="lvl1portal2" instance=ExtResource("5_bfqb0")]
+[node name="Interactable" parent="lvl2portal" instance=ExtResource("5_bfqb0")]
 scale = Vector2(0.9999999, 0.9999999)
 interact_name = "Press E to enter"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1portal2/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl2portal/Interactable"]
 z_index = 1
 position = Vector2(-0.7518616, -43.330635)
 shape = SubResource("RectangleShape2D_2hkft")
-
-[node name="Label" type="Label" parent="lvl1portal2"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.571144
-offset_top = -152.93163
-offset_right = 65.428856
-offset_bottom = -117.931625
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "Level 2
-Search Engine"
-label_settings = SubResource("LabelSettings_441x5")
-horizontal_alignment = 1
-vertical_alignment = 1
