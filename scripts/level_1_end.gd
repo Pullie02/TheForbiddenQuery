@@ -5,7 +5,7 @@ extends Control
 func _on_button_pressed() -> void:
 	var answer = ques_answer.text
 	if answer.to_int() == 8325:
-		print("Yes")
+		key_manager.add_blue_key()
 		Dialogic.start("FinishLvl1")
 		Dialogic.signal_event.connect(_back_to_hub)
 

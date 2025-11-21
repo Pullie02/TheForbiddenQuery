@@ -24,5 +24,4 @@ func _to_hub(argument: String):
 
 
 func _on_button_2_pressed() -> void:
-	Dialogic.start("leave")
-	Dialogic.signal_event.connect(_to_hub)
+	Dialogic.start("T2_Hint")

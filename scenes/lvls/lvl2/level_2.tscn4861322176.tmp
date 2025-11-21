@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://nmf8qobbv4fj"]
+[gd_scene load_steps=73 format=3 uid="uid://nmf8qobbv4fj"]
 
 [ext_resource type="Script" uid="uid://cxeqs2ihqgxho" path="res://scripts/level_2.gd" id="1_gu38m"]
 [ext_resource type="Script" uid="uid://3brkclnvaxoi" path="res://scripts/health_manager.gd" id="2_gu38m"]
@@ -61,7 +61,6 @@
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="59_i7ma6"]
 [ext_resource type="PackedScene" uid="uid://noo3vamkvm6w" path="res://scenes/lvls/lvl2/firewall2.tscn" id="60_oubns"]
 [ext_resource type="AudioStream" uid="uid://4nhddiwob10x" path="res://assets/music/SoundFX/damage-40114.mp3" id="61_lpaby"]
-[ext_resource type="PackedScene" uid="uid://que2nkh1tkae" path="res://scenes/lvls/lvl2/Level_2end.tscn" id="62_gu38m"]
 [ext_resource type="Texture2D" uid="uid://ctwjhhlr6g0pi" path="res://assets/images/Other/focus thing.png" id="63_75wvf"]
 [ext_resource type="Texture2D" uid="uid://npi3p1lo8f8o" path="res://assets/images/Other/lightbulp.png" id="64_oubns"]
 [ext_resource type="Texture2D" uid="uid://6jayykj58kf5" path="res://assets/images/Other/black bar.png" id="64_oyvvp"]
@@ -448,18 +447,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(135, -69)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Level2/Answer:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-5.0000005, -102.00001)]
-}
 
 [sub_resource type="Animation" id="Animation_c5c4f"]
 resource_name = "Transition"
@@ -520,29 +507,12 @@ tracks/0/keys = {
 "values": [Vector2(135, -69), Vector2(49, -69)]
 }
 
-[sub_resource type="Animation" id="Animation_gu38m"]
-resource_name = "inFrame2"
-length = 0.6333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Level2/Answer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-5.0000005, -102.00001), Vector2(-5.0000005, -65.00001)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e3sih"]
 _data = {
 &"RESET": SubResource("Animation_15mv3"),
 &"Transition": SubResource("Animation_c5c4f"),
 &"damage": SubResource("Animation_pa8r4"),
-&"inFrame": SubResource("Animation_akcvo"),
-&"inFrame2": SubResource("Animation_gu38m")
+&"inFrame": SubResource("Animation_akcvo")
 }
 
 [node name="Level2" type="Node2D"]
@@ -594,23 +564,16 @@ offset_right = 135.0
 offset_bottom = -69.0
 scale = Vector2(0.31, 0.31)
 
-[node name="DamageSound" type="AudioStreamPlayer2D" parent="Control"]
-scale = Vector2(1.0013912, 1.0013912)
-stream = ExtResource("61_lpaby")
-bus = &"SFX"
-
 [node name="Animations" type="AnimationPlayer" parent="Control"]
 root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_e3sih")
 }
 
-[node name="Answer" parent="." instance=ExtResource("62_gu38m")]
-offset_left = -5.0000005
-offset_top = -102.00001
-offset_right = -5.0000005
-offset_bottom = -102.00001
-scale = Vector2(0.2161365, 0.2161365)
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="Control"]
+scale = Vector2(1.0013912, 1.0013912)
+stream = ExtResource("61_lpaby")
+bus = &"SFX"
 
 [node name="Button" type="Button" parent="."]
 offset_left = -9.0

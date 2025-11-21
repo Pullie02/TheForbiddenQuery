@@ -8,6 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	opening.visible = true
 	player.set_physics_process(false)
 	Dialogic.signal_event.connect(_start_game)
 	Dialogic.start("Intro")

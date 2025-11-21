@@ -3,7 +3,6 @@ extends Control
 var db = SQLite
 var qr
 @onready var health_manager: Node = %HealthManager
-
 @onready var email: LineEdit = $LineEdit
 @onready var passw: LineEdit = $LineEdit2
 @onready var display_label: Label = $backEndCode
@@ -17,6 +16,7 @@ var qr
 @onready var output_focus: Control = $"../Focus/OutputFocus"
 @onready var health_focus: Control = $"../Focus/HealthFocus"
 @onready var return_focus: Control = $"../Focus/ReturnFocus"
+@onready var website: Control = $"../website"
 
 func _ready() -> void:
 	db = SQLite.new()
@@ -48,6 +48,7 @@ func _query(_new_text := "") -> void:
 		output.text = "Login successful!\n" + str(db.query_result)
 		await get_tree().create_timer(0.5).timeout
 		Animations.play("Transition")
+		website.visible = true
 		
 	else:
 		Animations.play("damage")

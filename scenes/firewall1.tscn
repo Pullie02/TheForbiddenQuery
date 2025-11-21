@@ -19,7 +19,7 @@ font_size = 60
 outline_size = 56
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control"]
+[node name="Answer" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

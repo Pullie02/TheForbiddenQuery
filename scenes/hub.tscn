@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwkc6e83lkb5a"]
+[gd_scene load_steps=17 format=3 uid="uid://cwkc6e83lkb5a"]
 
 [ext_resource type="Texture2D" uid="uid://bjlfiuqkxpr54" path="res://assets/images/bgImages/hub/Hub L Building.png" id="1_2hkft"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_d1od2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dimisa4v2dtma" path="res://scripts/wizard.gd" id="5_hlsmc"]
 [ext_resource type="Script" uid="uid://btg4p28uk5xy5" path="res://scripts/lvl1portal.gd" id="7_441x5"]
 [ext_resource type="Texture2D" uid="uid://dytsxx1odxb6h" path="res://assets/images/bgImages/hub/Hub M Building.png" id="10_4oyfp"]
+[ext_resource type="PackedScene" uid="uid://c7hp770lvdwxy" path="res://scenes/key_system.tscn" id="11_lcd1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
 texture = ExtResource("1_d1od2")
@@ -237,6 +238,10 @@ limit_right = 602
 limit_bottom = 5
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="KeyManager" parent="Characters/Player" instance=ExtResource("11_lcd1r")]
+position = Vector2(-161.13744, -142.18008)
+scale = Vector2(0.6739767, 0.6739767)
 
 [node name="Wizard" parent="Characters" instance=ExtResource("4_hlsmc")]
 position = Vector2(153, -8)

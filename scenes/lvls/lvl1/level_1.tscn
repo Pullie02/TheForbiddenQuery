@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://des3j4p5vacy4" path="res://assets/images/bgImages/lab.png" id="2_4nkto"]
 [ext_resource type="Script" uid="uid://3brkclnvaxoi" path="res://scripts/health_manager.gd" id="2_p5vji"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_rus8k"]
-[ext_resource type="PackedScene" uid="uid://b5lbmp3e2o77r" path="res://scenes/firewall1.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://b5lbmp3e2o77r" path="res://scenes/lvls/lvl1/firewall1.tscn" id="3_rus8k"]
 [ext_resource type="Texture2D" uid="uid://cv8bk8uhsxjg8" path="res://assets/images/Other/life/0/death2.png" id="5_eca2e"]
 [ext_resource type="Texture2D" uid="uid://ctwjhhlr6g0pi" path="res://assets/images/Other/focus thing.png" id="6_ob5n2"]
 [ext_resource type="Texture2D" uid="uid://74ikjq2beqib" path="res://assets/images/Other/life/0/death.png" id="6_p5vji"]
@@ -63,7 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://c2d00hcrgbk6m" path="res://assets/images/Other/life/4/h12.png" id="57_pfis4"]
 [ext_resource type="Texture2D" uid="uid://cqxxqmyg4hpl5" path="res://assets/images/Other/life/4/h13.png" id="58_k3h6u"]
 [ext_resource type="AudioStream" uid="uid://4nhddiwob10x" path="res://assets/music/SoundFX/damage-40114.mp3" id="61_akcvo"]
-[ext_resource type="PackedScene" uid="uid://que2nkh1tkae" path="res://scenes/Level_1end.tscn" id="62_c5c4f"]
+[ext_resource type="PackedScene" uid="uid://que2nkh1tkae" path="res://scenes/lvls/lvl2/Level_2end.tscn" id="62_c5c4f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffmti"]
 animations = [{

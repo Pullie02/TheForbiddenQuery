@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqnchu2hqwfna"]
+[gd_scene load_steps=7 format=3 uid="uid://bvjnp88pb66jc"]
 
-[ext_resource type="Script" uid="uid://b7ju438qvh2rs" path="res://scripts/level_1_end.gd" id="1_niecw"]
-[ext_resource type="Texture2D" uid="uid://cthvnqtj5g1ah" path="res://assets/images/Other/blue.png" id="2_4wbjk"]
-[ext_resource type="Texture2D" uid="uid://bilmohe8ddrer" path="res://assets/images/Other/purple.svg" id="3_38fiw"]
-[ext_resource type="Texture2D" uid="uid://dyuuly6yq7ybo" path="res://assets/images/Other/red.png" id="4_g3pi1"]
-[ext_resource type="FontFile" uid="uid://cr01w6bu3llx3" path="res://assets/fonts/Orbitron/Orbitron-Bold.ttf" id="5_7v8w7"]
-[ext_resource type="FontFile" uid="uid://cto2bj74uwv0k" path="res://assets/fonts/Orbitron/Orbitron-Regular.ttf" id="6_85if8"]
+[ext_resource type="Script" uid="uid://b7ju438qvh2rs" path="res://scripts/level_1_end.gd" id="1_kqnxw"]
+[ext_resource type="Texture2D" uid="uid://cthvnqtj5g1ah" path="res://assets/images/Other/blue.png" id="2_j7plx"]
+[ext_resource type="Texture2D" uid="uid://bilmohe8ddrer" path="res://assets/images/Other/purple.svg" id="3_k8i57"]
+[ext_resource type="Texture2D" uid="uid://dyuuly6yq7ybo" path="res://assets/images/Other/red.png" id="4_60pyn"]
+[ext_resource type="FontFile" uid="uid://cr01w6bu3llx3" path="res://assets/fonts/Orbitron/Orbitron-Bold.ttf" id="5_8w5m0"]
+[ext_resource type="FontFile" uid="uid://cto2bj74uwv0k" path="res://assets/fonts/Orbitron/Orbitron-Regular.ttf" id="6_hiw1a"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,28 +19,28 @@ grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_niecw")
+script = ExtResource("1_kqnxw")
 
 [node name="Blue" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.46666667)
 position = Vector2(100.00001, 95)
 scale = Vector2(0.17569478, 0.17745805)
 skew = 0.06806784
-texture = ExtResource("2_4wbjk")
+texture = ExtResource("2_j7plx")
 
 [node name="Purple" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.5529412)
 position = Vector2(103.52052, 44.7078)
 scale = Vector2(0.66133416, 0.33166668)
 skew = 0.06806779
-texture = ExtResource("3_38fiw")
+texture = ExtResource("3_k8i57")
 
 [node name="Red" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.52156866)
 position = Vector2(94.99986, 159.99998)
 scale = Vector2(0.102594234, 0.039153174)
 skew = 0.06806779
-texture = ExtResource("4_g3pi1")
+texture = ExtResource("4_60pyn")
 
 [node name="Website" type="Label" parent="."]
 layout_mode = 1
@@ -56,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.15463637, 0.16756535)
 theme_override_constants/outline_size = 34
-theme_override_fonts/font = ExtResource("5_7v8w7")
+theme_override_fonts/font = ExtResource("5_8w5m0")
 theme_override_font_sizes/font_size = 60
 text = "The Website:"
 
@@ -75,7 +75,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.15463637, 0.16756535)
 theme_override_constants/outline_size = 34
-theme_override_fonts/font = ExtResource("5_7v8w7")
+theme_override_fonts/font = ExtResource("5_8w5m0")
 theme_override_font_sizes/font_size = 55
 text = "Welcome back, Admin"
 horizontal_alignment = 1
@@ -97,7 +97,7 @@ grow_vertical = 2
 scale = Vector2(0.15463637, 0.16756535)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("5_7v8w7")
+theme_override_fonts/font = ExtResource("5_8w5m0")
 theme_override_font_sizes/font_size = 32
 text = "Account Code: 8325"
 
@@ -108,7 +108,7 @@ offset_top = 64.70776
 offset_right = 663.5205
 offset_bottom = 158.70776
 scale = Vector2(0.11031094, 0.1443365)
-theme_override_fonts/font = ExtResource("6_85if8")
+theme_override_fonts/font = ExtResource("6_hiw1a")
 theme_override_font_sizes/font_size = 60
 text = "Actions"
 
@@ -127,7 +127,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.15463637, 0.16756535)
 theme_override_constants/outline_size = 34
-theme_override_fonts/font = ExtResource("5_7v8w7")
+theme_override_fonts/font = ExtResource("5_8w5m0")
 theme_override_font_sizes/font_size = 45
 text = "The Question:"
 
@@ -146,7 +146,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.15463637, 0.16756535)
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("5_7v8w7")
+theme_override_fonts/font = ExtResource("5_8w5m0")
 theme_override_font_sizes/font_size = 26
 text = "Type the account code to continue to get the blue key."
 
@@ -157,7 +157,7 @@ offset_top = 175.0
 offset_right = 665.0
 offset_bottom = 269.0
 scale = Vector2(0.11031094, 0.1443365)
-theme_override_fonts/font = ExtResource("6_85if8")
+theme_override_fonts/font = ExtResource("6_hiw1a")
 theme_override_font_sizes/font_size = 60
 text = "Done"
 
@@ -168,7 +168,7 @@ offset_top = 150.0
 offset_right = 1076.6661
 offset_bottom = 292.85715
 scale = Vector2(0.12, 0.105)
-theme_override_fonts/font = ExtResource("6_85if8")
+theme_override_fonts/font = ExtResource("6_hiw1a")
 theme_override_font_sizes/font_size = 60
 placeholder_text = "The account code"
 
