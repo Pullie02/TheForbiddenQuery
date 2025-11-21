@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var interactable: Area2D = $Interactable
-@onready var player: CharacterBody2D = $"..ee/Player"
+@onready var player: CharacterBody2D = $"../Player"
 
 func _ready():
 	interactable.interact = _on_interact

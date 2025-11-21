@@ -21,3 +21,7 @@ func _on_button_pressed() -> void:
 
 func _to_hub(argument: String):
 	get_tree().change_scene_to_file("res://scenes/hub.tscn")
+
+
+func _on_hint_pressed() -> void:
+	Dialogic.start("T1_hint")

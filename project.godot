@@ -13,6 +13,7 @@ config_version=5
 config/name="The Forbidden Query"
 run/main_scene="uid://bl3evrpnxpnai"
 config/features=PackedStringArray("4.5", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -36,6 +37,7 @@ directories/dtl_directory={
 "FinishLvl1": "res://Dialogue/Dialogue/FinishLvl1.dtl",
 "Intro": "res://Dialogue/Dialogue/Intro.dtl",
 "PortalTutor": "res://Dialogue/Dialogue/PortalTutor.dtl",
+"T1_hint": "res://T1_hint.dtl",
 "T2_AfterNormal": "res://Dialogue/Dialogue/T2_AfterNormal.dtl",
 "T2_Done": "res://Dialogue/Dialogue/T2_Done.dtl",
 "T2_Hint": "res://Dialogue/Dialogue/T2_Hint.dtl",

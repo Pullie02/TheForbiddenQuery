@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://nmf8qobbv4fj"]
+[gd_scene load_steps=73 format=3 uid="uid://nmf8qobbv4fj"]
 
 [ext_resource type="Script" uid="uid://cxeqs2ihqgxho" path="res://scripts/level_2.gd" id="1_gu38m"]
 [ext_resource type="Script" uid="uid://3brkclnvaxoi" path="res://scripts/health_manager.gd" id="2_gu38m"]
@@ -62,6 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://noo3vamkvm6w" path="res://scenes/lvls/lvl2/firewall2.tscn" id="60_oubns"]
 [ext_resource type="AudioStream" uid="uid://4nhddiwob10x" path="res://assets/music/SoundFX/damage-40114.mp3" id="61_lpaby"]
 [ext_resource type="Texture2D" uid="uid://ctwjhhlr6g0pi" path="res://assets/images/Other/focus thing.png" id="63_75wvf"]
+[ext_resource type="Texture2D" uid="uid://npi3p1lo8f8o" path="res://assets/images/Other/lightbulp.png" id="64_oubns"]
 [ext_resource type="Texture2D" uid="uid://6jayykj58kf5" path="res://assets/images/Other/black bar.png" id="64_oyvvp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffmti"]
@@ -539,7 +540,6 @@ metadata/_edit_lock_ = true
 tile_set = SubResource("TileSet_4nkto")
 format = 2
 layer_0/name = "Background"
-layer_0/tile_data = PackedInt32Array(65519, 524288, 0, 65520, 524288, 0, 65521, 524288, 0, 65522, 524288, 0, 65523, 524288, 0, 65524, 524288, 0, 65525, 524288, 0, 65526, 524288, 0, 65527, 524288, 0, 65528, 524288, 0, 65529, 524288, 0, 65530, 524288, 0, 65531, 524288, 0, 65532, 524288, 0, 65533, 524288, 0, 65534, 524288, 0, 65535, 524288, 0, 0, 524288, 0, 1, 524288, 0, 2, 524288, 0, 3, 524288, 0, 4, 524288, 0, 5, 524288, 0, 6, 524288, 0, 7, 524288, 0, 8, 524288, 0, 9, 524288, 0, 10, 524288, 0, 11, 524288, 0, 12, 524288, 0, 13, 524288, 0, 14, 524288, 0, 15, 524288, 0, 16, 524288, 0, 17, 524288, 0, 18, 524288, 0, 19, 524288, 0, 20, 524288, 0, 21, 524288, 0, 22, 524288, 0, 23, 524288, 0, 24, 524288, 0, 25, 524288, 0, 26, 524288, 0, 27, 524288, 0, 28, 524288, 0, 29, 524288, 0, 30, 524288, 0, 65518, 524288, 0, 65517, 524288, 0, 65516, 524288, 0, 65515, 524288, 0, 65514, 524288, 0, 65513, 524288, 0, 65512, 524288, 0, 65511, 524288, 0, 65510, 524288, 0, 65509, 524288, 0)
 layer_1/name = "Mid"
 
 [node name="Player" parent="." instance=ExtResource("59_i7ma6")]
@@ -582,6 +582,7 @@ offset_right = 138.67
 scale = Vector2(0.085, 0.085)
 text = "Back to
 The Rootyard"
+metadata/_edit_use_anchors_ = true
 
 [node name="Focus" type="Node" parent="."]
 
@@ -699,4 +700,15 @@ position = Vector2(138.8387, -42.92124)
 scale = Vector2(0.04035026, 0.014256318)
 texture = ExtResource("64_oyvvp")
 
+[node name="hint" type="Button" parent="."]
+offset_left = 36.0
+offset_top = -77.0
+offset_right = 672.0
+offset_bottom = 553.0
+scale = Vector2(0.0151794255, 0.0151794255)
+icon = ExtResource("64_oubns")
+flat = true
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="hint" to="." method="_on_button_2_pressed"]
