@@ -2,6 +2,7 @@ extends Node2D
 
 var blue_key = 0
 var red_key = 0
+
 @onready var blue_key_img: Sprite2D = $BlueKeyImg
 @onready var red_key_img: Sprite2D = $RedKeyImg
 

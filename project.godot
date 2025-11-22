@@ -37,11 +37,12 @@ directories/dtl_directory={
 "FinishLvl1": "res://Dialogue/Dialogue/FinishLvl1.dtl",
 "Intro": "res://Dialogue/Dialogue/Intro.dtl",
 "PortalTutor": "res://Dialogue/Dialogue/PortalTutor.dtl",
-"T1_hint": "res://T1_hint.dtl",
+"T1_hint": "res://Dialogue/Dialogue/T1_hint.dtl",
 "T2_AfterNormal": "res://Dialogue/Dialogue/T2_AfterNormal.dtl",
 "T2_Done": "res://Dialogue/Dialogue/T2_Done.dtl",
 "T2_Hint": "res://Dialogue/Dialogue/T2_Hint.dtl",
-"T2_RightAnswer": "res://T2_RightAnswer.dtl",
+"T2_Loot_Hint": "res://Dialogue/Dialogue/T2_Loot_Hint.dtl",
+"T2_RightAnswer": "res://Dialogue/Dialogue/T2_RightAnswer.dtl",
 "T2_Start": "res://Dialogue/Dialogue/T2_Start.dtl",
 "T2_Success": "res://Dialogue/Dialogue/T2_Success.dtl",
 "WrongAnswer": "res://Dialogue/Dialogue/WrongAnswer.dtl",
@@ -94,7 +95,6 @@ audio/channel_defaults={
 
 [display]
 
-window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

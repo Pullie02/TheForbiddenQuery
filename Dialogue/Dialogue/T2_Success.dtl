@@ -1,8 +1,7 @@
-SQLarius: Well done. You successfully merged an additional category into the original query.
-
-SQLarius: This is the core idea behind UNION-based SQL injection.
-SQLarius: The system returns more data than intended, including hidden categories like this one.
-
-SQLarius: You’re ready to move on when you are.
-[signal arg="T2_Success"]
-[end_timeline]
+SQLarius: You did it! That query, my friend, is the "Holy Grail" of data hacking.
+SQLarius: You didn't just find a specific item; you forced the server to show you its entire **blueprint**!
+SQLarius: Look closely at that output. You see the tables: "products"... and the most valuable of all, "**users**"!
+SQLarius: This is the **map** we needed. The "users" table holds the key to the entire empire: the user **emails** and **passwords**.
+SQLarius: The last challenge is not to guess an item, but to prove you can use this map.
+SQLarius: Write the name of the new table, **users**, into the answer box.
+[signal arg="T2_Success_Finished"]
