@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4v1nvwvun4mm"]
+
+[ext_resource type="Script" uid="uid://b7ju438qvh2rs" path="res://scripts/level_1_end.gd" id="1_hg2f6"]
+[ext_resource type="Texture2D" uid="uid://cthvnqtj5g1ah" path="res://assets/images/Other/blue.png" id="2_fax58"]
+[ext_resource type="Texture2D" uid="uid://bilmohe8ddrer" path="res://assets/images/Other/purple.svg" id="3_sfu2p"]
+[ext_resource type="FontFile" uid="uid://cr01w6bu3llx3" path="res://assets/fonts/Orbitron/Orbitron-Bold.ttf" id="4_piakx"]
+[ext_resource type="FontFile" uid="uid://cto2bj74uwv0k" path="res://assets/fonts/Orbitron/Orbitron-Regular.ttf" id="5_0owpl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_hg2f6")
+
+[node name="Blue" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.46666667)
+position = Vector2(103.69193, 40.84494)
+scale = Vector2(0.17569478, 0.092644356)
+skew = 0.06806784
+texture = ExtResource("2_fax58")
+
+[node name="Purple" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.5529412)
+position = Vector2(103.67104, 42.499954)
+scale = Vector2(0.66133416, 0.39675188)
+skew = 0.06806779
+texture = ExtResource("3_sfu2p")
+
+[node name="Question" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.024
+anchor_top = -0.18
+anchor_right = 1.026
+anchor_bottom = 2.078
+offset_left = 5.0
+offset_top = 3.0517578e-05
+offset_right = 791.0
+offset_bottom = 107.00003
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.15463637, 0.16756535)
+theme_override_constants/outline_size = 41
+theme_override_fonts/font = ExtResource("4_piakx")
+theme_override_font_sizes/font_size = 85
+text = "The Question:"
+
+[node name="SubText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.024
+anchor_top = -0.18
+anchor_right = 1.026
+anchor_bottom = 2.078
+offset_left = 5.000061
+offset_top = 20.000061
+offset_right = 1298.3574
+offset_bottom = 96.00006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.15463637, 0.16756535)
+theme_override_constants/outline_size = 33
+theme_override_fonts/font = ExtResource("4_piakx")
+theme_override_font_sizes/font_size = 55
+text = "Write the name of one of the tables."
+
+[node name="Ques_answer" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1081.666
+offset_bottom = 182.85715
+scale = Vector2(0.12, 0.105)
+theme_override_fonts/font = ExtResource("5_0owpl")
+theme_override_font_sizes/font_size = 60
+placeholder_text = "table Name"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 65.0
+offset_right = 670.0
+offset_bottom = 159.0
+scale = Vector2(0.11031094, 0.1443365)
+theme_override_fonts/font = ExtResource("5_0owpl")
+theme_override_font_sizes/font_size = 60
+text = "Done"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

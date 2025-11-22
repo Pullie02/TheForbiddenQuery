@@ -573,6 +573,7 @@ layer_0/name = "Background"
 layer_1/name = "Mid"
 
 [node name="Player" parent="." instance=ExtResource("59_i7ma6")]
+visible = false
 position = Vector2(2, -20)
 scale = Vector2(0.958, 0.958)
 
@@ -626,14 +627,14 @@ offset_bottom = 40.0
 
 [node name="FocusThing" type="Sprite2D" parent="Focus/LoginFocus"]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(80, -66)
-scale = Vector2(0.2020343, -0.042898633)
+position = Vector2(82, -66)
+scale = Vector2(0.20902997, -0.0500222)
 texture = ExtResource("63_75wvf")
 
 [node name="BlackBar" type="Sprite2D" parent="Focus/LoginFocus"]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(55.000004, 15.000001)
-scale = Vector2(0.07508788, -0.10303187)
+position = Vector2(54.5, -20.4262)
+scale = Vector2(0.06440745, -0.033043478)
 texture = ExtResource("64_oyvvp")
 
 [node name="BackendFocus" type="Control" parent="Focus"]
@@ -647,60 +648,78 @@ scale = Vector2(0.9959823, 1.00325)
 
 [node name="FocusThing" type="Sprite2D" parent="Focus/BackendFocus"]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(80, -44)
-scale = Vector2(0.1995021, -0.074760355)
+position = Vector2(80.322716, -46.847744)
+scale = Vector2(0.19731075, -0.054296404)
 skew = 0.06806784
 texture = ExtResource("63_75wvf")
+
+[node name="BlackBar" type="Sprite2D" parent="Focus/BackendFocus"]
+modulate = Color(1, 1, 1, 0.54901963)
+position = Vector2(53.20962, -8.970845)
+scale = Vector2(0.061726, -0.015359917)
+texture = ExtResource("64_oyvvp")
+
+[node name="BlackBar1" type="Sprite2D" parent="Focus/BackendFocus"]
+modulate = Color(1, 1, 1, 0.54901963)
+position = Vector2(53.209618, -85.055084)
+scale = Vector2(0.061726, -0.015943369)
+texture = ExtResource("64_oyvvp")
 
 [node name="OutputFocus" type="Control" parent="Focus"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = -1.0
-offset_top = 25.000002
-offset_right = 39.0
-offset_bottom = 65.0
-scale = Vector2(1.0007137, 1.0069124)
+offset_left = -3.0
+offset_top = 26.999998
+offset_right = 37.0
+offset_bottom = 67.0
+scale = Vector2(1.0305481, 1.03684)
 
 [node name="FocusThing" type="Sprite2D" parent="Focus/OutputFocus"]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(80, -44)
-scale = Vector2(0.19869131, -0.074446924)
+position = Vector2(79.94294, -47.670486)
+scale = Vector2(0.19143718, -0.09026307)
 skew = 0.06806784
 texture = ExtResource("63_75wvf")
 
 [node name="BlackBar" type="Sprite2D" parent="Focus/OutputFocus"]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(54.46113, -107.2586)
-scale = Vector2(0.06278492, 0.04121626)
+position = Vector2(54.46113, -99.34031)
+scale = Vector2(0.06295326, 0.005387888)
 texture = ExtResource("64_oyvvp")
 
-[node name="HealthFocus" type="Control" parent="Focus"]
+[node name="HintFocus" type="Control" parent="Focus"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = -63.000008
-offset_top = -26.999998
-offset_right = -23.000008
-offset_bottom = 13.000002
-scale = Vector2(1.0007137, 1.0069124)
+offset_left = -62.999996
+offset_top = -25.000002
+offset_right = -22.999996
+offset_bottom = 14.999998
+scale = Vector2(0.999392, 1.0546029)
 
-[node name="FocusThing" type="Sprite2D" parent="Focus/HealthFocus"]
+[node name="FocusThing" type="Sprite2D" parent="Focus/HintFocus"]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(74.94652, -46.67735)
-scale = Vector2(0.05115273, -0.015194067)
+position = Vector2(103.925835, -44.691082)
+scale = Vector2(0.013096824, -0.020230526)
 texture = ExtResource("63_75wvf")
 
-[node name="BlackBar" type="Sprite2D" parent="Focus/HealthFocus"]
+[node name="BlackBar" type="Sprite2D" parent="Focus/HintFocus"]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(116.91656, -7.8160777)
-scale = Vector2(0.06230565, 0.054600503)
+position = Vector2(117.07118, -6.930573)
+scale = Vector2(0.062388062, 0.047806382)
 texture = ExtResource("64_oyvvp")
 
-[node name="BlackBar2" type="Sprite2D" parent="Focus/HealthFocus"]
+[node name="BlackBar2" type="Sprite2D" parent="Focus/HintFocus"]
 modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(152.95609, -45.68422)
-scale = Vector2(0.027735364, 0.012859318)
+position = Vector2(149.31119, -43.5204)
+scale = Vector2(0.031462383, 0.01734375)
+texture = ExtResource("64_oyvvp")
+
+[node name="BlackBar3" type="Sprite2D" parent="Focus/HintFocus"]
+modulate = Color(1, 1, 1, 0.54901963)
+position = Vector2(71.74111, -43.618313)
+scale = Vector2(0.018905977, 0.017759407)
 texture = ExtResource("64_oyvvp")
 
 [node name="ReturnFocus" type="Control" parent="Focus"]

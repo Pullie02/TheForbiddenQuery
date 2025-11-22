@@ -1,15 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwkc6e83lkb5a"]
+[gd_scene load_steps=16 format=3 uid="uid://cwkc6e83lkb5a"]
 
-[ext_resource type="Texture2D" uid="uid://bjlfiuqkxpr54" path="res://assets/images/bgImages/hub/Hub L Building.png" id="1_2hkft"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_d1od2"]
+[ext_resource type="Texture2D" uid="uid://brh4lo3eqo0cq" path="res://assets/images/bgImages/bgHub.png" id="2_2hkft"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_w6xti"]
-[ext_resource type="Texture2D" uid="uid://57t0fu6i3ukt" path="res://assets/images/bgImages/hub/Hub P Building.png" id="3_4oyfp"]
 [ext_resource type="PackedScene" uid="uid://dvg1rbf3lwyfc" path="res://scenes/portal.tscn" id="3_w6xti"]
 [ext_resource type="PackedScene" uid="uid://buxaw2cgx0u71" path="res://scenes/Wizard.tscn" id="4_hlsmc"]
 [ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://Interactions/interactable.tscn" id="5_bfqb0"]
 [ext_resource type="Script" uid="uid://dimisa4v2dtma" path="res://scripts/wizard.gd" id="5_hlsmc"]
 [ext_resource type="Script" uid="uid://btg4p28uk5xy5" path="res://scripts/lvl1portal.gd" id="7_441x5"]
-[ext_resource type="Texture2D" uid="uid://dytsxx1odxb6h" path="res://assets/images/bgImages/hub/Hub M Building.png" id="10_4oyfp"]
+[ext_resource type="Script" uid="uid://dkpmaa0seiqit" path="res://scripts/portal3.gd" id="10_4oyfp"]
 [ext_resource type="PackedScene" uid="uid://c7hp770lvdwxy" path="res://scenes/key_system.tscn" id="11_lcd1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
@@ -198,30 +197,18 @@ func _on_interact():
 
 [node name="Hub" type="Node2D"]
 
-[node name="Background" type="Node" parent="."]
-
-[node name="HubLBuilding" type="Sprite2D" parent="Background"]
-position = Vector2(95, -60.000004)
-scale = Vector2(0.1278076, 0.1278076)
-texture = ExtResource("1_2hkft")
-
-[node name="HubMBuilding" type="Sprite2D" parent="Background"]
-position = Vector2(294, -58)
-scale = Vector2(0.13134766, 0.13134766)
-texture = ExtResource("10_4oyfp")
-
-[node name="HubPBuilding" type="Sprite2D" parent="Background"]
-position = Vector2(498.5187, -55.98755)
-scale = Vector2(0.13474128, 0.13474129)
-texture = ExtResource("3_4oyfp")
-
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -8.000004)
 tile_set = SubResource("TileSet_w6xti")
 format = 2
 layer_0/name = "Background"
-layer_0/tile_data = PackedInt32Array(65535, 524288, 1, 0, 524288, 1, 1, 524288, 1, 2, 524288, 1, 3, 524288, 1, 4, 524288, 1, 5, 524288, 1, 6, 524288, 1, 7, 524288, 1, 8, 524288, 1, 9, 524288, 1, 10, 524288, 1, 11, 524288, 1, 12, 524288, 1, 13, 524288, 1, 14, 524288, 1, 15, 524288, 1, 16, 524288, 1, 17, 524288, 1, 18, 524288, 1, 19, 524288, 1, 20, 524288, 1, 22, 524288, 1, 21, 524288, 1, 23, 524288, 1, 24, 524288, 0, 25, 524288, 0, 26, 524288, 0, 27, 524288, 0, 28, 524288, 0, 29, 524288, 0, 30, 524288, 0, 31, 524288, 0, 32, 524288, 0, 33, 524288, 0, 34, 524288, 0, 35, 524288, 0, 36, 524288, 0, 37, 524288, 0, -1, 524288, 0, -65537, 524288, 0, -131073, 524288, 0, -196609, 524288, 0, -262145, 524288, 0, -327681, 524288, 0, -393217, 524288, 0, -458753, 524288, 0, -524251, 524288, 0, -458715, 524288, 0, -393179, 524288, 0, -327643, 524288, 0, -262107, 524288, 0, -196571, 524288, 0, -131035, 524288, 0, -65499, 524288, 0)
+layer_0/tile_data = PackedInt32Array(65535, 524288, 0, 0, 524288, 1, 1, 524288, 1, 2, 524288, 1, 3, 524288, 1, 4, 524288, 1, 5, 524288, 1, 6, 524288, 1, 7, 524288, 1, 8, 524288, 1, 9, 524288, 1, 10, 524288, 1, 11, 524288, 1, 12, 524288, 1, 13, 524288, 1, 14, 524288, 1, 15, 524288, 1, 16, 524288, 1, 17, 524288, 1, 18, 524288, 1, 19, 524288, 1, 20, 524288, 1, 22, 524288, 1, 21, 524288, 1, 23, 524288, 1, 24, 524288, 0, 25, 524288, 0, 26, 524288, 0, 27, 524288, 0, 28, 524288, 0, 29, 524288, 0, 30, 524288, 0, 31, 524288, 0, 32, 524288, 0, 33, 524288, 0, 34, 524288, 0, 35, 524288, 0, 36, 524288, 0, 37, 524288, 0, 38, 524288, 0, 39, 524288, 0, 40, 524288, 0, 41, 524288, 0, 42, 524288, 0, -65494, 524288, 0, -131030, 524288, 0, -196566, 524288, 0, -262102, 524288, 0, -327638, 524288, 0, -393174, 524288, 0, -458710, 524288, 0, -524246, 524288, 0, -589782, 524288, 0, 65534, 524288, 0, -2, 524288, 0, -65538, 524288, 0, -131074, 524288, 0, -196610, 524288, 0, -262146, 524288, 0, -327682, 524288, 0, -393218, 524288, 0, -458754, 524288, 0, -524290, 524288, 0, -589826, 524288, 0)
 layer_1/name = "Mid"
+
+[node name="BgHub" type="Sprite2D" parent="."]
+position = Vector2(327, -75.00001)
+scale = Vector2(0.06926095, 0.067050956)
+texture = ExtResource("2_2hkft")
 
 [node name="Characters" type="Node" parent="."]
 
@@ -230,12 +217,12 @@ position = Vector2(108, -20)
 
 [node name="Camera2D" type="Camera2D" parent="Characters/Player"]
 position = Vector2(-1.5797732, -56.872036)
-scale = Vector2(8.165876, 8.165876)
+scale = Vector2(9.954263, 5.361266)
 zoom = Vector2(5.255, 5.255)
-limit_left = -3
-limit_top = -125
-limit_right = 602
-limit_bottom = 5
+limit_left = -19
+limit_top = -168
+limit_right = 673
+limit_bottom = 9
 limit_smoothed = true
 position_smoothing_enabled = true
 
@@ -244,7 +231,7 @@ position = Vector2(-161.13744, -142.18008)
 scale = Vector2(0.6739767, 0.6739767)
 
 [node name="Wizard" parent="Characters" instance=ExtResource("4_hlsmc")]
-position = Vector2(153, -8)
+position = Vector2(162, -8)
 script = ExtResource("5_hlsmc")
 
 [node name="Interactable" parent="Characters/Wizard" instance=ExtResource("5_bfqb0")]
@@ -258,7 +245,7 @@ shape = SubResource("CircleShape2D_hlsmc")
 
 [node name="lvl1portal" parent="." instance=ExtResource("3_w6xti")]
 modulate = Color(1, 0.30457973, 0.18976966, 1)
-position = Vector2(77.00003, -33)
+position = Vector2(88.00001, -36.000004)
 script = ExtResource("7_441x5")
 
 [node name="Interactable" parent="lvl1portal" instance=ExtResource("5_bfqb0")]
@@ -267,13 +254,13 @@ interact_name = "Press E to enter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1portal/Interactable"]
 z_index = 1
-position = Vector2(0.33877563, 0)
+position = Vector2(-5.722046e-05, 0)
 scale = Vector2(0.99036366, 1)
 shape = SubResource("RectangleShape2D_2hkft")
 
 [node name="lvl2portal" parent="." instance=ExtResource("3_w6xti")]
 modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
-position = Vector2(291.00003, -8)
+position = Vector2(222, -38)
 script = SubResource("GDScript_441x5")
 
 [node name="Interactable" parent="lvl2portal" instance=ExtResource("5_bfqb0")]
@@ -282,5 +269,19 @@ interact_name = "Press E to enter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl2portal/Interactable"]
 z_index = 1
-position = Vector2(-0.7518616, -43.330635)
+position = Vector2(-4.5776367e-05, -3.8146973e-06)
+shape = SubResource("RectangleShape2D_2hkft")
+
+[node name="lvl3portal" parent="." instance=ExtResource("3_w6xti")]
+modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
+position = Vector2(377, -38)
+script = ExtResource("10_4oyfp")
+
+[node name="Interactable" parent="lvl3portal" instance=ExtResource("5_bfqb0")]
+scale = Vector2(0.9999999, 0.9999999)
+interact_name = "Press E to enter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl3portal/Interactable"]
+z_index = 1
+position = Vector2(-4.5776367e-05, -3.8146973e-06)
 shape = SubResource("RectangleShape2D_2hkft")
