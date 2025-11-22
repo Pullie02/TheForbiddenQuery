@@ -31,7 +31,7 @@ func _ready() -> void:
 	db = SQLite.new()
 	
 	var original_db_path = "res://Database/databaseLvl3.db"
-	var temp_db_path = "user://Database/level3_temp_db.db" 
+	var temp_db_path = "user://level3_temp_db.db" 
 	
 	# 1. Ensure user:// directory exists
 	var dir = DirAccess.open("user://")
