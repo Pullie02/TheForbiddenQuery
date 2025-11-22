@@ -1,0 +1,5 @@
+SQLarius: Yes! You've mastered the chain injection!
+SQLarius: You used a simple SELECT statement to smuggle in a malicious UPDATE command.
+SQLarius: The powers are restored, but we must confirm you know the final status.
+SQLarius: Tell me, what single word did you use to change the status of the power in the database?
+[signal arg="T3_Success_Finished"]

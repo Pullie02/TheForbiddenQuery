@@ -13,6 +13,7 @@ var did_success := false
 @onready var search_button: Button = $Button
 @onready var output: RichTextLabel = $Output
 
+
 # Answer Phase UI
 @onready var answer_panel: Control = $"../Answer"
 @onready var answer_input: LineEdit = $"../Answer/Ques_answer"

@@ -1,0 +1,3 @@
+SQLarius: Hmm, a simple search won't work this time.
+SQLarius: The goal is not to retrieve data, but to CHANGE data. You must **update** the status column of the 'powers' table.
+SQLarius: Remember how we used the semicolon (;) and the comment (--) to chain commands? You'll need to do that again.
