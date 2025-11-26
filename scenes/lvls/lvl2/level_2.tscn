@@ -573,7 +573,6 @@ layer_0/name = "Background"
 layer_1/name = "Mid"
 
 [node name="Player" parent="." instance=ExtResource("59_i7ma6")]
-visible = false
 position = Vector2(2, -20)
 scale = Vector2(0.958, 0.958)
 

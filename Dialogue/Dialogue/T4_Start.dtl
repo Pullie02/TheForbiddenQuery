@@ -1,0 +1,16 @@
+SQLarius: Welcome. In this lesson, we’ll focus on searching through categories.
+MainCharacter: ...
+[signal arg="inFrame"]
+
+SQLarius: This is the input field. Type a category here to look up items stored in the database.
+[signal arg="T2_Start"]
+
+SQLarius: Here you can see the SQL query that the system builds from your input. It shows exactly what the database receives.
+[signal arg="T2_Backend"]
+
+SQLarius: And here is the output panel. Whatever the database returns will appear in this section.
+[signal arg="T2_NormalSearch"]
+
+SQLarius: Try entering a normal category, such as “phones.” This will show you how the system behaves with regular input.
+[signal arg="T2_Done"]
+[end_timeline]

@@ -1,25 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5lbmp3e2o77r"]
+[gd_scene load_steps=10 format=3 uid="uid://dq1gy8gyr516b"]
 
-[ext_resource type="Script" uid="uid://dyo0u43olyrdi" path="res://scripts/firewall_1.gd" id="1_jogw7"]
-[ext_resource type="Texture2D" uid="uid://cthvnqtj5g1ah" path="res://assets/images/Other/blue.png" id="2_g4w76"]
-[ext_resource type="FontFile" uid="uid://cto2bj74uwv0k" path="res://assets/fonts/Orbitron/Orbitron-Regular.ttf" id="2_qg4uy"]
-[ext_resource type="Texture2D" uid="uid://bilmohe8ddrer" path="res://assets/images/Other/purple.svg" id="3_h2j0b"]
-[ext_resource type="Texture2D" uid="uid://dyuuly6yq7ybo" path="res://assets/images/Other/red.png" id="4_o2hvr"]
-[ext_resource type="FontFile" uid="uid://cr01w6bu3llx3" path="res://assets/fonts/Orbitron/Orbitron-Bold.ttf" id="6_co1ik"]
+[ext_resource type="Script" uid="uid://c0mhtdggadsw1" path="res://scripts/firewall_2.gd" id="1_ly0bl"]
+[ext_resource type="Texture2D" uid="uid://cthvnqtj5g1ah" path="res://assets/images/Other/blue.png" id="2_v8v82"]
+[ext_resource type="Texture2D" uid="uid://bilmohe8ddrer" path="res://assets/images/Other/purple.svg" id="3_67bv0"]
+[ext_resource type="Texture2D" uid="uid://dyuuly6yq7ybo" path="res://assets/images/Other/red.png" id="4_4an4j"]
+[ext_resource type="FontFile" uid="uid://cto2bj74uwv0k" path="res://assets/fonts/Orbitron/Orbitron-Regular.ttf" id="5_lktkn"]
+[ext_resource type="FontFile" uid="uid://cr01w6bu3llx3" path="res://assets/fonts/Orbitron/Orbitron-Bold.ttf" id="6_lrhb4"]
+[ext_resource type="FontFile" uid="uid://bfh65fplf7fyv" path="res://assets/fonts/Orbitron/Orbitron-Black.ttf" id="7_3uj6r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6xbue"]
-font = ExtResource("6_co1ik")
+font = ExtResource("6_lrhb4")
 font_size = 60
 outline_size = 34
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qg4uy"]
-font = ExtResource("2_qg4uy")
+font = ExtResource("5_lktkn")
 font_size = 60
 outline_size = 56
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Phase1" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,50 +32,38 @@ grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_jogw7")
+script = ExtResource("1_ly0bl")
 
 [node name="Blue" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.46666667)
 position = Vector2(100.00001, 95)
 scale = Vector2(0.17569478, 0.17745805)
 skew = 0.06806784
-texture = ExtResource("2_g4w76")
+texture = ExtResource("2_v8v82")
 
 [node name="Purple" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.5529412)
-position = Vector2(101.91347, 80.00001)
-scale = Vector2(0.66133416, 0.33166668)
+position = Vector2(102.58524, 70.14607)
+scale = Vector2(0.66133416, 0.24935997)
 skew = 0.06806784
-texture = ExtResource("3_h2j0b")
+texture = ExtResource("3_67bv0")
 
 [node name="Red" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.52156866)
-position = Vector2(97.329575, 159.99998)
-scale = Vector2(0.102594234, 0.039153174)
+position = Vector2(98.01131, 150)
+scale = Vector2(0.102594234, 0.04894146)
 skew = 0.06806779
-texture = ExtResource("4_o2hvr")
+texture = ExtResource("4_4an4j")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
 offset_top = -10.000001
-offset_right = 791.6666
+offset_right = 1750.0
 offset_bottom = 132.85715
 scale = Vector2(0.12, 0.105)
-theme_override_fonts/font = ExtResource("2_qg4uy")
+theme_override_fonts/font = ExtResource("5_lktkn")
 theme_override_font_sizes/font_size = 60
-placeholder_text = "user@gmail.com"
-
-[node name="LineEdit2" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 99.99999
-offset_top = -10.000001
-offset_right = 933.3334
-offset_bottom = 132.85715
-scale = Vector2(0.12, 0.105)
-theme_override_fonts/font = ExtResource("2_qg4uy")
-theme_override_font_sizes/font_size = 60
-placeholder_text = "password"
-secret = true
+placeholder_text = "Enter item"
 
 [node name="BackEndName" type="Label" parent="."]
 layout_mode = 1
@@ -100,14 +89,13 @@ anchor_right = 0.8
 anchor_bottom = 1.1500001
 offset_top = 59.999996
 offset_right = 2050.0
-offset_bottom = 610.0
+offset_bottom = 410.0
 scale = Vector2(0.1, 0.1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/outline_size = 565
-text = "SELECT *
-FROM users
-WHERE email = ''
-AND pass = ''"
+text = "SELECT name
+FROM products
+WHERE category = ''"
 label_settings = SubResource("LabelSettings_qg4uy")
 autowrap_mode = 3
 
@@ -118,36 +106,45 @@ anchor_top = 0.45000002
 anchor_right = 0.377
 anchor_bottom = 0.577
 offset_left = -0.00010681152
-offset_top = 119.99994
+offset_top = 99.99994
 offset_right = 487.99988
-offset_bottom = 195.99994
+offset_bottom = 175.99994
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.15463637, 0.16756535)
 text = "OutPut"
 label_settings = SubResource("LabelSettings_6xbue")
 
-[node name="Output" type="Label" parent="."]
+[node name="Output" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.6
 anchor_right = 0.8
 anchor_bottom = 1.1500001
-offset_top = 135.0
+offset_top = 115.0
 offset_right = 2000.0
-offset_bottom = 685.0
+offset_bottom = 965.0
 scale = Vector2(0.1, 0.1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/outline_size = 565
-label_settings = SubResource("LabelSettings_qg4uy")
-autowrap_mode = 3
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("7_3uj6r")
+theme_override_fonts/bold_font = ExtResource("6_lrhb4")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
+offset_left = 65.0
 offset_top = 14.999999
-offset_right = 600.0
+offset_right = 665.0
 offset_bottom = 109.0
 scale = Vector2(0.11031094, 0.1443365)
-theme_override_fonts/font = ExtResource("2_qg4uy")
+theme_override_fonts/font = ExtResource("5_lktkn")
 theme_override_font_sizes/font_size = 60
-text = "Login"
+text = "Enter"

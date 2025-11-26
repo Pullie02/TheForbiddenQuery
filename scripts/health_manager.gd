@@ -22,5 +22,5 @@ func _img_change():
 		Dialogic.start("Death")
 		Dialogic.signal_event.connect(_back_to_courtyard)
 
-func _back_to_courtyard(argument: String):
+func _back_to_courtyard():
 	get_tree().change_scene_to_file("res://scenes/hub.tscn")

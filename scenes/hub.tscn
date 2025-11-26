@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwkc6e83lkb5a"]
+[gd_scene load_steps=17 format=3 uid="uid://cwkc6e83lkb5a"]
 
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_d1od2"]
 [ext_resource type="Texture2D" uid="uid://brh4lo3eqo0cq" path="res://assets/images/bgImages/bgHub.png" id="2_2hkft"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://btg4p28uk5xy5" path="res://scripts/lvl1portal.gd" id="7_441x5"]
 [ext_resource type="Script" uid="uid://dkpmaa0seiqit" path="res://scripts/portal3.gd" id="10_4oyfp"]
 [ext_resource type="PackedScene" uid="uid://c7hp770lvdwxy" path="res://scenes/key_system.tscn" id="11_lcd1r"]
+[ext_resource type="Script" uid="uid://difo34n8kmrh" path="res://scripts/portal4.gd" id="11_s6eg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
 texture = ExtResource("1_d1od2")
@@ -209,6 +210,7 @@ layer_1/name = "Mid"
 position = Vector2(327, -75.00001)
 scale = Vector2(0.06926095, 0.067050956)
 texture = ExtResource("2_2hkft")
+metadata/_edit_lock_ = true
 
 [node name="Characters" type="Node" parent="."]
 
@@ -269,7 +271,7 @@ interact_name = "Press E to enter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl2portal/Interactable"]
 z_index = 1
-position = Vector2(-4.5776367e-05, -3.8146973e-06)
+position = Vector2(6.080336e-06, 2.6673906e-06)
 shape = SubResource("RectangleShape2D_2hkft")
 
 [node name="lvl3portal" parent="." instance=ExtResource("3_w6xti")]
@@ -284,4 +286,18 @@ interact_name = "Press E to enter"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl3portal/Interactable"]
 z_index = 1
 position = Vector2(-4.5776367e-05, -3.8146973e-06)
+shape = SubResource("RectangleShape2D_2hkft")
+
+[node name="lvl4portal" parent="." instance=ExtResource("3_w6xti")]
+modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
+position = Vector2(556, -37.000004)
+script = ExtResource("11_s6eg2")
+
+[node name="Interactable" parent="lvl4portal" instance=ExtResource("5_bfqb0")]
+scale = Vector2(0.9999999, 0.9999999)
+interact_name = "Press E to enter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl4portal/Interactable"]
+z_index = 1
+position = Vector2(-4.5776367e-05, 2.6673906e-06)
 shape = SubResource("RectangleShape2D_2hkft")

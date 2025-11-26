@@ -36,6 +36,8 @@ directories/dtl_directory={
 "Death": "res://Dialogue/Dialogue/Death.dtl",
 "FinishLvl1": "res://Dialogue/Dialogue/FinishLvl1.dtl",
 "Intro": "res://Dialogue/Dialogue/Intro.dtl",
+"L4Phase1donee": "res://Dialogue/Dialogue/L4Phase1donee.dtl",
+"L4Phase2": "res://Dialogue/Dialogue/L4Phase2.dtl",
 "PortalTutor": "res://Dialogue/Dialogue/PortalTutor.dtl",
 "T1_hint": "res://Dialogue/Dialogue/T1_hint.dtl",
 "T2_AfterNormal": "res://Dialogue/Dialogue/T2_AfterNormal.dtl",
@@ -48,6 +50,7 @@ directories/dtl_directory={
 "T3_AfterNormal": "res://Dialogue/Dialogue/T3_AfterNormal.dtl",
 "T3_RightAnswer": "res://Dialogue/Dialogue/T3_RightAnswer.dtl",
 "T3_Success": "res://Dialogue/Dialogue/T3_Success.dtl",
+"T4_Start": "res://Dialogue/Dialogue/T4_Start.dtl",
 "WrongAnswer": "res://Dialogue/Dialogue/WrongAnswer.dtl",
 "leave": "res://Dialogue/Dialogue/leave.dtl",
 "lvl1": "res://Dialogue/Dialogue/lvl1.dtl",
@@ -98,7 +101,6 @@ audio/channel_defaults={
 
 [display]
 
-window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

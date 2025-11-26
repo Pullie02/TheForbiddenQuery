@@ -63,7 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://c2d00hcrgbk6m" path="res://assets/images/Other/life/4/h12.png" id="57_pfis4"]
 [ext_resource type="Texture2D" uid="uid://cqxxqmyg4hpl5" path="res://assets/images/Other/life/4/h13.png" id="58_k3h6u"]
 [ext_resource type="AudioStream" uid="uid://4nhddiwob10x" path="res://assets/music/SoundFX/damage-40114.mp3" id="61_akcvo"]
-[ext_resource type="PackedScene" uid="uid://que2nkh1tkae" path="res://scenes/lvls/lvl2/Level_2end.tscn" id="62_c5c4f"]
+[ext_resource type="PackedScene" uid="uid://dqnchu2hqwfna" path="res://scenes/lvls/lvl1/Level_1end.tscn" id="64_3v235"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffmti"]
 animations = [{
@@ -471,18 +471,6 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Level1/website:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_c5c4f"]
 resource_name = "Transition"
@@ -497,18 +485,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Level1/website:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_pa8r4"]
@@ -533,7 +509,7 @@ tracks/1/path = NodePath("Level1/Player:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.23333333, 0.33333334),
+"times": PackedFloat32Array(0, 0.1, 0.2333, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2, -20), Vector2(5, -20), Vector2(-2, -20), Vector2(2, -20)]
@@ -671,13 +647,13 @@ libraries = {
 stream = ExtResource("61_akcvo")
 bus = &"SFX"
 
-[node name="website" parent="." instance=ExtResource("62_c5c4f")]
+[node name="website" parent="." instance=ExtResource("64_3v235")]
 visible = false
 offset_left = 49.0
 offset_top = -69.0
 offset_right = 49.0
 offset_bottom = -69.0
-scale = Vector2(0.3101974, 0.30944106)
+scale = Vector2(0.31, 0.31)
 
 [node name="Button" type="Button" parent="."]
 offset_left = -9.0
