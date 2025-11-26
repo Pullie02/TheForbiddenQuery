@@ -2,12 +2,12 @@ extends Control
 
 var db = SQLite
 var did_success := false
-var did_normal_search = false
 
 @onready var search: LineEdit = $LineEdit
 @onready var display_label: Label = $backEndCode
 @onready var search_button: Button = $Button
 @onready var output: RichTextLabel = $Output
+@onready var phase_3: Control = $"../Phase3"
 
 
 	
@@ -17,8 +17,8 @@ func _ready() -> void:
 	db.path = "user://level4_temp.db"
 	db.open_db()
 	
+	
 	_update_backend_preview()
-
 
 	search.text_changed.connect(_update_backend_preview)
 	search_button.pressed.connect(_run_query)
@@ -34,14 +34,10 @@ func _run_query() -> void:
 	
 	if db.query_result.size() > 0:
 		
-		var admin_items_found := false
 		var schema_found := false
 		
 		for row in db.query_result:
-			if row.get("category") == "admin_items":
-				admin_items_found = true
-			
-			# Check 2: Schema Found (using 'products' table name and long SQL definition)
+			# Check Schema Found (using 'products' table name and long SQL definition)
 			if row.get("name") == "products" and len(str(row.get("category"))) > 10:
 				schema_found = true
 				
@@ -57,23 +53,16 @@ func _run_query() -> void:
 		if schema_found and not did_success:
 			did_success = true
 			# The success dialogue will trigger the animation via the handler
-			Dialogic.start("T2_Success")
-			
-		elif admin_items_found and not did_success:
-			Dialogic.start("T2_Loot_Hint") 
-			
-		elif not did_normal_search and "union select" not in term.to_lower():
-			did_normal_search = true
-			Dialogic.start("T2_AfterNormal")
-			
+			Dialogic.start("L4_Phase2")
+			Dialogic.signal_event.connect(_p2_done)
+			queue_free()
 	else:
 		output.text = "No items found in that category."
 
-# -----------------------------------------------------------------------------
-# FIXED HELPER: REALISTIC SCHEMA OUTPUT
-# -----------------------------------------------------------------------------
 
-# FIX: Rewritten to extract table names and columns from the SQL definitions.
+# -----------------------------------------------------------------------------
+# REALISTIC SCHEMA OUTPUT
+# -----------------------------------------------------------------------------
 func _display_schema_table(data: Array) -> void:
 	var text := "[b]SQL Database Schema Discovery[/b]\n"
 	text += "-----------------------------------------------\n"
@@ -97,6 +86,8 @@ func _display_schema_table(data: Array) -> void:
 			text += "\n[color=#ffa500]TABLE: users[/color]\n"
 			# Columns for users are email, pass
 			text += "  > Columns: [b]user[/b], [b]password[/b]\n"
+	output.text = text
+
 
 func _back_to_hub(argument: String):
 	if argument == "BackToHub":
@@ -123,3 +114,9 @@ func _display_table(data: Array) -> void:
 		text += item_name + category + "\n"
 
 	output.text = text
+
+
+func _p2_done(argument : String):
+	match argument:
+		"P2Done":
+			phase_3.visible = true

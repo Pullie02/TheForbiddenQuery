@@ -56,5 +56,5 @@ func _query(_new_text := "") -> void:
 func _dialogic_signals(argument:String):
 	match argument:
 		"phase1done":
-			visible = false
+			queue_free()
 			phase_2.visible = true
