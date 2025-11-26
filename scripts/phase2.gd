@@ -30,32 +30,43 @@ func _run_query() -> void:
 	var term := search.text.strip_edges()
 	var sql := "SELECT name, category FROM products WHERE category = '" + term + "'"
 
+	# Run SELECT
 	db.query(sql)
-	
+
+	# SAVE RESULT BEFORE IT GETS OVERWRITTEN
+	var select_result: Array[Dictionary] = db.query_result.duplicate(true)
+
+	# --- INJECTION CHECK ---
+	var verify := "SELECT status FROM powers WHERE power_name = 'SQLariusPowers'"
+	db.query(verify)
+
 	if db.query_result.size() > 0:
+		var s := str(db.query_result[0].get("status"))
+		if s == "returned":
+			output.text = "[color=green][b]STATUS UPDATE SUCCESSFUL[/b][/color]\nSQLarius's powers are restored."
+			did_success = true
+			return
+	# -------------------------
+
+	# USE select_result INSTEAD OF db.query_result
+	if select_result.size() > 0:
 		
 		var schema_found := false
 		
-		for row in db.query_result:
-			# Check Schema Found (using 'products' table name and long SQL definition)
+		for row in select_result:
 			if row.get("name") == "products" and len(str(row.get("category"))) > 10:
 				schema_found = true
 				
-		# --- OUTPUT DISPLAY ---
+		# OUTPUT DISPLAY
 		if schema_found:
-			# FIX: Use the realistic, column-summarized schema display
-			_display_schema_table(db.query_result)
+			_display_schema_table(select_result)
 		else:
-			_display_table(db.query_result)
-		
-		# --- DIALOGUE AND ACTION LOGIC ---
+			_display_table(select_result)
 		
 		if schema_found and not did_success:
 			did_success = true
-			# The success dialogue will trigger the animation via the handler
-			Dialogic.start("L4_Phase2")
-			Dialogic.signal_event.connect(_p2_done)
-			queue_free()
+			print("works")
+			
 	else:
 		output.text = "No items found in that category."
 
@@ -87,6 +98,8 @@ func _display_schema_table(data: Array) -> void:
 			# Columns for users are email, pass
 			text += "  > Columns: [b]user[/b], [b]password[/b]\n"
 	output.text = text
+	
+	
 
 
 func _back_to_hub(argument: String):
@@ -114,9 +127,3 @@ func _display_table(data: Array) -> void:
 		text += item_name + category + "\n"
 
 	output.text = text
-
-
-func _p2_done(argument : String):
-	match argument:
-		"P2Done":
-			phase_3.visible = true
