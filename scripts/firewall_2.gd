@@ -30,15 +30,46 @@ var did_success := false
 # -----------------------------------------------------------------------------
 func _ready() -> void:
 	db = SQLite.new()
-	db.path = "res://Database/database.db"
+
+	# Paths
+	var original_db_path = "res://Database/database.db"
+	var temp_db_path = "user://level2_temp.db"
+
+	# --- Copy DB every time using FileAccess (works in export) ---
+	var read_file = FileAccess.open(original_db_path, FileAccess.READ)
+	if read_file == null:
+		push_error("ERROR: Could not read database at: " + original_db_path)
+		return
+
+	var bytes = read_file.get_buffer(read_file.get_length())
+	read_file.close()
+
+	var write_file = FileAccess.open(temp_db_path, FileAccess.WRITE)
+	if write_file == null:
+		push_error("ERROR: Could not write temporary DB to: " + temp_db_path)
+		return
+
+	write_file.store_buffer(bytes)
+	write_file.close()
+	# -------------------------------------------------------------
+
+	# Open the fresh copied DB
+	db.path = temp_db_path
 	db.open_db()
-	
+
+	# Update UI preview initially
 	_update_backend_preview()
 
+	# Connect Dialogue signals
 	Dialogic.signal_event.connect(_tutorial_handler)
+
+	# Connect search field + button
 	search.text_changed.connect(_update_backend_preview)
 	search_button.pressed.connect(_run_query)
+
+	# Connect final answer button
 	answer_button.pressed.connect(_check_final_answer)
+
 
 # -----------------------------------------------------------------------------
 # PHASE 1: EXECUTE QUERY LOGIC
@@ -132,6 +163,7 @@ func _check_final_answer() -> void:
 		# Success! The user found a table name.
 		Dialogic.start("T2_RightAnswer")
 		Dialogic.signal_event.connect(_back_to_hub)
+		key_manager.add_red_key()
 	else:
 		answer_input.text = ""
 		# Updated placeholder text for the new question

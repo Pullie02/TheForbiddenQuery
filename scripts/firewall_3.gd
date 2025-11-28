@@ -24,33 +24,40 @@ var did_success := false
 # -----------------------------------------------------------------------------
 func _ready() -> void:
 	db = SQLite.new()
-	
+
 	var original_db_path = "res://Database/databaseLvl3.db"
-	var temp_db_path = "user://level3_temp.db" 
-	
-	# 1. Ensure user:// directory exists
-	var dir = DirAccess.open("user://")
-	if not dir:
-		push_error("Could not open user:// directory!")
+	var temp_db_path = "user://level3_temp.db"
+
+	# --- Copy DB every time using FileAccess (works in export) ---
+	var read_file = FileAccess.open(original_db_path, FileAccess.READ)
+	if read_file == null:
+		push_error("ERROR: Could not read database at: " + original_db_path)
 		return
-	
-	# 2. Copy the pristine database to user data (This handles the reset)
-	var error = dir.copy(original_db_path, temp_db_path)
-	if error != OK:
-		push_error("Failed to copy database: ", error)
+
+	var bytes = read_file.get_buffer(read_file.get_length())
+	read_file.close()
+
+	var write_file = FileAccess.open(temp_db_path, FileAccess.WRITE)
+	if write_file == null:
+		push_error("ERROR: Could not write temporary DB to: " + temp_db_path)
 		return
-		
-	db.path = temp_db_path # Use the copied, writable database
+
+	write_file.store_buffer(bytes)
+	write_file.close()
+	# -------------------------------------------------------------
+
+	# Open the freshly copied DB
+	db.path = temp_db_path
 	db.open_db()
-	# --------------------------------------------------
-	
+
+	# Update initial preview
 	_update_backend_preview()
 
 	# Signal Connections
 	Dialogic.signal_event.connect(_tutorial_handler)
-	
 	search.text_changed.connect(_update_backend_preview)
 	search_button.pressed.connect(_run_query)
+
 
 # -----------------------------------------------------------------------------
 # PHASE 1: EXECUTE QUERY LOGIC (UPDATE VULNERABILITY)
@@ -78,11 +85,12 @@ func _run_query() -> void:
 	if power_status == "returned":
 		# Level 3 Success! The injection updated the status.
 		if not did_success:
+			key_manager.add_gold_key()
 			did_success = true
 			output.text = "[color=#00ff00][b]STATUS UPDATE SUCCESSFUL.[/b][/color]\nSQLarius's powers have been restored to the mainframe."
 			Dialogic.start("T3_RightAnswer")
 			Dialogic.signal_event.connect(_back_to_hub)
-			key_manager.add_gold_key()
+			
 	else:
 		# Output for a failed or benign query
 		output.text = "Attempted to update status for item: " + term + "\nStatus check: Not yet returned."

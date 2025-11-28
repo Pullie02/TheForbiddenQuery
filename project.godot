@@ -42,6 +42,8 @@ directories/dtl_directory={
 "NoGoldKey": "res://Dialogue/Dialogue/NoGoldKey.dtl",
 "NoRedKey": "res://Dialogue/Dialogue/NoRedKey.dtl",
 "PortalTutor": "res://Dialogue/Dialogue/PortalTutor.dtl",
+"T1_Done": "res://Dialogue/Dialogue/T1_Done.dtl",
+"T1_FirstWrong": "res://Dialogue/Dialogue/T1_FirstWrong.dtl",
 "T1_hint": "res://Dialogue/Dialogue/T1_hint.dtl",
 "T2_AfterNormal": "res://Dialogue/Dialogue/T2_AfterNormal.dtl",
 "T2_Done": "res://Dialogue/Dialogue/T2_Done.dtl",

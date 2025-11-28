@@ -23,9 +23,12 @@ func _ready() -> void:
 
 func add_blue_key():
 	key_manager.blue_key += 1
+	print(blue_key)
 
 func add_red_key():
 	key_manager.red_key += 1
+	print(red_key)
 
 func add_gold_key():
 	key_manager.gold_key += 1
+	print(gold_key)

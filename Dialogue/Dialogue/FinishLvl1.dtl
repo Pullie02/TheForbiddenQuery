@@ -1,7 +1,5 @@
-SQLarius: Good job!
-SQLarius: You finished the first challenge.
-SQLarius: Im sure it was was easy for you!
-SQLarius: Now that you have done it successfully,
+SQLarius: Well done. This is what we will use to infeltrate into their systems when we go to their hiding spot.
+SQLarius: You can use this to bypass any vulnerable login page.
 SQLarius: do you wanna go back to the hub? Or do you wanna do it again?
 - Go back to hub
 	[wait time="0.5"]

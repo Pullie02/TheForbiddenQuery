@@ -18,9 +18,34 @@ var qr
 @onready var return_focus: Control = $"../Focus/ReturnFocus"
 @onready var website: Control = $"../website"
 
+var wronganswer = false
+
 func _ready() -> void:
 	db = SQLite.new()
-	db.path = "res://Database/database.db"
+	
+	var original_db_path = "res://Database/database.db"
+	var temp_db_path = "user://level1_temp.db"
+
+	# --- Copy DB every time using FileAccess (works in export) ---
+	var read_file = FileAccess.open(original_db_path, FileAccess.READ)
+	if read_file == null:
+		push_error("ERROR: Could not read database at: " + original_db_path)
+		return
+
+	var data = read_file.get_buffer(read_file.get_length())
+	read_file.close()
+
+	var write_file = FileAccess.open(temp_db_path, FileAccess.WRITE)
+	if write_file == null:
+		push_error("ERROR: Could not write database to: " + temp_db_path)
+		return
+
+	write_file.store_buffer(data)
+	write_file.close()
+	# -------------------------------------------------------------
+
+	# Open the fresh copied DB
+	db.path = temp_db_path
 	db.open_db()
 
 	# Connect signals
@@ -30,6 +55,7 @@ func _ready() -> void:
 
 	_update_label()
 	Dialogic.signal_event.connect(_tutorial)
+
 
 func _update_label(_new_text := "") -> void:
 	display_label.text = (
@@ -47,17 +73,21 @@ func _query(_new_text := "") -> void:
 	if db.query_result.size() > 0:
 		output.text = "Login successful!\n" + str(db.query_result)
 		await get_tree().create_timer(0.5).timeout
-		Animations.play("Transition")
+		queue_free()
 		website.visible = true
-		
+		Dialogic.start("T1_Done")
 	else:
 		Animations.play("damage")
 		player.animated_sprite.play("damage")
 		await get_tree().create_timer(0.5).timeout
 		player.animated_sprite.play("idle")
 		output.text = "No user found with that email and password."
-		Dialogic.start("WrongAnswer")
 		health_manager.less_health()
+		if not wronganswer:
+			Dialogic.start("T1_FirstWrong")
+			wronganswer = true
+		else:
+			Dialogic.start("WrongAnswer")
 
 
 

@@ -1,0 +1,7 @@
+SQLarius: As you can see it does not allow you to go inside, since you do not have the email and password.
+SQLarius: But there is an SQL Injection technique that we use that allows us to bypass such login pages if not well protected.
+SQLarius: We firstly use a ' (quote) to get out of the [b]WHERE email = ''[/b] then we will write [b]OR 1=1[/b]
+SQLarius: Since the 1=1 condition is always true. it will come out with an output, and let us enter the website.
+SQLarius: However it will give an SQL error, because we have a ' (quote) in the end and we have to address it.
+SQLarius: so we will write -- to make the rest of the backend code into a comment, including the ' (quote).
+SQLarius: In the end the code will be [' OR 1=1--] so try it out!

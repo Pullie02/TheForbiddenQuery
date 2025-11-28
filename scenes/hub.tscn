@@ -194,7 +194,7 @@ func _ready():
 	
 func _on_interact():
 	if key_manager.blue_key >= 1:
-		get_tree().change_scene_to_file(\"res://scenes/lvls/lvl4/level_4.tscn\")
+		get_tree().change_scene_to_file(\"res://scenes/lvls/lvl2/level_2.tscn\")
 	else:
 		Dialogic.start(\"NoBlueKey\")
 "
@@ -247,61 +247,61 @@ interact_name = "Press E to talk to SQLarius"
 z_index = 10
 shape = SubResource("CircleShape2D_hlsmc")
 
-[node name="Node" type="Node" parent="."]
+[node name="Portals" type="Node" parent="."]
 
-[node name="lvl1portal" parent="Node" instance=ExtResource("3_w6xti")]
+[node name="lvl1portal" parent="Portals" instance=ExtResource("3_w6xti")]
 modulate = Color(1, 0.30457973, 0.18976966, 1)
 position = Vector2(88.00001, -36.000004)
 script = ExtResource("7_441x5")
 
-[node name="Interactable" parent="Node/lvl1portal" instance=ExtResource("5_bfqb0")]
+[node name="Interactable" parent="Portals/lvl1portal" instance=ExtResource("5_bfqb0")]
 scale = Vector2(0.9999999, 0.9999999)
 interact_name = "Press E to enter"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/lvl1portal/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/lvl1portal/Interactable"]
 z_index = 1
-position = Vector2(-5.722046e-05, 0)
+position = Vector2(-6.1035156e-05, 0)
 scale = Vector2(0.99036366, 1)
 shape = SubResource("RectangleShape2D_2hkft")
 
-[node name="lvl2portal" parent="Node" instance=ExtResource("3_w6xti")]
+[node name="lvl2portal" parent="Portals" instance=ExtResource("3_w6xti")]
 modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
 position = Vector2(222, -38)
 script = SubResource("GDScript_441x5")
 
-[node name="Interactable" parent="Node/lvl2portal" instance=ExtResource("5_bfqb0")]
+[node name="Interactable" parent="Portals/lvl2portal" instance=ExtResource("5_bfqb0")]
 scale = Vector2(0.9999999, 0.9999999)
 interact_name = "Press E to enter"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/lvl2portal/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/lvl2portal/Interactable"]
 z_index = 1
 position = Vector2(6.080336e-06, 2.6673906e-06)
 shape = SubResource("RectangleShape2D_2hkft")
 
-[node name="lvl3portal" parent="Node" instance=ExtResource("3_w6xti")]
+[node name="lvl3portal" parent="Portals" instance=ExtResource("3_w6xti")]
 modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
 position = Vector2(377, -38)
 script = ExtResource("10_4oyfp")
 
-[node name="Interactable" parent="Node/lvl3portal" instance=ExtResource("5_bfqb0")]
+[node name="Interactable" parent="Portals/lvl3portal" instance=ExtResource("5_bfqb0")]
 scale = Vector2(0.9999999, 0.9999999)
 interact_name = "Press E to enter"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/lvl3portal/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/lvl3portal/Interactable"]
 z_index = 1
 position = Vector2(-4.5776367e-05, -3.8146973e-06)
 shape = SubResource("RectangleShape2D_2hkft")
 
-[node name="lvl4portal" parent="Node" instance=ExtResource("3_w6xti")]
+[node name="lvl4portal" parent="Portals" instance=ExtResource("3_w6xti")]
 modulate = Color(0.19267336, 0.739938, 0.9999998, 1)
 position = Vector2(556, -37.000004)
 script = ExtResource("11_s6eg2")
 
-[node name="Interactable" parent="Node/lvl4portal" instance=ExtResource("5_bfqb0")]
+[node name="Interactable" parent="Portals/lvl4portal" instance=ExtResource("5_bfqb0")]
 scale = Vector2(0.9999999, 0.9999999)
 interact_name = "Press E to enter"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/lvl4portal/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/lvl4portal/Interactable"]
 z_index = 1
 position = Vector2(-4.5776367e-05, 2.6673906e-06)
 shape = SubResource("RectangleShape2D_2hkft")
