@@ -1,3 +1,7 @@
 SQLarius: Success! You've mastered data manipulation.
 SQLarius: You're ready for the final stage.
-[signal arg="BackToHub"]
+SQLarius: Do you wanna restart or go back to the Rootyard?
+- Go back to Rootyard
+	[signal arg="BackToHub"]
+- Restart
+	[signal arg="again"]

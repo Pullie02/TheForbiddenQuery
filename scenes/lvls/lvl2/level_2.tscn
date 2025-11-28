@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://nmf8qobbv4fj"]
+[gd_scene load_steps=76 format=3 uid="uid://nmf8qobbv4fj"]
 
 [ext_resource type="Script" uid="uid://cxeqs2ihqgxho" path="res://scripts/level_2.gd" id="1_gu38m"]
 [ext_resource type="Script" uid="uid://3brkclnvaxoi" path="res://scripts/health_manager.gd" id="2_gu38m"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://ctwjhhlr6g0pi" path="res://assets/images/Other/focus thing.png" id="63_75wvf"]
 [ext_resource type="Texture2D" uid="uid://npi3p1lo8f8o" path="res://assets/images/Other/lightbulp.png" id="64_oubns"]
 [ext_resource type="Texture2D" uid="uid://6jayykj58kf5" path="res://assets/images/Other/black bar.png" id="64_oyvvp"]
+[ext_resource type="Script" uid="uid://cnylbuam8tk88" path="res://scripts/level_2_end.gd" id="66_r0s6g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffmti"]
 animations = [{
@@ -765,6 +766,7 @@ offset_top = -99.0
 offset_right = -5.0000005
 offset_bottom = -99.0
 scale = Vector2(0.216, 0.2)
+script = ExtResource("66_r0s6g")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="hint" to="." method="_on_button_2_pressed"]

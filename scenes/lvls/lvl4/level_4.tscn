@@ -628,6 +628,7 @@ sprite_frames = SubResource("SpriteFrames_ffmti")
 animation = &"4"
 autoplay = "4"
 frame_progress = 0.9777877
+metadata/_edit_lock_ = true
 
 [node name="DBuildingBg" type="Sprite2D" parent="."]
 position = Vector2(54, -34)
@@ -692,6 +693,7 @@ offset_right = 115.0
 offset_bottom = -89.0
 scale = Vector2(0.31, 0.31)
 script = ExtResource("62_1og78")
+metadata/_edit_use_anchors_ = true
 
 [node name="Phase2" parent="Phases" instance=ExtResource("62_gcuk2")]
 visible = false

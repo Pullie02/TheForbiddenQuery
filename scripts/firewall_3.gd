@@ -87,7 +87,8 @@ func _run_query() -> void:
 			did_success = true
 			answer_panel.visible = true # Ensure the answer panel is ready for animation
 			output.text = "[color=#00ff00][b]STATUS UPDATE SUCCESSFUL.[/b][/color]\nSQLarius's powers have been restored to the mainframe."
-			Dialogic.start("T3_Success") # Requires a T3_Success dialogue event
+			Dialogic.start("T3_RightAnswer") # Requires a T3_Success dialogue event
+			Dialogic.signal_event.connect(_back_to_hub)
 	else:
 		# Output for a failed or benign query
 		output.text = "Attempted to update status for item: " + term + "\nStatus check: Not yet returned."
