@@ -39,6 +39,8 @@ directories/dtl_directory={
 "L4Phase1donee": "res://Dialogue/Dialogue/L4Phase1donee.dtl",
 "L4Phase2": "res://Dialogue/Dialogue/L4Phase2.dtl",
 "NoBlueKey": "res://Dialogue/Dialogue/NoBlueKey.dtl",
+"NoGoldKey": "res://Dialogue/Dialogue/NoGoldKey.dtl",
+"NoRedKey": "res://Dialogue/Dialogue/NoRedKey.dtl",
 "PortalTutor": "res://Dialogue/Dialogue/PortalTutor.dtl",
 "T1_hint": "res://Dialogue/Dialogue/T1_hint.dtl",
 "T2_AfterNormal": "res://Dialogue/Dialogue/T2_AfterNormal.dtl",
@@ -102,6 +104,7 @@ audio/channel_defaults={
 
 [display]
 
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

@@ -30,17 +30,20 @@ func add_blue_key():
 script = SubResource("GDScript_hdu0s")
 
 [node name="BlueKeyImg" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.085547455, 0.42011222, 0.9852794, 1)
 self_modulate = Color(0.29244882, 0.3258976, 0.9279773, 1)
 position = Vector2(1, 0)
 texture = ExtResource("1_hdu0s")
 
 [node name="RedKeyImg" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(0.84398454, 0.2938965, 0.3657671, 1)
 position = Vector2(35, 0)
 texture = ExtResource("1_hdu0s")
 
 [node name="GoldKeyImg" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.833653, 0.74264556, 0.7372162, 1)
 position = Vector2(69, 0)
 texture = ExtResource("1_hdu0s")

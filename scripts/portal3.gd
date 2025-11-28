@@ -6,4 +6,7 @@ func _ready():
 	interactable.interact = _on_interact
 	
 func _on_interact():
-	get_tree().change_scene_to_file("res://scenes/lvls/lvl3/level_3.tscn")
+	if key_manager.blue_key >= 1 and key_manager.red_key>=1:
+		get_tree().change_scene_to_file("res://scenes/lvls/lvl4/level_4.tscn")
+	else:
+		Dialogic.start("NoRedKey")

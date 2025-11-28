@@ -229,11 +229,10 @@ limit_top = -168
 limit_right = 673
 limit_bottom = 9
 limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="KeyManager" parent="Characters/Player" instance=ExtResource("11_lcd1r")]
-position = Vector2(-161.13744, -142.18008)
-scale = Vector2(0.6739767, 0.6739767)
+position = Vector2(-161.13744, -142.1801)
+scale = Vector2(0.6739768, 0.6739767)
 
 [node name="Wizard" parent="Characters" instance=ExtResource("4_hlsmc")]
 position = Vector2(33, -8)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://c504f3jirke86"]
+[gd_scene load_steps=75 format=3 uid="uid://c504f3jirke86"]
 
 [ext_resource type="Script" uid="uid://yljlt6qon1kg" path="res://scripts/level_3.gd" id="1_kvn5s"]
 [ext_resource type="Script" uid="uid://3brkclnvaxoi" path="res://scripts/health_manager.gd" id="2_ufimg"]
@@ -65,7 +65,6 @@
 [ext_resource type="Texture2D" uid="uid://ctwjhhlr6g0pi" path="res://assets/images/Other/focus thing.png" id="62_1i06b"]
 [ext_resource type="Texture2D" uid="uid://6jayykj58kf5" path="res://assets/images/Other/black bar.png" id="63_c2iot"]
 [ext_resource type="Texture2D" uid="uid://npi3p1lo8f8o" path="res://assets/images/Other/lightbulp.png" id="64_numyj"]
-[ext_resource type="PackedScene" uid="uid://c4v1nvwvun4mm" path="res://scenes/lvls/lvl3/Level_3end.tscn" id="65_u2v3t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffmti"]
 animations = [{
@@ -449,18 +448,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(135, -69)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Level3/Answer:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-5.0000005, -99)]
-}
 
 [sub_resource type="Animation" id="Animation_c5c4f"]
 resource_name = "Transition"
@@ -524,18 +511,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_gu38m"]
 resource_name = "inFrame2"
 length = 0.6333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Level3/Answer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-5.0000005, -99), Vector2(-5.0000005, -64)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e3sih"]
 _data = {
@@ -741,13 +716,6 @@ scale = Vector2(0.0151794255, 0.0151794255)
 icon = ExtResource("64_numyj")
 flat = true
 metadata/_edit_use_anchors_ = true
-
-[node name="Answer" parent="." instance=ExtResource("65_u2v3t")]
-offset_left = -5.0000005
-offset_top = -99.0
-offset_right = -5.0000005
-offset_bottom = -99.0
-scale = Vector2(0.216, 0.2)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="hint" to="." method="_on_button_2_pressed"]
