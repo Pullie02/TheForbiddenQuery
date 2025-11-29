@@ -1,7 +1,8 @@
 SQLarius: You did it! That query, my friend, is the "Holy Grail" of data hacking.
-SQLarius: You didn't just find a specific item; you forced the server to show you its entire **blueprint**!
-SQLarius: Look closely at that output. You see the tables: "products"... and the most valuable of all, "**users**"!
-SQLarius: This is the **map** we needed. The "users" table holds the key to the entire empire: the user **emails** and **passwords**.
-SQLarius: The last challenge is not to guess an item, but to prove you can use this map.
-SQLarius: Write the name of the new table, **users**, into the answer box.
+SQLarius: You didn't just find a specific item; you forced the server to show you its entire Structure.
+SQLarius: Look closely at that output. You see the tables\: "products", and "users".
+SQLarius: In the users folder is the email and password for everyone that we can just gain access to. But we do not need that at the moment.
+SQLarius: We need to find where my powers are hidden in the D-Building Database.
+SQLarius: Therefore, we will use this to discover exactly where they have hid my powers.
+SQLarius: All you have to do now is put the name of one of the tables into, and we will gain the [color=red]Red Key[/color]
 [signal arg="T2_Success_Finished"]

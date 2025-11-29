@@ -78,42 +78,62 @@ func _run_query() -> void:
 	var term := search.text.strip_edges()
 	var sql := "SELECT name, category FROM products WHERE category = '" + term + "'"
 
+	# Run SELECT
 	db.query(sql)
-	
+
+	# Save the real results BEFORE running the second query
+	var select_result: Array[Dictionary] = db.query_result.duplicate(true)
+
+	# --- INJECTION CHECK ---
+	var verify := "SELECT status FROM powers WHERE power_name = 'SQLariusPowers'"
+	db.query(verify)
+
 	if db.query_result.size() > 0:
-		
+		var s := str(db.query_result[0].get("status"))
+		if s == "returned":
+			output.text = "[color=green][b]STATUS UPDATE SUCCESSFUL[/b][/color]\nSQLarius's powers are restored."
+			did_success = true
+			return
+	# -------------------------
+
+	# Now use *select_result* because db.query_result was overwritten
+	if select_result.size() > 0:
+
 		var admin_items_found := false
 		var schema_found := false
-		
-		for row in db.query_result:
+
+		for row in select_result:
+
+			# Level-specific check 1
 			if row.get("category") == "admin_items":
 				admin_items_found = true
-			
-			# Check 2: Schema Found (using 'products' table name and long SQL definition)
+
+			# Level-specific check 2: schema found
 			if row.get("name") == "products" and len(str(row.get("category"))) > 10:
 				schema_found = true
-				
+
 		# --- OUTPUT DISPLAY ---
 		if schema_found:
-			# FIX: Use the realistic, column-summarized schema display
-			_display_schema_table(db.query_result)
+			_display_schema_table(select_result)
 		else:
-			_display_table(db.query_result)
-		
-		# --- DIALOGUE AND ACTION LOGIC ---
-		
+			_display_table(select_result)
+
+		# --- LEVEL-SPECIFIC DIALOGUE & LOGIC ---
+
+		# SUCCESS state
 		if schema_found and not did_success:
 			did_success = true
-			# The success dialogue will trigger the animation via the handler
 			Dialogic.start("T2_Success")
-			
+
+		# Loot hint
 		elif admin_items_found and not did_success:
-			Dialogic.start("T2_Loot_Hint") 
-			
+			Dialogic.start("T2_Loot_Hint")
+
+		# Normal search dialogue
 		elif not did_normal_search and "union select" not in term.to_lower():
 			did_normal_search = true
 			Dialogic.start("T2_AfterNormal")
-			
+
 	else:
 		output.text = "No items found in that category."
 
@@ -143,7 +163,6 @@ func _display_schema_table(data: Array) -> void:
 			text += "  > Columns: [b]email[/b], [b]pass[/b]\n"
 	
 	# Add a hint for the user based on the realistic output
-	text += "\n[color=gray]Look at those columns! The 'users' table is the real prize.[/color]"
 	output.text = text
 
 
@@ -180,10 +199,10 @@ func _back_to_hub(argument: String):
 # VISUAL & OUTPUT HELPERS
 # -----------------------------------------------------------------------------
 func _update_backend_preview(_text := "") -> void:
-	display_label.text = "SELECT name\nFROM products\nWHERE category = '" + search.text + "'"
+	display_label.text = "SELECT name, category\nFROM products\nWHERE category = '" + search.text + "'"
 
 func _display_table(data: Array) -> void:
-	var text := "[b]Item Name                    Category[/b]\n"
+	var text := "[b]name                    category[/b]\n"
 	text += "-----------------------------------------------\n"
 
 	for row in data:
@@ -200,16 +219,7 @@ func _display_table(data: Array) -> void:
 # -----------------------------------------------------------------------------
 func _tutorial_handler(argument: String) -> void:
 	match argument:
-		"T2_Start":
-			login_focus.visible = true
-		"T2_Backend":
-			login_focus.visible = false
-			backend_focus.visible = true
 		"T2_Success_Finished":
 			if is_instance_valid(answer_panel) and is_instance_valid(animations):
 				answer_panel.visible = true
 				animations.play("inFrame2")
-		"T2_Done":
-			output_focus.visible = false
-			login_focus.visible = false
-			backend_focus.visible = false

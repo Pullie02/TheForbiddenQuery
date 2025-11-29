@@ -54,6 +54,7 @@ directories/dtl_directory={
 "T2_Success": "res://Dialogue/Dialogue/T2_Success.dtl",
 "T3_AfterNormal": "res://Dialogue/Dialogue/T3_AfterNormal.dtl",
 "T3_RightAnswer": "res://Dialogue/Dialogue/T3_RightAnswer.dtl",
+"T3_Start": "res://Dialogue/Dialogue/T3_Start.dtl",
 "T3_Success": "res://Dialogue/Dialogue/T3_Success.dtl",
 "T4_Start": "res://Dialogue/Dialogue/T4_Start.dtl",
 "WrongAnswer": "res://Dialogue/Dialogue/WrongAnswer.dtl",

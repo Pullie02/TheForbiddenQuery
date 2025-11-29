@@ -56,7 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://d1nweij38sdk4" path="res://assets/images/Other/life/4/h11.png" id="54_p8qnp"]
 [ext_resource type="Texture2D" uid="uid://c2d00hcrgbk6m" path="res://assets/images/Other/life/4/h12.png" id="55_13ccr"]
 [ext_resource type="Texture2D" uid="uid://cqxxqmyg4hpl5" path="res://assets/images/Other/life/4/h13.png" id="56_vs1je"]
-[ext_resource type="Texture2D" uid="uid://lqutm2pjjheg" path="res://assets/images/bgImages/P-Building1.png" id="57_kvn5s"]
+[ext_resource type="Texture2D" uid="uid://cuvna0iwryvpd" path="res://assets/images/bgImages/M-Building.png" id="57_kvn5s"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="58_obb64"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="59_gd0v7"]
 [ext_resource type="PackedScene" uid="uid://da6k4tsbagw4k" path="res://scenes/lvls/lvl3/firewall3.tscn" id="60_n75os"]
@@ -536,9 +536,9 @@ animation = &"4"
 autoplay = "4"
 frame_progress = 0.9777877
 
-[node name="PBuilding" type="Sprite2D" parent="."]
-position = Vector2(54, -43.999996)
-scale = Vector2(0.084428936, 0.084428936)
+[node name="MBuilding" type="Sprite2D" parent="."]
+position = Vector2(58.999996, -41)
+scale = Vector2(0.06486959, 0.06486959)
 texture = ExtResource("57_kvn5s")
 
 [node name="TileMap" type="TileMap" parent="."]

@@ -1,0 +1,8 @@
+SQLarius: Here is the M-Building. This time we will be learning about [color=red]Data Manipulation[color]
+MainCharacter: So you mean changing values in a database?
+SQLarius: Precisely, we will use the UPDATE function to change the owner of my powers back to me.
+[signal arg="inFrame"]
+
+SQLarius: This is very siminlar to the previous window because we will be using the same window.
+SQLarius: I will teach you how to find them and then manipulate them in the next building. For now, just search for some "phones" in the search bar.
+[end_timeline]

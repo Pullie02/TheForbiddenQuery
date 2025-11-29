@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://ft86fcpscmch"]
+[gd_scene load_steps=74 format=3 uid="uid://ft86fcpscmch"]
 
 [ext_resource type="Script" uid="uid://cdxuy7dk3485m" path="res://scripts/level_4.gd" id="1_uhqqd"]
 [ext_resource type="Script" uid="uid://3brkclnvaxoi" path="res://scripts/health_manager.gd" id="2_l8vt6"]
@@ -63,7 +63,6 @@
 [ext_resource type="Script" uid="uid://c4mj0kbdefa77" path="res://scripts/phase1.gd" id="62_1og78"]
 [ext_resource type="AudioStream" uid="uid://4nhddiwob10x" path="res://assets/music/SoundFX/damage-40114.mp3" id="62_f2vra"]
 [ext_resource type="PackedScene" uid="uid://noo3vamkvm6w" path="res://scenes/lvls/lvl2/firewall2.tscn" id="62_gcuk2"]
-[ext_resource type="PackedScene" uid="uid://da6k4tsbagw4k" path="res://scenes/lvls/lvl3/firewall3.tscn" id="63_b3sgx"]
 [ext_resource type="Script" uid="uid://ggnexk4tkxeu" path="res://scripts/phase2.gd" id="64_qxbnm"]
 [ext_resource type="Texture2D" uid="uid://npi3p1lo8f8o" path="res://assets/images/Other/lightbulp.png" id="65_vmjby"]
 
@@ -704,16 +703,6 @@ offset_right = 29.0
 offset_bottom = -89.0
 scale = Vector2(0.31, 0.31)
 script = ExtResource("64_qxbnm")
-
-[node name="Phase3" parent="Phases" instance=ExtResource("63_b3sgx")]
-visible = false
-layout_mode = 1
-offset_left = 29.0
-offset_top = -89.0
-offset_right = 29.0
-offset_bottom = -89.0
-scale = Vector2(0.31, 0.31)
-script = null
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 libraries = {

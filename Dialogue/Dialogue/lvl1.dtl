@@ -3,13 +3,14 @@ MainCharacter: Okay I see.
 [signal arg="inFrame"]
 SQLarius: This is where you will be learning the basics SQL Injection.
 [signal arg="tutLogin"]
-SQLarius: We will be using these TextFields to perform our SQL Injection magic. So, we will be entering the SQL queries that will allow us to bypass this screen.
+SQLarius: These TextFields allows us to perform our SQL Injection magic. So, we will be entering the SQL queries that will allow us to bypass this screen.
 [signal arg="tutBackend"]
 SQLarius: This will show what is truly behind the website, the part where the people dont see. We will see real time how this will be effected and changed.
 [signal arg="tutOutput"]
 SQLarius: This is where we will see if our SQL Injection queries were successful or not.
 [signal arg="tutHealth"]
-SQLarius: And these are your hearts, you will get 4 of them. you will have to get it correctly before you run out of health. If not you will be kicked out of the building and back to the Rootyard
+SQLarius: And these are your hearts, you will get 4 of them. you will have to get it correctly before you run out of health.
+SQLarius: If not you will be kicked out of the building and back to the Rootyard
 [signal arg="tutReturn"]
 SQLarius: And lastly, we have the return button. For when you want to go back to the Courtyard quickly.
 [signal arg="tutDone"]

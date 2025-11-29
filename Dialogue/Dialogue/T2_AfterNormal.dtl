@@ -1,11 +1,9 @@
-SQLarius: Good. That’s the expected behavior for a standard category search.
+SQLarius: Good. That’s the expected behavior for a standard category search. Now we can take this a step further.
+SQLarius: Since this searchbox is vulnerable, we can use more than just basic words.
 
-SQLarius: Now we can take this a step further.
-SQLarius: The search box accepts more than just simple categories.
+SQLarius: With a UNION command, you can attach additional results to the original query. This includes categories the system normally hides.
 
-SQLarius: With a UNION command, you can attach additional results to the original query.
-SQLarius: This includes categories the system normally hides.
-
-SQLarius: When you’re ready, try using UNION to reveal a hidden category. 
-SQLarius: If you need help, use the hint button.
+SQLarius: When you’re ready, try using UNION to reveal a hidden category. Which is the admin_items.
+SQLarius: And do not forget to make a quote in the beginning to get out of the quote and -- to make the rest into a comment.
+SQLarius: If you need any help, press the hint button.
 [end_timeline]

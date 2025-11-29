@@ -8,7 +8,7 @@ extends Node2D
 func _ready() -> void:
 	player.set_physics_process(false)
 	Dialogic.signal_event.connect(_start_game)
-	Dialogic.start("T2_Start")
+	Dialogic.start("T3_Start")
 	
 func _start_game(argument: String):
 	if argument == "inFrame":

@@ -1,16 +1,8 @@
-SQLarius: Welcome. In this lesson, we’ll focus on searching through categories.
-MainCharacter: ...
+SQLarius: Now, we are in the L-Building, this is where we will learn how to use [color=cyan]Data Discovery[/color] that we are not supposed to know.
+MainCharacter: [color=cyan]Data Discovery[/color]?
+SQLarius: It is the process of getting access to Data we are not allowed to see.
 [signal arg="inFrame"]
 
-SQLarius: This is the input field. Type a category here to look up items stored in the database.
-[signal arg="T2_Start"]
-
-SQLarius: Here you can see the SQL query that the system builds from your input. It shows exactly what the database receives.
-[signal arg="T2_Backend"]
-
-SQLarius: And here is the output panel. Whatever the database returns will appear in this section.
-[signal arg="T2_NormalSearch"]
-
-SQLarius: Try entering a normal category, such as “phones.” This will show you how the system behaves with regular input.
-[signal arg="T2_Done"]
+SQLarius: For example, when we go to the hackers. We will need to know how they have stored my powers in the database, and in what table.
+SQLarius: I will teach you how to find them and then manipulate them in the next building. For now, just search for some "phones" in the search bar.
 [end_timeline]
