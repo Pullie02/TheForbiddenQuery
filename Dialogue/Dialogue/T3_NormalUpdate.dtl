@@ -1,1 +1,4 @@
-SQLarius: Okay this is normal now try with the SQL command
+SQLarius: As you can see the value changed inside the table. This is to be expected.
+SQLarius: However, what if we wanted to change the power to stolen, or change who is the owner of these powers.
+SQLarius: Here comes the injection we will use. firstly we will again close the ' (quote). But this time we will be adding a semicolon after it.
+SQLarius: This is so we can have a new line of code we can write ourselves. then we can use any update we want. try it for yourself!

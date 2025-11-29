@@ -1,1 +1,6 @@
-SQLarius: Okay great this is perfect.
+SQLarius: Great job. that is all we need. now you are ready to infiltrate the base of the hackers in the D-Building.
+SQLarius: Do you wanna restart or go back to the Rootyard?
+- Go back to Rootyard
+	[signal arg="BackToHub"]
+- Restart
+	[signal arg="again"]

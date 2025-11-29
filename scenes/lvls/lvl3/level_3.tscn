@@ -722,14 +722,15 @@ metadata/_edit_lock_ = true
 
 [node name="BlackBar" type="Sprite2D" parent="."]
 modulate = Color(0.57938534, 0.0019768262, 0.79326755, 0.3647059)
-position = Vector2(28.999998, -37.5)
-scale = Vector2(0.015347723, 0.052537847)
+position = Vector2(28.000002, -37.5)
+scale = Vector2(0.016306955, 0.052537847)
+skew = 0.06806784
 texture = ExtResource("63_c2iot")
 
 [node name="HackersTable" type="RichTextLabel" parent="."]
-offset_left = 16.0
+offset_left = 13.000004
 offset_top = -64.99999
-offset_right = 279.63635
+offset_right = 294.81818
 offset_bottom = 462.27264
 scale = Vector2(0.11, 0.11)
 

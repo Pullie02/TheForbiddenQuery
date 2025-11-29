@@ -1,8 +1,9 @@
-SQLarius: Here is the M-Building. This time we will be learning about [color=red]Data Manipulation[color]
-MainCharacter: So you mean changing values in a database?
+SQLarius: This is the M-Building. This is where I will teach you about [color=red]Data Manipulation[/color]
+MainCharacter: [color=red]Data Manipulation[/color]?
 SQLarius: Precisely, we will use the UPDATE function to change the owner of my powers back to me.
 [signal arg="inFrame"]
 
-SQLarius: This is very siminlar to the previous window because we will be using the same window.
-SQLarius: I will teach you how to find them and then manipulate them in the next building. For now, just search for some "phones" in the search bar.
+SQLarius: This time I will show you the table we are working with since we already learned how to find the content in the previous lesson.
+SQLarius: As you can see by the Backend Code, it is already written that the power will become "updated" when we write one of the hackers names.
+SQLarius: So try to write one of their names.
 [end_timeline]

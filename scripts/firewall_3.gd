@@ -55,7 +55,7 @@ func _ready() -> void:
 func _run_query() -> void:
 	var term := search.text.strip_edges()
 	if term == "":
-		output.text = "⚠ Enter a hacker name or ID."
+		output.text = "Enter a hacker name or ID."
 		return
 
 	# -------------------------
@@ -135,6 +135,7 @@ func _run_query() -> void:
 			]
 
 		Dialogic.start("T3_SQLInjection")
+		Dialogic.signal_event.connect(_back_to_hub)
 
 	_show_hackers_table()
 
@@ -144,19 +145,41 @@ func _run_query() -> void:
 # LIVE TABLE VIEW
 # -----------------------------------------------------------------------------
 func _show_hackers_table():
-	var sql = "SELECT id, name, power FROM hackers ORDER BY id ASC;"
-	db.query(sql)
+	db.query("SELECT id, name, power FROM hackers ORDER BY id ASC;")
 
-	var txt = "[b]Hackers Table[/b]\n"
-	txt += "ID | Name | Power\n"
-	txt += "-------------------------\n"
+	var txt = ""
+	txt += "=== HACKERS DATABASE ===\n"
+	txt += " ID  | Name         | Power\n"
+	txt += "----------------------------------\n"
 
 	for row in db.query_result:
-		txt += str(row.get("id")) + " | " + str(row.get("name")) + " | " + str(row.get("power")) + "\n"
+		var id = pad_right(str(row.get("id")), 3)
+		var name = pad_right(str(row.get("name")), 12)
+		var power = str(row.get("power"))
+
+		txt += " %s | %s | %s\n" % [id, name, power]
 
 	hackers_table_display.text = txt
 
 
+
+func pad_right(text:String, length:int) -> String:
+	if text.length() >= length:
+		return text
+	return text + " ".repeat(length - text.length())
+
+func pad_left(text:String, length:int) -> String:
+	if text.length() >= length:
+		return text
+	return " ".repeat(length - text.length()) + text
+
+
+
+func _back_to_hub(argument: String):
+	if argument == "BackToHub":
+		get_tree().change_scene_to_file("res://scenes/hub.tscn")
+	if argument == "again":
+		get_tree().reload_current_scene()
 # -----------------------------------------------------------------------------
 # UI PREVIEW
 # -----------------------------------------------------------------------------
