@@ -1,2 +1,3 @@
 SQLarius: Great! now that we have infeltrated their sytems, we need to find in which table did they store my powers.
+SQLarius: Remember to use slqite_master!
 [signal arg="phase1done"]
