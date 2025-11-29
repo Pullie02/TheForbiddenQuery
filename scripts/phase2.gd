@@ -1,129 +1,79 @@
 extends Control
 
-var db = SQLite
+var db: SQLite
+var did_normal_search := false
 var did_success := false
 
 @onready var search: LineEdit = $LineEdit
-@onready var display_label: Label = $backEndCode
 @onready var search_button: Button = $Button
+@onready var display_label: Label = $backEndCode
 @onready var output: RichTextLabel = $Output
-@onready var phase_3: Control = $"../Phase3"
+@onready var hackers_table_display: RichTextLabel = $HackersTable
 
+@onready var login_focus: Control = $"../Focus/LoginFocus"
+@onready var backend_focus: Control = $"../Focus/BackendFocus"
+@onready var output_focus: Control = $"../Focus/OutputFocus"
 
-	
 func _ready() -> void:
-
 	db = SQLite.new()
-	db.path = "user://level4_temp.db"
+
+	var original_db = "res://Database/databaseLvl3.db"
+	var temp_db = "user://level3_temp.db"
+
+	var r = FileAccess.open(original_db, FileAccess.READ)
+	if r == null:
+		push_error("Could not open original DB: " + original_db)
+		return
+	var bytes = r.get_buffer(r.get_length())
+	r.close()
+
+	var w = FileAccess.open(temp_db, FileAccess.WRITE)
+	if w == null:
+		push_error("Could not write temp DB: " + temp_db)
+		return
+	w.store_buffer(bytes)
+	w.close()
+
+	db.path = temp_db
 	db.open_db()
-	
-	
-	_update_backend_preview()
 
 	search.text_changed.connect(_update_backend_preview)
 	search_button.pressed.connect(_run_query)
 
-# -----------------------------------------------------------------------------
-# PHASE 1: EXECUTE QUERY LOGIC
-# -----------------------------------------------------------------------------
+	_update_backend_preview()
+	_show_hackers_table()
+
+
 func _run_query() -> void:
 	var term := search.text.strip_edges()
-	var sql := "SELECT name, category FROM products WHERE category = '" + term + "'"
+	if term == "":
+		output.text = "⚠ Enter a hacker name or ID."
+		return
 
-	# Run SELECT
-	db.query(sql)
+	var sql_update := ""
+	var where_desc := ""
 
-	# SAVE RESULT BEFORE IT GETS OVERWRITTEN
-	var select_result: Array[Dictionary] = db.query_result.duplicate(true)
-
-	# --- INJECTION CHECK ---
-	var verify := "SELECT status FROM powers WHERE power_name = 'SQLariusPowers'"
-	db.query(verify)
-
-	if db.query_result.size() > 0:
-		var s := str(db.query_result[0].get("status"))
-		if s == "returned":
-			output.text = "[color=green][b]STATUS UPDATE SUCCESSFUL[/b][/color]\nSQLarius's powers are restored."
-			did_success = true
-			return
-	# -------------------------
-
-	# USE select_result INSTEAD OF db.query_result
-	if select_result.size() > 0:
-		
-		var schema_found := false
-		
-		for row in select_result:
-			if row.get("name") == "products" and len(str(row.get("category"))) > 10:
-				schema_found = true
-				
-		# OUTPUT DISPLAY
-		if schema_found:
-			_display_schema_table(select_result)
-		else:
-			_display_table(select_result)
-		
-		if schema_found and not did_success:
-			did_success = true
-			print("works")
-			
+	if term.is_valid_int():
+		sql_update = "UPDATE hackers SET power = 'Updated' WHERE id = " + term + ";"
+		where_desc = "id = " + term
 	else:
-		output.text = "No items found in that category."
+		# case-insensitive name match
+		sql_update = "UPDATE hackers SET power = 'Updated' WHERE name = '" + term + "' COLLATE NOCASE;"
+		where_desc = "name = '" + term + "' (no case)"
 
+	db.query(sql_update)
 
-# -----------------------------------------------------------------------------
-# REALISTIC SCHEMA OUTPUT
-# -----------------------------------------------------------------------------
-func _display_schema_table(data: Array) -> void:
-	var text := "[b]SQL Database Schema Discovery[/b]\n"
-	text += "-----------------------------------------------\n"
+	# Check how many rows were affected
+	var check_sql := ""
+	if term.is_valid_int():
+		check_sql = "SELECT id, name, power FROM hackers WHERE id = " + term + ";"
+	else:
+		check_sql = "SELECT id, name, power FROM hackers WHERE name = '" + term + "' COLLATE NOCASE;"
 
-	for row in data:
-		var name := str(row.get("name"))
-		var sql_def := str(row.get("category")).to_lower()
-		
-		# We only care about the main data tables, not indices or sequences
-		if name == "products":
-			text += "\n[color=#ffa500]TABLE: products[/color]\n"
-			# Columns for products are name, category
-			text += "  > Columns: [b]name[/b], [b]category[/b]\n"
-		
-		elif name == "powers":
-			text += "\n[color=#ffa500]TABLE: powers[/color]\n"
-			# Columns for users are email, pass
-			text += "  > Columns: [b]power_name[/b], [b]status[/b]\n"
-			
-		elif name == "users":
-			text += "\n[color=#ffa500]TABLE: users[/color]\n"
-			# Columns for users are email, pass
-			text += "  > Columns: [b]user[/b], [b]password[/b]\n"
-	output.text = text
-	
-	
+	db.query(check_sql)
 
-
-func _back_to_hub(argument: String):
-	if argument == "BackToHub":
-		get_tree().change_scene_to_file("res://scenes/hub.tscn")
-	if argument == "again":
-		get_tree().reload_current_scene()
-
-
-# -----------------------------------------------------------------------------
-# VISUAL & OUTPUT HELPERS
-# -----------------------------------------------------------------------------
-func _update_backend_preview(_text := "") -> void:
-	display_label.text = "SELECT name\nFROM products\nWHERE category = '" + search.text + "'"
-
-func _display_table(data: Array) -> void:
-	var text := "[b]Item Name                    Category[/b]\n"
-	text += "-----------------------------------------------\n"
-
-	for row in data:
-		var item_name := str(row["name"])
-		var category := str(row["category"])
-		while item_name.length() < 28:
-			item_name += " "
-		text += item_name + category + "\n"
-
-	output.text = text
+	if db.query_result.size() == 0:
+		output.text = "No hacker found for " + where_desc + "."
+	else:
+		var row = db.query_result[0]
+		output.

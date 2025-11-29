@@ -538,8 +538,9 @@ frame_progress = 0.9777877
 
 [node name="MBuilding" type="Sprite2D" parent="."]
 position = Vector2(58.999996, -41)
-scale = Vector2(0.06486959, 0.06486959)
+scale = Vector2(0.06618367, 0.06618367)
 texture = ExtResource("57_kvn5s")
+metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4nkto")
@@ -590,6 +591,7 @@ scale = Vector2(0.085, 0.085)
 text = "Back to
 The Rootyard"
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Focus" type="Node" parent="."]
 
@@ -716,6 +718,20 @@ scale = Vector2(0.0151794255, 0.0151794255)
 icon = ExtResource("64_numyj")
 flat = true
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="BlackBar" type="Sprite2D" parent="."]
+modulate = Color(0.57938534, 0.0019768262, 0.79326755, 0.3647059)
+position = Vector2(28.999998, -37.5)
+scale = Vector2(0.015347723, 0.052537847)
+texture = ExtResource("63_c2iot")
+
+[node name="HackersTable" type="RichTextLabel" parent="."]
+offset_left = 16.0
+offset_top = -64.99999
+offset_right = 279.63635
+offset_bottom = 462.27264
+scale = Vector2(0.11, 0.11)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="hint" to="." method="_on_button_2_pressed"]

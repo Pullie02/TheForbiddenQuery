@@ -5,7 +5,6 @@ extends Node2D
 
 var db: SQLite
 
-
 func _ready() -> void:
 	player.set_physics_process(false)
 	Dialogic.start("T4_Start")
