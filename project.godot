@@ -38,6 +38,8 @@ directories/dtl_directory={
 "Intro": "res://Dialogue/Dialogue/Intro.dtl",
 "L4Phase1donee": "res://Dialogue/Dialogue/L4Phase1donee.dtl",
 "L4Phase2": "res://Dialogue/Dialogue/L4Phase2.dtl",
+"L4_Finish": "res://Dialogue/Dialogue/L4_Finish.dtl",
+"L4_Phase2Done": "res://Dialogue/Dialogue/L4_Phase2Done.dtl",
 "NoBlueKey": "res://Dialogue/Dialogue/NoBlueKey.dtl",
 "NoGoldKey": "res://Dialogue/Dialogue/NoGoldKey.dtl",
 "NoRedKey": "res://Dialogue/Dialogue/NoRedKey.dtl",

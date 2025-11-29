@@ -14,6 +14,7 @@ var did_success := false
 @onready var output: RichTextLabel = $Output
 @onready var animations: AnimationPlayer = $Animations
 @onready var hackers_table_display: RichTextLabel = $"../HackersTable"
+@onready var animated_sprite: AnimatedSprite2D = $"../Player/AnimatedSprite2D"
 
 # Focus nodes
 @onready var login_focus: Control = $"../Focus/LoginFocus"
@@ -53,6 +54,10 @@ func _ready() -> void:
 # MAIN LOGIC
 # -----------------------------------------------------------------------------
 func _run_query() -> void:
+	animated_sprite.play("attack")
+	await await get_tree().create_timer(1.9).timeout
+	animated_sprite.play("idle")
+	
 	var term := search.text.strip_edges()
 	if term == "":
 		output.text = "Enter a hacker name or ID."

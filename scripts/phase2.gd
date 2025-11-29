@@ -7,10 +7,12 @@ var did_success := false
 @onready var search: LineEdit = $LineEdit
 @onready var display_label: Label = $backEndCode
 @onready var search_button: Button = $Button
-
 @onready var output: RichTextLabel = $Output
 @onready var phase_3: Control = $"../Phase3"
-
+@onready var health_manager: Node = %HealthManager
+@onready var animations: AnimationPlayer = $"../../Animations"
+@onready var player: CharacterBody2D = $"../../Player"
+@onready var animated_sprite: AnimatedSprite2D = $"../../Player/AnimatedSprite2D"
 
 func _ready() -> void:
 
@@ -29,6 +31,10 @@ func _ready() -> void:
 # -----------------------------------------------------------------------------
 
 func _run_query() -> void:
+	animated_sprite.play("attack")
+	await await get_tree().create_timer(1.9).timeout
+	animated_sprite.play("idle")
+	
 	var term := search.text.strip_edges()
 	var sql := "SELECT name, category FROM products WHERE category = '" + term + "'"
 
@@ -47,6 +53,7 @@ func _run_query() -> void:
 		if s == "returned":
 			output.text = "[color=green][b]STATUS UPDATE SUCCESSFUL[/b][/color]\nSQLarius's powers are restored."
 			did_success = true
+			Dialogic.start("L4_Finish")
 			return
 	# -------------------------
 
@@ -54,7 +61,7 @@ func _run_query() -> void:
 	if select_result.size() > 0:
 		
 		var schema_found := false
-		
+		var table_found := false
 		for row in select_result:
 			if row.get("name") == "products" and len(str(row.get("category"))) > 10:
 				schema_found = true
@@ -64,13 +71,23 @@ func _run_query() -> void:
 			_display_schema_table(select_result)
 		else:
 			_display_table(select_result)
-		
+			if not table_found:
+				table_found = true
+				Dialogic.start("L4_Phase2Done")
 		if schema_found and not did_success:
 			did_success = true
-			print("works")
-			
+			Dialogic.start("L4Phase2")
+
 	else:
 		output.text = "No items found in that category."
+		animations.play("damage")
+		player.animated_sprite.play("damage")
+		await get_tree().create_timer(0.5).timeout
+		player.animated_sprite.play("idle")
+		output.text = "No user found with that email and password."
+		Dialogic.start("WrongAnswer")
+		health_manager.less_health()
+		
 
 
 # -----------------------------------------------------------------------------
@@ -83,7 +100,6 @@ func _display_schema_table(data: Array) -> void:
 	for row in data:
 		var name := str(row.get("name"))
 		var sql_def := str(row.get("category")).to_lower()
-		
 		# We only care about the main data tables, not indices or sequences
 		if name == "products":
 			text += "\n[color=#ffa500]TABLE: products[/color]\n"

@@ -12,6 +12,7 @@ var did_success := false
 @onready var display_label: Label = $backEndCode
 @onready var search_button: Button = $Button
 @onready var output: RichTextLabel = $Output
+@onready var animated_sprite: AnimatedSprite2D = $"../Player/AnimatedSprite2D"
 
 
 # Answer Phase UI
@@ -75,6 +76,10 @@ func _ready() -> void:
 # PHASE 1: EXECUTE QUERY LOGIC
 # -----------------------------------------------------------------------------
 func _run_query() -> void:
+	animated_sprite.play("attack")
+	await await get_tree().create_timer(1.9).timeout
+	animated_sprite.play("idle")
+	
 	var term := search.text.strip_edges()
 	var sql := "SELECT name, category FROM products WHERE category = '" + term + "'"
 

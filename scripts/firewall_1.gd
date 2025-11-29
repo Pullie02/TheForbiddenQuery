@@ -9,7 +9,7 @@ var qr
 @onready var button: Button = $Button
 @onready var output: Label = $Output
 @onready var Animations: AnimationPlayer = $Animations
-@onready var animated_sprite: AnimatedSprite2D = $Player/AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $"../Player/AnimatedSprite2D"
 @onready var player: CharacterBody2D = $"../Player"
 @onready var login_focus: Control = $"../Focus/LoginFocus"
 @onready var backend_focus: Control = $"../Focus/BackendFocus"
@@ -66,6 +66,9 @@ func _update_label(_new_text := "") -> void:
 	)
 
 func _query(_new_text := "") -> void:
+	animated_sprite.play("attack")
+	await await get_tree().create_timer(1.9).timeout
+	animated_sprite.play("idle")
 	var sql = "SELECT * FROM users WHERE email = '" + email.text + "' AND pass = '" + passw.text + "'"
 	db.query(sql)
 	

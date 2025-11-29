@@ -1,0 +1,8 @@
+SQLarius: You got my powers back! great job!
+SQLarius: lets get out of here.
+- Go back to hub
+	[wait time="0.5"]
+	[signal arg="BackToHub"]
+- Replay Level.
+	[wait time="1.0"]
+	[signal arg="again"]
