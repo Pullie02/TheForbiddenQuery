@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3ue1e0ultkq4" path="res://scenes/overlaid_menus/main_menu_options_overlaid_menu.tscn" id="3_ixa71"]
 [ext_resource type="PackedScene" uid="uid://drnijxoociwlb" path="res://scenes/overlaid_menus/main_menu_credits_overlaid_menu.tscn" id="4_2k5l7"]
 [ext_resource type="Texture2D" uid="uid://b3osa7llvu1jh" path="res://assets/images/bgImages/mainmenu.png" id="5_2k5l7"]
-[ext_resource type="FontFile" uid="uid://cr01w6bu3llx3" path="res://assets/fonts/Orbitron/Orbitron-Bold.ttf" id="7_2k5l7"]
+[ext_resource type="FontFile" uid="uid://brojp67qm7ykh" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="7_2k5l7"]
 [ext_resource type="Texture2D" uid="uid://du2u0qdq80s0x" path="res://assets/images/bgImages/komar-logo-eng-krd-Transparent.png" id="7_vsp5b"]
 
 [sub_resource type="Animation" id="1"]
@@ -318,15 +318,15 @@ graph_offset = Vector2(-180.277, 49)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2k5l7"]
 font = ExtResource("7_2k5l7")
-font_size = 71
+font_size = 66
 font_color = Color(0.32495183, 0.15620512, 1.0175575, 1)
 outline_size = 20
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vsp5b"]
 font = ExtResource("7_2k5l7")
-font_size = 23
-outline_size = 13
+font_size = 25
+outline_size = 11
 outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" instance=ExtResource("1_rr1rn")]
@@ -342,10 +342,9 @@ texture = ExtResource("5_2k5l7")
 metadata/_edit_lock_ = true
 
 [node name="KomarLogoEngKrdTransparent" type="Sprite2D" parent="." index="1"]
-position = Vector2(70, 577)
-scale = Vector2(0.20703125, 0.20703125)
+position = Vector2(571, 306)
+scale = Vector2(0.27358425, 0.27358425)
 texture = ExtResource("7_vsp5b")
-metadata/_edit_lock_ = true
 
 [node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 libraries = {
@@ -383,6 +382,11 @@ label_settings = SubResource("LabelSettings_vsp5b")
 modulate = Color(1, 1, 1, 0)
 
 [node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0"]
+offset_left = -192.0
+offset_top = 198.0
+offset_right = 192.0
+offset_bottom = 253.93
+vertical = false
 lock = true
 
 [node name="MouseFilter" type="Control" parent="." index="9"]

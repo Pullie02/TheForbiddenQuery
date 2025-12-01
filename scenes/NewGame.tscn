@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=16 format=3 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" uid="uid://dnt2db0yeyo3v" path="res://scripts/NewGame.gd" id="1_a7222"]
+[ext_resource type="PackedScene" uid="uid://b5jb25sw7hbk5" path="res://scenes/PauseMenuController.tscn" id="2_r55i3"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_yjc3x"]
 [ext_resource type="Texture2D" uid="uid://frd6mt7tpu77" path="res://assets/images/bgImages/B-Building.png" id="3_l4j0o"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="3_n0sx4"]
@@ -241,3 +242,15 @@ interact_name = "E to enter"
 position = Vector2(0, 3.8146973e-06)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_r55i3")
+
+[node name="PauseMenuController" parent="." instance=ExtResource("2_r55i3")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UIRoot" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

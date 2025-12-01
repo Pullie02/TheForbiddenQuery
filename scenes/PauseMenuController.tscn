@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5jb25sw7hbk5"]
+
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_menus_template/base/nodes/utilities/pause_menu_controller.gd" id="1_rb8y6"]
+[ext_resource type="PackedScene" uid="uid://dcliu5iayulwn" path="res://scenes/overlaid_menus/pause_menu.tscn" id="2_isaku"]
+
+[node name="PauseMenuController" type="Node"]
+script = ExtResource("1_rb8y6")
+pause_menu_packed = ExtResource("2_isaku")

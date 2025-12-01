@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://danyblna0hnea"]
 
-[ext_resource type="Script" path="res://scenes/credits/scrollable_credits.gd" id="1_jnbjt"]
-[ext_resource type="PackedScene" path="res://scenes/credits/credits_label.tscn" id="2_35kdw"]
+[ext_resource type="Script" uid="uid://yf6bxakoj4kn" path="res://scenes/credits/scrollable_credits.gd" id="1_jnbjt"]
+[ext_resource type="PackedScene" uid="uid://dd7ydqfvien2s" path="res://scenes/credits/credits_label.tscn" id="2_35kdw"]
 
 [node name="ScrollableCredits" type="Control"]
 layout_mode = 3
@@ -15,5 +15,105 @@ script = ExtResource("1_jnbjt")
 [node name="CreditsLabel" parent="." instance=ExtResource("2_35kdw")]
 unique_name_in_owner = true
 layout_mode = 1
+text = "
+
+
+All development, writing, design, and art were created by the student team.
+
+
+
+---
+
+
+
+\\[font_size=48]Tools \\& Engines Used[/font_size]
+
+\\*\\*Godot Engine 4.5\\*\\*  
+
+Godot Plugins: Dialogic, Maaack’s Menus, Godot SQLite  
+
+Aseprite · DB Browser (SQLite)
+
+
+
+---
+
+
+
+\\[font_size=48]Developers / Programmers[/font_size]
+
+Dere Rzgar  
+
+Bawan Mohammed  
+
+Muhammed Dlshad
+
+
+
+---
+
+
+
+\\[font_size=48]Writers / Story Designers[/font_size]
+
+Dere Rzgar · Bawan Mohammed · Muhammed Dlshad
+
+
+
+---
+
+
+
+\\[font_size=48]UI/UX Designers[/font_size]
+
+Dere Rzgar · Bawan Mohammed · Muhammed Dlshad
+
+
+
+---
+
+
+
+\\[font_size=48]Artists / Illustrators[/font_size]
+
+Dere Rzgar · Bawan Mohammed · Muhammed Dlshad
+
+
+
+---
+
+
+
+\\[font_size=48]Sound \\& Music[/font_size]
+
+Dere Rzgar · Bawan Mohammed · Muhammed Dlshad
+
+
+
+---
+
+
+
+\\[font_size=48]Supervisor[/font_size]
+
+Dr. Karzan Hussein Sharif
+
+
+
+\\[font_size=48]Chairperson[/font_size]
+
+Dr. Osman Sharif
+
+
+
+---
+
+
+
+\\*\\*Graduation Project – KUST\\*\\*
+
+
+
+"
 fit_content = false
 scroll_active = true

@@ -120,7 +120,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/godo
 
 [gui]
 
-theme/custom="res://resources/themes/lab.tres"
+theme/custom="res://resources/themes/gravity.tres"
 
 [input]
 

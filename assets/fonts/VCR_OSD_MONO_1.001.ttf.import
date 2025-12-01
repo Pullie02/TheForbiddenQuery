@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c53kogtyjwsss"
-path="res://.godot/imported/PixelOperator8-Bold.ttf-74faf550739674ad3170f08e646e0614.fontdata"
+uid="uid://brojp67qm7ykh"
+path="res://.godot/imported/VCR_OSD_MONO_1.001.ttf-856c41b5beb75e8fa3ccb5c59022acc8.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/PixelOperator8-Bold.ttf"
-dest_files=["res://.godot/imported/PixelOperator8-Bold.ttf-74faf550739674ad3170f08e646e0614.fontdata"]
+source_file="res://assets/fonts/VCR_OSD_MONO_1.001.ttf"
+dest_files=["res://.godot/imported/VCR_OSD_MONO_1.001.ttf-856c41b5beb75e8fa3ccb5c59022acc8.fontdata"]
 
 [params]
 
@@ -23,7 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 modulate_color_glyphs=false
 hinting=1
-subpixel_positioning=1
+subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null

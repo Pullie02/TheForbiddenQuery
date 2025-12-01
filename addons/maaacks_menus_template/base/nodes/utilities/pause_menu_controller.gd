@@ -11,7 +11,7 @@ func _unhandled_input(event : InputEvent) -> void:
 			focused_viewport = get_viewport()
 		var _initial_focus_control = focused_viewport.gui_get_focus_owner()
 		var current_menu = pause_menu_packed.instantiate()
-		get_tree().current_scene.call_deferred("add_child", current_menu)
+		get_tree().current_scene.get_node("UI/UIRoot").add_child(current_menu)
 		await current_menu.tree_exited
 		if is_inside_tree() and _initial_focus_control:
 			_initial_focus_control.grab_focus()

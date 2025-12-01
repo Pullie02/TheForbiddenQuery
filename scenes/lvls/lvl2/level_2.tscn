@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://nmf8qobbv4fj"]
+[gd_scene load_steps=75 format=3 uid="uid://nmf8qobbv4fj"]
 
 [ext_resource type="Script" uid="uid://cxeqs2ihqgxho" path="res://scripts/level_2.gd" id="1_gu38m"]
 [ext_resource type="Script" uid="uid://3brkclnvaxoi" path="res://scripts/health_manager.gd" id="2_gu38m"]
@@ -64,7 +64,9 @@
 [ext_resource type="Texture2D" uid="uid://ctwjhhlr6g0pi" path="res://assets/images/Other/focus thing.png" id="63_75wvf"]
 [ext_resource type="Texture2D" uid="uid://npi3p1lo8f8o" path="res://assets/images/Other/lightbulp.png" id="64_oubns"]
 [ext_resource type="Texture2D" uid="uid://6jayykj58kf5" path="res://assets/images/Other/black bar.png" id="64_oyvvp"]
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_menus_template/base/nodes/utilities/pause_menu_controller.gd" id="66_mmxub"]
 [ext_resource type="Script" uid="uid://cnylbuam8tk88" path="res://scripts/level_2_end.gd" id="66_r0s6g"]
+[ext_resource type="PackedScene" uid="uid://dcliu5iayulwn" path="res://scenes/overlaid_menus/pause_menu.tscn" id="67_7tbq0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffmti"]
 animations = [{
@@ -594,6 +596,20 @@ offset_right = -5.0000005
 offset_bottom = -99.0
 scale = Vector2(0.216, 0.2)
 script = ExtResource("66_r0s6g")
+
+[node name="PauseMenuController" type="Node" parent="."]
+script = ExtResource("66_mmxub")
+pause_menu_packed = ExtResource("67_7tbq0")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UIRoot" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="hint" to="." method="_on_button_2_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwkc6e83lkb5a"]
+[gd_scene load_steps=20 format=3 uid="uid://cwkc6e83lkb5a"]
 
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_d1od2"]
 [ext_resource type="Texture2D" uid="uid://brh4lo3eqo0cq" path="res://assets/images/bgImages/bgHub.png" id="2_2hkft"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dkpmaa0seiqit" path="res://scripts/portal3.gd" id="10_4oyfp"]
 [ext_resource type="PackedScene" uid="uid://c7hp770lvdwxy" path="res://scenes/key_system.tscn" id="11_lcd1r"]
 [ext_resource type="Script" uid="uid://difo34n8kmrh" path="res://scripts/portal4.gd" id="11_s6eg2"]
+[ext_resource type="PackedScene" uid="uid://b5jb25sw7hbk5" path="res://scenes/PauseMenuController.tscn" id="14_phvbg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
 texture = ExtResource("1_d1od2")
@@ -212,13 +213,13 @@ layer_0/tile_data = PackedInt32Array(65535, 524288, 0, 0, 524288, 1, 1, 524288, 
 layer_1/name = "Mid"
 
 [node name="BgHub" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(327, -75.00001)
 scale = Vector2(0.06926095, 0.067050956)
 texture = ExtResource("2_2hkft")
 metadata/_edit_lock_ = true
 
 [node name="BgHub2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(327.6013, -75.154495)
 scale = Vector2(0.1763515, 0.17123987)
 texture = ExtResource("3_glsmu")
@@ -319,3 +320,15 @@ interact_name = "Press E to enter"
 z_index = 1
 position = Vector2(-4.5776367e-05, 2.6673906e-06)
 shape = SubResource("RectangleShape2D_2hkft")
+
+[node name="PauseMenuController" parent="." instance=ExtResource("14_phvbg")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UIRoot" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
