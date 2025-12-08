@@ -213,13 +213,13 @@ layer_0/tile_data = PackedInt32Array(65535, 524288, 0, 0, 524288, 1, 1, 524288, 
 layer_1/name = "Mid"
 
 [node name="BgHub" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(327, -75.00001)
 scale = Vector2(0.06926095, 0.067050956)
 texture = ExtResource("2_2hkft")
 metadata/_edit_lock_ = true
 
 [node name="BgHub2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(327.6013, -75.154495)
 scale = Vector2(0.1763515, 0.17123987)
 texture = ExtResource("3_glsmu")
