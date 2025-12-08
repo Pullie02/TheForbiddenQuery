@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ft86fcpscmch"]
+[gd_scene load_steps=74 format=3 uid="uid://ft86fcpscmch"]
 
 [ext_resource type="Script" uid="uid://cdxuy7dk3485m" path="res://scripts/level_4.gd" id="1_uhqqd"]
 [ext_resource type="Script" uid="uid://3brkclnvaxoi" path="res://scripts/health_manager.gd" id="2_l8vt6"]
@@ -65,8 +65,6 @@
 [ext_resource type="PackedScene" uid="uid://noo3vamkvm6w" path="res://scenes/lvls/lvl2/firewall2.tscn" id="62_gcuk2"]
 [ext_resource type="Script" uid="uid://ggnexk4tkxeu" path="res://scripts/phase2.gd" id="64_qxbnm"]
 [ext_resource type="Texture2D" uid="uid://npi3p1lo8f8o" path="res://assets/images/Other/lightbulp.png" id="65_vmjby"]
-[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_menus_template/base/nodes/utilities/pause_menu_controller.gd" id="66_u3m5l"]
-[ext_resource type="PackedScene" uid="uid://dcliu5iayulwn" path="res://scenes/overlaid_menus/pause_menu.tscn" id="67_u1vew"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffmti"]
 animations = [{
@@ -714,20 +712,6 @@ libraries = {
 [node name="DamageSound" type="AudioStreamPlayer2D" parent="Animations"]
 position = Vector2(54, -41)
 stream = ExtResource("62_f2vra")
-
-[node name="PauseMenuController" type="Node" parent="."]
-script = ExtResource("66_u3m5l")
-pause_menu_packed = ExtResource("67_u1vew")
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="UIRoot" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="pressed" from="hint" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

