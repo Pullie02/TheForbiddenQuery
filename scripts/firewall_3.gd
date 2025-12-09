@@ -141,6 +141,7 @@ func _run_query() -> void:
 
 		Dialogic.start("T3_SQLInjection")
 		Dialogic.signal_event.connect(_back_to_hub)
+		key_manager.add_gold_key()
 
 	_show_hackers_table()
 

@@ -8,6 +8,7 @@ func less_health():
 	health -= 1
 	_img_change()
 	print(health)
+	
 func _img_change():
 	if health == 4:
 		healthpic.play("4")
