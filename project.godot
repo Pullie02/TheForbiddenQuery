@@ -40,6 +40,7 @@ directories/dtl_directory={
 "L4Phase2": "res://Dialogue/Dialogue/L4Phase2.dtl",
 "L4_Finish": "res://Dialogue/Dialogue/L4_Finish.dtl",
 "L4_Phase2Done": "res://Dialogue/Dialogue/L4_Phase2Done.dtl",
+"L4_Phase2Done1": "res://Dialogue/Dialogue/L4_Phase2Done1.dtl",
 "NoBlueKey": "res://Dialogue/Dialogue/NoBlueKey.dtl",
 "NoGoldKey": "res://Dialogue/Dialogue/NoGoldKey.dtl",
 "NoRedKey": "res://Dialogue/Dialogue/NoRedKey.dtl",

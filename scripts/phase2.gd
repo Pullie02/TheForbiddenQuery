@@ -8,7 +8,6 @@ var did_success := false
 @onready var display_label: Label = $backEndCode
 @onready var search_button: Button = $Button
 @onready var output: RichTextLabel = $Output
-@onready var phase_3: Control = $"../Phase3"
 @onready var health_manager: Node = %HealthManager
 @onready var animations: AnimationPlayer = $"../../Animations"
 @onready var player: CharacterBody2D = $"../../Player"
@@ -73,7 +72,7 @@ func _run_query() -> void:
 			_display_table(select_result)
 			if not table_found:
 				table_found = true
-				Dialogic.start("L4_Phase2Done")
+				Dialogic.start("L4_Phase2Done1")
 		if schema_found and not did_success:
 			did_success = true
 			Dialogic.start("L4Phase2")
